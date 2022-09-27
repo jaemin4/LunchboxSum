@@ -7,6 +7,7 @@
 <head>
 <meta charset="EUC-KR">
 <!-- Latest compiled and minified CSS -->
+<!-- 코드 수정 -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <!-- jQuery library -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
