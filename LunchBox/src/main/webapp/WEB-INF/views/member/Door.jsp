@@ -25,6 +25,8 @@
 		modal은 javascript로 구현가능!
 	-->
 	
+	<!-- pull 확인용 입니당 -대건- -->
+	
 	메인페이지
 	
 </body>
