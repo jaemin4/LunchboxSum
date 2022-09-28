@@ -13,6 +13,22 @@
 <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
+<!-- fullcalender -->
+<link href='.//resources/fullcalendar-5.11.3/lib/main.css' rel='stylesheet' />
+<script src='.//resources/fullcalendar-5.11.3/lib/main.js'></script>
+<script>
+
+      document.addEventListener('DOMContentLoaded', function() {
+        var calendarEl = document.getElementById('calendar');
+        var calendar = new FullCalendar.Calendar(calendarEl, {
+          initialView: 'dayGridMonth',
+          contentHeight: 500,
+        });
+        calendar.render();
+      });
+
+</script>
+
 <title>Insert title here</title>
 </head>
 <body>
@@ -24,6 +40,10 @@
 		저장해둔 부분만 색을 입혀서 출력
 		>> 누르면 해당날짜에 저장된 도시락상세페이지로 이동
 	-->
+	
+	<h1>달력페이지 테스트</h1>
+	<hr>
+	<div id='calendar'></div>
 	
 </body>
 </html>
