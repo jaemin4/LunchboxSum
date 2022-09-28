@@ -191,7 +191,7 @@ COMMENT ON COLUMN tbl_lunchbox.lb_calories IS '총 칼로리'
 
 ALTER TABLE tbl_lunchbox
     ADD CONSTRAINT FK_tbl_lunchbox_mb_id_tbl_memb FOREIGN KEY (mb_id)
-        REFERENCES tbl_member (mb_id) ON DELETE RESTRICT 
+        REFERENCES tbl_member (mb_id)
 /
 
 
@@ -258,7 +258,7 @@ COMMENT ON COLUMN tbl_community.article_likes IS '글 추천수'
 
 ALTER TABLE tbl_community
     ADD CONSTRAINT FK_tbl_community_mb_id_tbl_mem FOREIGN KEY (mb_id)
-        REFERENCES tbl_member (mb_id) ON DELETE RESTRICT 
+        REFERENCES tbl_member (mb_id)
 /
 
 
@@ -313,12 +313,12 @@ COMMENT ON COLUMN tbl_comment.mb_id IS '댓글 작성자'
 
 ALTER TABLE tbl_comment
     ADD CONSTRAINT FK_tbl_comment_article_seq_tbl FOREIGN KEY (article_seq)
-        REFERENCES tbl_community (article_seq) ON DELETE RESTRICT 
+        REFERENCES tbl_community (article_seq)
 /
 
 ALTER TABLE tbl_comment
     ADD CONSTRAINT FK_tbl_comment_mb_id_tbl_membe FOREIGN KEY (mb_id)
-        REFERENCES tbl_member (mb_id) ON DELETE RESTRICT 
+        REFERENCES tbl_member (mb_id)
 /
 
 
@@ -365,12 +365,12 @@ COMMENT ON COLUMN tbl_lunchbox_detail.recipe_code IS '레시피 코드'
 
 ALTER TABLE tbl_lunchbox_detail
     ADD CONSTRAINT FK_tbl_lunchbox_detail_lb_seq_ FOREIGN KEY (lb_seq)
-        REFERENCES tbl_lunchbox (lb_seq) ON DELETE RESTRICT 
+        REFERENCES tbl_lunchbox (lb_seq)
 /
 
 ALTER TABLE tbl_lunchbox_detail
     ADD CONSTRAINT FK_tbl_lunchbox_detail_recipe_ FOREIGN KEY (recipe_code)
-        REFERENCES tbl_recipe (recipe_code) ON DELETE RESTRICT 
+        REFERENCES tbl_recipe (recipe_code)
 /
 
 
@@ -429,7 +429,7 @@ COMMENT ON COLUMN tbl_nutritionfact.r_calories IS '권장 칼로리'
 
 ALTER TABLE tbl_nutritionfact
     ADD CONSTRAINT FK_tbl_nutritionfact_mb_id_tbl FOREIGN KEY (mb_id)
-        REFERENCES tbl_member (mb_id) ON DELETE RESTRICT 
+        REFERENCES tbl_member (mb_id)
 /
 
 
@@ -476,10 +476,10 @@ COMMENT ON COLUMN tbl_cooking.ingre_seq IS '식재료 번호'
 
 ALTER TABLE tbl_cooking
     ADD CONSTRAINT FK_tbl_cooking_recipe_code_tbl FOREIGN KEY (recipe_code)
-        REFERENCES tbl_recipe (recipe_code) ON DELETE RESTRICT 
+        REFERENCES tbl_recipe (recipe_code)
 /
 
 ALTER TABLE tbl_cooking
     ADD CONSTRAINT FK_tbl_cooking_ingre_seq_tbl_i FOREIGN KEY (ingre_seq)
-        REFERENCES tbl_ingredient (ingre_seq) ON DELETE RESTRICT 
+        REFERENCES tbl_ingredient (ingre_seq)
 /
