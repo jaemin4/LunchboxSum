@@ -27,7 +27,9 @@
 		>> 모든 페이지로 이동가능하게!
 	-->
 	<h1>메인페이지</h1>
-	<button onclick="location.href='GoCalendar.do'" class="btn btn-primary btn-sm">달력</button>
+	<button onclick="location.href='GoCalendar.do?mb_id=admin'" class="btn btn-primary btn-sm">달력</button>
+	
+	
 	
 </body>
 </html>
