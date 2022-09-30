@@ -1,35 +1,64 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
-<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ page isELIgnored="false" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
+<title>ì‹œìž‘í™”ë©´</title>
 <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-<!-- jQuery library -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<!-- Latest compiled JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
-<title>Insert title here</title>
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
 <body>
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+<!-- Brand -->
+<h1 class="navbar-brand" href="#">LUNCHBOX SIMULATOR</h1>
 
-	<!-- 
-		´ë¹®ÆäÀÌÁö!
-		·Î±×ÀÎ / È¸¿ø°¡ÀÔ ±â´É
-		(Modal)¸ð´Þ ±â´ÉÀ¸·Î divÅÂ±×·Î displayÇØ¼­ ±¸ÇöÇÏ±â!
-		
-		modalÀº javascript·Î ±¸Çö°¡´É!
-	-->
-	
-	<!-- pull È®ÀÎ¿ë ÀÔ´Ï´ç -´ë°Ç- -->
-	<!-- pull È®ÀÎ¿ë ÀÔ´Ï´ç -ÀçÈ«- -->
-	<!-- pull È®ÀÎ¿ë ÀÔ´Ï´Ù -Àç¹Î- -->
-	<!-- pull È®ÀÎ¿ë ÀÔ´Ï´Ù. -Á¾ÈÆ -->
-	<!-- pull È®ÀÎ¿ë ÀÔ´Ï´Ù -»óÁØ- -->
-	
+<!-- Toggler/collapsibe Button -->
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+</button>
+
+<!-- Navbar links -->
+<div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+        <li class="nav-item">
+            <a class="nav-link" href="#" data-toggle="modal" data-target="#login">ë¡œê·¸ì¸</a>
+        <!-- The Modal -->
+        <div class="modal" id="login">
+		<div class="modal-dialog">
+		<div class="modal-content">
+        <!-- Modal Header -->
+        <div class="modal-header">
+        <h4 class="modal-title">ë¡œê·¸ì¸</h4>
+		</div>	
+		<!-- Modal body -->
+		<div class="modal-body">
+            <form action="login.do" class="was-validated">
+                <div class="form-group">
+                    <label for="MbId">ì•„ì´ë””  </label>
+                    <input type="text" class="form-control" id="MbId" placeholder="IDë¥¼ ìž…ë ¥í•˜ì„¸ìš”." name="MbId" required>
+                    <div class="valid-feedback">ìž…ë ¥ ì™„ë£Œ</div>
+                    <div class="invalid-feedback">í•„ìˆ˜ ìž…ë ¥ ê³µê°„</div>
+                </div>
+                <div class="form-group">
+                    <label for="MbPw">ë¹„ë°€ë²ˆí˜¸ </label>
+                    <input type="password" class="form-control" id="MbPw" placeholder="PWë¥¼ ìž…ë ¥í•˜ì„¸ìš”." name="MbPw" required>
+                    <div class="valid-feedback">ìž…ë ¥ ì™„ë£Œ</div>
+                    <div class="invalid-feedback">í•„ìˆ˜ ìž…ë ¥ ê³µê°„</div>
+                </div>
+                <button type="submit" class="btn btn-primary" style="margin-left:50%;">ë¡œê·¸ì¸</button>
+                <button type="button" onclick="location='Join.do'" class="btn btn-primary">íšŒì›ê°€ìž…</button> 
+            </form>
+		</div>
+</nav>
 </body>
 </html>

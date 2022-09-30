@@ -16,6 +16,9 @@ import com.smhrd.controller.CalendarAjaxCon;
 import com.smhrd.controller.CalendarCon;
 import com.smhrd.controller.CalendarDetailCon;
 import com.smhrd.controller.Controller;
+import com.smhrd.controller.DoorCon;
+import com.smhrd.controller.JoinCon;
+import com.smhrd.controller.LoginCon;
 import com.smhrd.controller.MainCon;
 
 @WebServlet("*.do")
@@ -34,6 +37,9 @@ public class FrontController extends HttpServlet {
 		mappings.put("/GoCalendar.do", new CalendarCon());
 		mappings.put("/GoCalendarDetail.do", new CalendarDetailCon());
 		mappings.put("/ajax.do", new CalendarAjaxCon());
+		mappings.put("/Join.do", new JoinCon());
+		mappings.put("/Door.do", new DoorCon());
+		mappings.put("/Login.do", new LoginCon());
 	}
 	
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

@@ -1,25 +1,42 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
-<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ page isELIgnored="false" %>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="EUC-KR">
-<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-<!-- jQuery library -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<!-- Latest compiled JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-
-<title>Insert title here</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>íšŒì›ì •ë³´ìˆ˜ì •</title>
 </head>
 <body>
-
-	<!-- 
-		È¸¿øÁ¤º¸ ¼öÁ¤ÆäÀÌÁö
-	-->
-
+    <h1>LUNCHBOX SIMULATOR</h1>
+    <form action="Door.jsp" method="post">
+        <table>
+            <tr>
+                <td>ID</td>
+                <td align="center"><input type="text" name="MbId" placeholder= "${session.user_id}" readonly></td>
+            </tr>
+            <tr>
+                <th>ì„±ë³„</th>
+                <td align="center"><input type="radio" name="MbGender" value="M" checked>ë‚¨ì</td>
+                <td><input type="radio" name="MbGender" value="F">ì—¬ì</td>
+            </tr>
+            <tr>
+                <th>ë‚˜ì´</th>
+                <td><input type="date" name="MbBirthdate"></td>
+            </tr>
+            <tr align="right">
+                <td colspan = "2">
+                    <div>
+                        <input type="submit" oninput="alertBox()" value="ì •ë³´ìˆ˜ì •"/>
+                    </div>   
+                </td>
+            </tr>       
+        </table>
+    </form>
+    <script>
+        function alertBox(){
+            updateMember();
+            alert("ì •ë³´ìˆ˜ì •ì´ ì™„ë£Œë˜ì—ˆìŠµë‹ˆë‹¤.");
+        }
+    </script>
 </body>
 </html>
