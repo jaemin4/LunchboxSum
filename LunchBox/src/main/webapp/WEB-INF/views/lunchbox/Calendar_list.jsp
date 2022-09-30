@@ -20,18 +20,55 @@
 <link href='.//resources/fullcalendar-5.11.3/lib/main.css'
 	rel='stylesheet' />
 <script src='.//resources/fullcalendar-5.11.3/lib/main.js'></script>
-<script>
+<script src=".//resources/js/jquery-3.6.1.min.js"></script>
+<script type="text/javascript">
+
+	
+
 	document.addEventListener('DOMContentLoaded', function() {
+		
+		// ajax 요청
+		// ajax 요청으로 events 받아오기
+		$.ajax({
+			url : 'ajax.do',
+			type : 'get', // get? post?
+			data : {
+				"mb_id" : '${mb_id}'
+			},
+			dataType : 'json',
+			success : function(res){
+				console.log(res);
+				
+				data = [];
+				
+				for(let i = 0; i < res.length; i++){
+					data.push({
+						title: res[i].lb_Name,
+			            start: res[i].ld_Date
+					})
+				}
+				
+				console.log(data)
+				
+				loadCal(data)
+				
+				
+			},
+			error : function(e){
+				alert("error!");
+			}
+			
+		})
+		
+		
+	});	
+	
+	function loadCal(data){
 		var calendarEl = document.getElementById('calendar');
 		var calendar = new FullCalendar.Calendar(calendarEl, {
 			initialView : 'dayGridMonth',
 			contentHeight : 500,
-			events : [
-				{
-				title: '다이어트 도시락',
-                start: '2022-09-20'
-				}
-			],
+			events : data,
 			navLinks : true,
 			navLinkDayClick : function(date, jsEvent) {
 				
@@ -40,13 +77,11 @@
 				let day = date.toISOString().split('T')[0];
 				console.log('day', day);
 				location.href = 'GoCalendarDetail.do?day=' + day;
-
+	
 			},
 		});
 		calendar.render();
-	});
-	
-	
+	}
 </script>
 
 <title>Insert title here</title>

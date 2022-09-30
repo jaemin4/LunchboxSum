@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.smhrd.controller.CalendarAjaxCon;
 import com.smhrd.controller.CalendarCon;
 import com.smhrd.controller.CalendarDetailCon;
 import com.smhrd.controller.Controller;
@@ -32,7 +33,7 @@ public class FrontController extends HttpServlet {
 		mappings.put("/Main.do", new MainCon());
 		mappings.put("/GoCalendar.do", new CalendarCon());
 		mappings.put("/GoCalendarDetail.do", new CalendarDetailCon());
-
+		mappings.put("/ajax.do", new CalendarAjaxCon());
 	}
 	
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -51,15 +52,16 @@ public class FrontController extends HttpServlet {
 		nextView = con.execute(request, response);
 		
 		// 페이지 이동
-		if(nextView.contains("redirect:/")) {
-			// redirect
-			response.sendRedirect(nextView.split(":/")[1]);
-		} else {
-			// forward
-			RequestDispatcher rd = request.getRequestDispatcher("WEB-INF/views/"+nextView+".jsp");
-			rd.forward(request, response);
+		if(nextView != null) {
+			if(nextView.contains("redirect:/")) {
+				// redirect
+				response.sendRedirect(nextView.split(":/")[1]);
+			} else {
+				// forward
+				RequestDispatcher rd = request.getRequestDispatcher("WEB-INF/views/"+nextView+".jsp");
+				rd.forward(request, response);
+			}
 		}
-		
 	}
 
 }
