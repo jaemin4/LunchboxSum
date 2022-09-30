@@ -10,12 +10,12 @@
 </head>
 <body>
 	<caption><h1>LUNCHBOX SIMULATOR</h1></caption>
-    <form name="join" action="Door.jsp" method="post">
+    <form name="join" action="Door.do" method="post">
         <table>
             <tr>
                 <th>ID</th>
                 <td><input type="text" name="MbId" placeholder="ID를 입력하세요."></td>
-                <td><input type="submit" name="CheckMbId" oninput="idcheck()" value="중복체크"></td>
+                <td><input type="button" name="CheckMbId" oninput="idcheck()" value="중복체크"></td>
             </tr>
             <tr>
                 <th>PW</th>
