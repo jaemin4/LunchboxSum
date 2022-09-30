@@ -51,12 +51,12 @@ public class MemberDAO {
 			String SQL = "insert into tbl_member values (?, ?, ?, ?,sysdate,'u')";
 			try {
 				psmt = conn.prepareStatement(SQL);
-				psmt.setString(1, dto.getMbId());
-				psmt.setString(2, dto.getMbPw());
-				psmt.setString(3, dto.getMbBirthdate());
-				psmt.setString(4, dto.getMbGender());
-	            psmt.setDate(5, (java.sql.Date) dto.getMbJoindate());
-	            psmt.setString(6, dto.getMbType());
+				psmt.setString(1, dto.getMb_Id());
+				psmt.setString(2, dto.getMb_Pw());
+				psmt.setString(3, dto.getMb_Birthdate());
+				psmt.setString(4, dto.getMb_Gender());
+	            psmt.setDate(5, (java.sql.Date) dto.getMb_Joindate());
+	            psmt.setString(6, dto.getMb_Type());
 				
 				cnt = psmt.executeUpdate();
 			} catch (Exception e) {
@@ -75,8 +75,8 @@ public class MemberDAO {
 				String sql = "select count(*) cnt from tbl_member where mb_id = ? and mb_pw = ?";
 				psmt = conn.prepareStatement(sql);
 
-				psmt.setString(1, dto.getMbId());
-				psmt.setString(2, dto.getMbPw());
+				psmt.setString(1, dto.getMb_Id());
+				psmt.setString(2, dto.getMb_Pw());
 
 				rs = psmt.executeQuery();
 
@@ -85,7 +85,7 @@ public class MemberDAO {
 					String MbId = rs.getString(1);
 					String MbPw = rs.getString(2);
 
-					dto = new Member(dto.getMbId(), dto.getMbPw());
+					dto = new Member(dto.getMb_Id(), dto.getMb_Pw());
 				}
 			} catch (SQLException e) {
 				e.printStackTrace();
@@ -103,7 +103,7 @@ public class MemberDAO {
 	        try {
 	            String sql = "select mb_id from tbl_member where mb_id = ?";
 	            psmt = conn.prepareStatement(sql);
-	            psmt.setString(1, dto.getMbId());
+	            psmt.setString(1, dto.getMb_Id());
 	    
 	            rs = psmt.executeQuery();
 	    
@@ -128,8 +128,8 @@ public class MemberDAO {
 	        try {
 	            String sql = "update tbl_member set mb_birthdate=?, mb_gender=? where mb_id=?";
 	            psmt = conn.prepareStatement(sql);
-	            psmt.setString(3, dto.getMbBirthdate());
-	            psmt.setString(4, dto.getMbGender());
+	            psmt.setString(3, dto.getMb_Birthdate());
+	            psmt.setString(4, dto.getMb_Gender());
 	            
 	            cnt = psmt.executeUpdate();
 
