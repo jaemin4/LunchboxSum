@@ -18,7 +18,7 @@
 <body>
 
 	<!-- 
-		메인 기능 - lunchbox choice
+		메인 기능1 - lunchbox choice
 		
 		1. 재료선택-레시피출력
 		2. 레시피 상세 출력

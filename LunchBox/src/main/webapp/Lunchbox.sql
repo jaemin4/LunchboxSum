@@ -474,6 +474,7 @@ COMMENT ON COLUMN tbl_cooking.recipe_code IS '레시피 코드'
 COMMENT ON COLUMN tbl_cooking.ingre_seq IS '식재료 번호'
 /
 
+
 ALTER TABLE tbl_cooking
     ADD CONSTRAINT FK_tbl_cooking_recipe_code_tbl FOREIGN KEY (recipe_code)
         REFERENCES tbl_recipe (recipe_code)

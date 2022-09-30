@@ -13,17 +13,23 @@
 <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
+<script type="text/javascript">
+
+</script>
+
 <title>Insert title here</title>
 </head>
 <body>
 
 	<!-- 
-		대문페이지!
-		로그인 / 회원가입 기능
-		(Modal)모달 기능으로 div태그로 display해서 구현하기!
+		메인 서비스 페이지!
 		
-		modal은 javascript로 구현가능!
+		>> 모든 페이지로 이동가능하게!
 	-->
+	<h1>메인페이지</h1>
+	<button onclick="location.href='GoCalendar.do?mb_id=admin'" class="btn btn-primary btn-sm">달력</button>
+	
+	
 	
 </body>
 </html>

@@ -12,7 +12,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.smhrd.controller.CalendarCon;
+import com.smhrd.controller.CalendarDetailCon;
 import com.smhrd.controller.Controller;
+import com.smhrd.controller.MainCon;
 
 @WebServlet("*.do")
 public class FrontController extends HttpServlet {
@@ -26,7 +29,9 @@ public class FrontController extends HttpServlet {
 		mappings = new HashMap<>();
 		
 		// * 매핑예시
-		// mappings.put("/recipeList.do", new RecipeListCon());
+		mappings.put("/Main.do", new MainCon());
+		mappings.put("/GoCalendar.do", new CalendarCon());
+		mappings.put("/GoCalendarDetail.do", new CalendarDetailCon());
 
 	}
 	
