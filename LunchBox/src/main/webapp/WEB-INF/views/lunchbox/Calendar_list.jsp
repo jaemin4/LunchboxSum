@@ -8,7 +8,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -31,7 +31,7 @@
 		// ajax 요청
 		// ajax 요청으로 events 받아오기
 		$.ajax({
-			url : 'ajax.do',
+			url : 'calAjax.do',
 			type : 'get', // get? post?
 			data : {
 				"mb_id" : '${mb_id}'
@@ -82,6 +82,12 @@
 				let day = date.toISOString().split('T')[0];
 				location.href = 'GoCalendarDetail.do?day='+day;
 			},*/
+			events : [
+				{
+				title: '다이어트 도시락',
+                start: '2022-09-20'
+				}
+			],
 			navLinks : true,
 			navLinkDayClick : function(date, jsEvent) {
 				let nowYear = new Date(date).getFullYear();
@@ -135,12 +141,21 @@
 	<% String mb_id = (String)request.getAttribute("mb_id"); %>
 	<h1 style="color:gold">LUNCH PLANNER</h1>
 	
+
+	<h1>달력페이지 테스트</h1>
 	<hr>
 	
 	<div id='calendar' style="overflow:auto;"></div>
 	
 	<div id='user_id' style='display: none;'>
 		<%=mb_id%>
+	<div id='user_date'> <!--  style='display: none;'>-->
+		<c:forEach  var="Lunchlist" items="${user_lunchList}">
+			<p>
+					도시락 : ${Lunchlist.lb_Name}
+				<br>날짜 : ${Lunchlist.ld_Date}
+			</p>
+		</c:forEach>
 	</div>
 	
 </body>

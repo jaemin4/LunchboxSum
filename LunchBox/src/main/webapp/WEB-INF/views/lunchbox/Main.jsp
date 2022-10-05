@@ -1,11 +1,11 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page isELIgnored="false" %>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <!-- jQuery library -->
@@ -22,13 +22,13 @@
 <body>
 
 	<!-- 
-		¸ÞÀÎ ¼­ºñ½º ÆäÀÌÁö!
+		ë©”ì¸ ì„œë¹„ìŠ¤ íŽ˜ì´ì§€!
 		
-		>> ¸ðµç ÆäÀÌÁö·Î ÀÌµ¿°¡´ÉÇÏ°Ô!
+		>> ëª¨ë“  íŽ˜ì´ì§€ë¡œ ì´ë™ê°€ëŠ¥í•˜ê²Œ!
 	-->
-	<h1>¸ÞÀÎÆäÀÌÁö</h1>
-	<button onclick="location.href='GoCalendar.do?mb_id=admin'" class="btn btn-primary btn-sm">´Þ·Â</button>
-	
+	<h1>ë©”ì¸íŽ˜ì´ì§€</h1>
+	<button onclick="location.href='GoCalendar.do?mb_id=admin'" class="btn btn-primary btn-sm">ë‹¬ë ¥</button>
+	<button onclick="location.href='GoLunch.do'" class="btn btn-primary btn-sm">ëŸ°ì¹˜</button>
 	
 	
 </body>

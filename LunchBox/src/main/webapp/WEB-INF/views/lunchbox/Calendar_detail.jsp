@@ -8,7 +8,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -22,6 +22,13 @@
 <title>Insert title here</title>
 </head>
 <body>
+
+
+
+
+
+
+	
 
 	<!-- 
 		메인기능2 - 런치박스 플래너
@@ -39,7 +46,6 @@
 	<%=box.getLb_Img()%>
 	
 	<input type="image" src="https://img.freepik.com/free-vector/calendar-icon-on-white-background_1308-84634.jpg?w=740&t=st=1664847862~exp=1664848462~hmac=a360141333cf295e0d70d83d3fe69da92f344785f0f45b610b920f1afcf2f7dd" width="250"	height="200" onclick="location.href='GoCalendar.do?mb_id=<%=box.getMb_Id()%>'"> 
-	
 
 </body>
 </html>

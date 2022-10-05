@@ -1,105 +1,101 @@
 <%@page import="java.util.ArrayList"%>
 <%@page import="com.smhrd.model.Recipe"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ page isELIgnored="false"%>
+    pageEncoding="UTF-8"%>
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page isELIgnored="false" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <!-- jQuery library -->
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <!-- Latest compiled JavaScript -->
-<script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
 <title>Insert title here</title>
 <style>
+
 @import url(https://fonts.googleapis.com/css?family=BenchNine:700);
-
 .snip1535 {
-	background-color: #c47135;
-	border: none;
-	color: #ffffff;
-	cursor: pointer;
-	display: inline-block;
-	font-family: 'BenchNine', Arial, sans-serif;
-	font-size: 1em;
-	font-size: 22px;
-	line-height: 1em;
-	margin: 15px 40px;
-	outline: none;
-	padding: 12px 40px 10px;
-	position: relative;
-	text-transform: uppercase;
-	font-weight: 700;
+background-color: #c47135;
+border: none;
+color: #ffffff;
+cursor: pointer;
+display: inline-block;
+font-family: 'BenchNine', Arial, sans-serif;
+font-size: 1em;
+font-size: 22px;
+line-height: 1em;
+margin: 15px 40px;
+outline: none;
+padding: 12px 40px 10px;
+position: relative;
+text-transform: uppercase;
+font-weight: 700;
 }
-
-.snip1535:before, .snip1535:after {
-	border-color: transparent;
-	-webkit-transition: all 0.25s;
-	transition: all 0.25s;
-	border-style: solid;
-	border-width: 0;
-	content: "";
-	height: 24px;
-	position: absolute;
-	width: 24px;
-}
-
-.snip1535:before {
-	border-color: #c47135;
-	border-right-width: 2px;
-	border-top-width: 2px;
-	right: -5px;
-	top: -5px;
-}
-
+.snip1535:before,
 .snip1535:after {
-	border-bottom-width: 2px;
-	border-color: #c47135;
-	border-left-width: 2px;
-	bottom: -5px;
-	left: -5px;
+border-color: transparent;
+-webkit-transition: all 0.25s;
+transition: all 0.25s;
+border-style: solid;
+border-width: 0;
+content: "";
+height: 24px;
+position: absolute;
+width: 24px;
 }
-
-.snip1535:hover, .snip1535.hover {
-	background-color: #c47135;
+.snip1535:before {
+border-color: #c47135;
+border-right-width: 2px;
+border-top-width: 2px;
+right: -5px;
+top: -5px;
 }
-
-.snip1535:hover:before, .snip1535.hover:before, .snip1535:hover:after,
-	.snip1535.hover:after {
-	height: 100%;
-	width: 100%;
+.snip1535:after {
+border-bottom-width: 2px;
+border-color: #c47135;
+border-left-width: 2px;
+bottom: -5px;
+left: -5px;
 }
-</style>
-
+.snip1535:hover,
+.snip1535.hover {
+background-color: #c47135;
+}
+.snip1535:hover:before,
+.snip1535.hover:before,
+.snip1535:hover:after,
+.snip1535.hover:after {
+height: 100%;
+width: 100%;
+}
+</style>      
+    
 </head>
 <body>
 
-	<button class="snip1535" id="Temp_Button1">1</button>
-	<button class="snip1535 hover" id="Temp_Button2">2</button>
-	<button class="snip1535" id="Temp_Button3">3</button>
-	<button class="snip1535" id="Temp_Button4">4</button>
-	<div id="recipe_area"></div>
+    <button class="snip1535" id ="Temp_Button1">1</button>
+    <button class="snip1535 hover" id ="Temp_Button2">2</button>
+    <button class="snip1535" id ="Temp_Button3">3</button>
+    <button class="snip1535" id ="Temp_Button4">4</button>
+    <div id="recipe_area"></div>
 
-	<div class="search-box" id="search_model"></div>
+    <div class="search-box" id = "search_model"></div>
+    
+    <div>
+    	<c:forEach items="${lunchList}" var="list">
+    		<li>\${list.recipeName}</li>
+    	</c:forEach>
+    </div>
+    
 
-	<div>
-		<c:forEach items="${lunchList}" var="list">
-			<li>\${list.recipeName}</li>
-		</c:forEach>
-	</div>
 
 
-
-
-	<script>
+<script>
 
 
 
@@ -134,10 +130,13 @@ function search_Model(){
         search_model.innerHTML = "";
         recipe_area.innerHTML = "";
         search_model.innerHTML = `
-        						<input class="search-txt" type="text" placeholder="검색어를 입력해 주세요" id = "Input_Search">
-                                <button class="search-btn" type="submit" id = 'searchbar' >찾기</button>`;
-                                
+        						
+        							<input class="search-txt" type="text" placeholder="검색어를 입력해 주세요" id = "Input_Search">
+                                	<button class="search-btn" type="submit" id = 'searchbar' >찾기</button>
+                               
+                                	`;
 //jsquery//3.검색 클릭시 
+
 let InputSearch = document.getElementById("Input_Search");
 let SearchBar = document.getElementById("searchbar");
 
@@ -180,6 +179,7 @@ let SearchBar = document.getElementById("searchbar");
         let resultHTML =
             `<table border="1"> 
                 <tr>
+                
                     <th>음식 이미지</th>
                     <th>음식 이름</th>
                     <th>난이도</th>
@@ -223,7 +223,7 @@ let SearchBar = document.getElementById("searchbar");
                           <td><img src = "\${Recipe.indi_img[i]}" width = "100px" height = "100px"></td> 
                           <td colspan = 3>\${Recipe.recipe[i]}</td> 
                       </tr>`;
-                };
+                }
 
                 recipe_area.innerHTML = 
                   `<table border = 1>
@@ -241,66 +241,31 @@ let SearchBar = document.getElementById("searchbar");
                           <td><button id = "Search_Price">최저가 검색</button></td> 
                           <td colspan = "2" align = "center"><button id = "Select_Complete">선택 완료</button></td>   
                       </tr>
-                  </table>`
+                  </table>`;
             }
     }//for문
 
     //6.사용자가 뒤로가기 버튼을 클릭시 레시피 선택 화면 출력
     let Goback = document.getElementById("Go_Back");
-	
+	let Searchprice = document.getElementById("Search_Price");
 	
     function GoBack(){
-    	
-       recipe_area.innerHTML = resultHTML;
-       for(let i = 0; i<recipe_num.length; i++){
-           Click_Addbutton(i);
+        recipe_area.innerHTML = resultHTML;
+        for(let i = 0; i<recipe_num.length; i++){
+            Click_Addbutton(i);
         }
     }
     
-    Goback.addEventListener("click",GoBack);
-    
-  //7.사용자가 최저가 검색 버튼을 누를 시 검색창이 뜸
-    let Searchprice = document.getElementById("Search_Price");
-     function SearchPrice() {				  //Price_Area
-   
-    	 //8.사용자가 검색을 하면 크롤링된 데이터가 출력이됨
-    	 	 search_model.innerHTML = "";
-    	 	 recipe_area.innerHTML = "";
-    	 	 search_model.innerHTML = 	
-    	 	//8.5 사용자가 검색한 재료 크롤링하게끔 데이터 보내주기(Flask)
-    	 		`<input class="search-txt" type="text" placeholder="검색어를 입력해 주세요" id = "Input_Search2">
-    	 	     <button class="search-btn" type="submit" id = 'searchbar2' >찾기</button>`;
-    	 for(let i = 0; i<5; i++){
-  		 	Price_AreaResult += 
-				`<tr>
-					<td>이미지</td>
-					<td>이름</td>
-					<td>가격</td>
-				</tr>`;
-  		 };
-    	 recipe_area.innerHTML = 
-    	 						`<table border = 1 width = "700px" height = "700px">
-									<tr>
-										<td colspan = 3>n번째 도시락 칸</td>
-									</tr>
-									<tr>
-										<td colspan = 3>최저가 검색</td>
-									</tr>
-										\${Price_AreaResult}
-									<tr>
-										<td><button id = "Price_Back">뒤로가기</button></td>
-									</tr>
-								 </table>`
-										
-		//9최저가 검색 -> 뒤로가기
-		let PriceBack = document.getElementById("Price_Back");
-		function PriceBack_fun(){
-			window.history.back();
-		}
-			
-		PriceBack.addEventListener("click",PriceBack_fun);
+     function SearchPrice() {
+    	var link = 'https://www.naver.com/';
+    	location.href=link;
+    	location.replace(link);
+    	window.open(link);
+    	
+    	
 	} 
 
+    Goback.addEventListener("click",GoBack);
     Searchprice.addEventListener("click",SearchPrice);
     
    

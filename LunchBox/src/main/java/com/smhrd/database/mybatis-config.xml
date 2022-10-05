@@ -31,6 +31,8 @@
   	<mappers>
   		<!-- 만약 mapper 파일이 여러 개 라면 mapper 태그를 여러 개 잡아주기! -->
   		<mapper resource="com/smhrd/database/LunchboxMapper.xml" />
+  		<mapper resource="com/smhrd/database/RecipeMapper.xml" />
+  		
   	</mappers>
   
   </configuration>
