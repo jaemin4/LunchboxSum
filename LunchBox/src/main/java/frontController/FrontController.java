@@ -15,7 +15,10 @@ import javax.servlet.http.HttpServletResponse;
 import com.smhrd.controller.CalendarCon;
 import com.smhrd.controller.CalendarDetailCon;
 import com.smhrd.controller.Controller;
+import com.smhrd.controller.GoLunchCon;
 import com.smhrd.controller.MainCon;
+import com.smhrd.controller.Re_SearchCon;
+
 
 @WebServlet("*.do")
 public class FrontController extends HttpServlet {
@@ -32,9 +35,11 @@ public class FrontController extends HttpServlet {
 		mappings.put("/Main.do", new MainCon());
 		mappings.put("/GoCalendar.do", new CalendarCon());
 		mappings.put("/GoCalendarDetail.do", new CalendarDetailCon());
-
+		mappings.put("/GoLunch.do", new GoLunchCon());
+		mappings.put("/ajax.do", new Re_SearchCon());
 	}
-	
+
+
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		request.setCharacterEncoding("EUC-KR");

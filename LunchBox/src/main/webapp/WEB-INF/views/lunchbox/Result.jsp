@@ -1,11 +1,11 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page isELIgnored="false" %>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <!-- jQuery library -->
@@ -18,8 +18,8 @@
 <body>
 
 	<!-- 
-		¿Ï¼ºµÈ µµ½Ã¶ô ¿µ¾ç¼Ò ¹×
-		»ç¿ëÀÚ ±ÇÀå ¿µ¾ç¼Ò ºñ±³ ÆäÀÌÁö
+		ì™„ì„±ëœ ë„ì‹œë½ ì˜ì–‘ì†Œ ë°
+		ì‚¬ìš©ìž ê¶Œìž¥ ì˜ì–‘ì†Œ ë¹„êµ íŽ˜ì´ì§€
 	-->
 	
 </body>
