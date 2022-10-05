@@ -42,7 +42,7 @@
 		</div>	
 		<!-- Modal body -->
 		<div class="modal-body">
-            <form action="logincheck.html" class="was-validated">
+            <form action="login.do" class="was-validated">
                 <div class="form-group">
                     <label for="MbId">아이디  </label>
                     <input type="text" class="form-control" id="MbId" placeholder="ID를 입력하세요." name="MbId" required>
@@ -56,7 +56,7 @@
                     <div class="invalid-feedback">필수 입력 공간</div>
                 </div>
                 <button type="submit" class="btn btn-primary" style="margin-left:50%;">로그인</button>
-                <button type="button" onclick="location='Join.html'" class="btn btn-primary">회원가입</button> 
+                <button type="button" onclick="location='Join.do'" class="btn btn-primary">회원가입</button> 
             </form>
 		</div>
 </nav>

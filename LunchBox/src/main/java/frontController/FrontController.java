@@ -15,7 +15,10 @@ import javax.servlet.http.HttpServletResponse;
 import com.smhrd.controller.CalendarCon;
 import com.smhrd.controller.CalendarDetailCon;
 import com.smhrd.controller.Controller;
+import com.smhrd.controller.DoorCon;
 import com.smhrd.controller.GoLunchCon;
+import com.smhrd.controller.JoinCon;
+import com.smhrd.controller.LoginCon;
 import com.smhrd.controller.MainCon;
 import com.smhrd.controller.Re_SearchCon;
 
@@ -35,8 +38,14 @@ public class FrontController extends HttpServlet {
 		mappings.put("/Main.do", new MainCon());
 		mappings.put("/GoCalendar.do", new CalendarCon());
 		mappings.put("/GoCalendarDetail.do", new CalendarDetailCon());
+
 		mappings.put("/GoLunch.do", new GoLunchCon());
 		mappings.put("/ajax.do", new Re_SearchCon());
+
+		mappings.put("/Join.do", new JoinCon());
+		mappings.put("/Door.do", new DoorCon());
+		mappings.put("/Login.do", new LoginCon());
+
 	}
 
 

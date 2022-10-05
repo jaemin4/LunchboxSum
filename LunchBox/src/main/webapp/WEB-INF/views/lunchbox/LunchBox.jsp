@@ -180,7 +180,6 @@ let SearchBar = document.getElementById("searchbar");
         let resultHTML =
             `<table border="1"> 
                 <tr>
-                
                     <th>음식 이미지</th>
                     <th>음식 이름</th>
                     <th>난이도</th>

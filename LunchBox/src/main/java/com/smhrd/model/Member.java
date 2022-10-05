@@ -5,85 +5,75 @@ import java.util.Date;
 public class Member {
 
 	// 사용자 아이디 
-    private String mbId;
+    private String mb_Id;
 
     // 사용자 비밀번호 
-    private String mbPw;
+    private String mb_Pw;
 
     // 사용자 생년월일 
-    private String mbBirthdate;
+    private String mb_Birthdate;
 
     // 사용자 성별 
-    private String mbGender;
+    private String mb_Gender;
 
     // 사용자 가입일자 
-    private Date mbJoindate;
+    private Date mb_Joindate;
 
     // 사용자 유형 
-    private String mbType;
+    private String mb_Type;
 
-	public Member(String mbId, String mbPw) {
+	public Member(String mb_Id, String mb_Pw) {
 		super();
-		this.mbId = mbId;
-		this.mbPw = mbPw;
+		this.mb_Id = mb_Id;
+		this.mb_Pw = mb_Pw;
 	}
 
-	public String getMbId() {
-		return mbId;
+	public String getMb_Id() {
+		return mb_Id;
 	}
 
-	public void setMbId(String mbId) {
-		this.mbId = mbId;
+	public void setMb_Id(String mb_Id) {
+		this.mb_Id = mb_Id;
 	}
 
-	public String getMbPw() {
-		return mbPw;
+	public String getMb_Pw() {
+		return mb_Pw;
 	}
 
-	public void setMbPw(String mbPw) {
-		this.mbPw = mbPw;
+	public void setMb_Pw(String mb_Pw) {
+		this.mb_Pw = mb_Pw;
 	}
 
-	public String getMbBirthdate() {
-		return mbBirthdate;
+	public String getMb_Birthdate() {
+		return mb_Birthdate;
 	}
 
-	public void setMbBirthdate(String mbBirthdate) {
-		this.mbBirthdate = mbBirthdate;
+	public void setMb_Birthdate(String mb_Birthdate) {
+		this.mb_Birthdate = mb_Birthdate;
 	}
 
-	public String getMbGender() {
-		return mbGender;
+	public String getMb_Gender() {
+		return mb_Gender;
 	}
 
-	public void setMbGender(String mbGender) {
-		this.mbGender = mbGender;
+	public void setMb_Gender(String mb_Gender) {
+		this.mb_Gender = mb_Gender;
 	}
 
-	public Date getMbJoindate() {
-		return mbJoindate;
+	public Date getMb_Joindate() {
+		return mb_Joindate;
 	}
 
-	public void setMbJoindate(Date mbJoindate) {
-		this.mbJoindate = mbJoindate;
+	public void setMb_Joindate(Date mb_Joindate) {
+		this.mb_Joindate = mb_Joindate;
 	}
 
-	public String getMbType() {
-		return mbType;
+	public String getMb_Type() {
+		return mb_Type;
 	}
 
-	public void setMbType(String mbType) {
-		this.mbType = mbType;
+	public void setMb_Type(String mb_Type) {
+		this.mb_Type = mb_Type;
 	}
-	// Member 모델 복사
-    public void CopyData(Member param)
-    {
-        this.mbId = param.getMbId();
-        this.mbPw = param.getMbPw();
-        this.mbBirthdate = param.getMbBirthdate();
-        this.mbGender = param.getMbGender();
-        this.mbJoindate = param.getMbJoindate();
-        this.mbType = param.getMbType();
-    }
-    
+	
 }

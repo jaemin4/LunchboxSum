@@ -7,12 +7,12 @@
 <mapper namespace="com.smhrd.model.DAO">
 
     <select id="loginCheck" resultType="Member">
-        select count(*) cnt from tbl_member where mb_id =#{mb_id} and mb_pw =#{mb_id}
+        select count(*) from tbl_member where mb_id =#{mb_id} and mb_pw =#{mb_id}
     </select>
     
     <insert id="join" parameterType="Member">
-        insert into tbl_member(mb_id,mb_pw,mb_birthdate,mb_gender,mb_joindate,mb_type)
-        values (#{mb_id},#{mb_pw},#{mb_birthdate},#{mb_gender},sysdate,u)
+        insert into tbl_member(mb_id,mb_pw,mb_birthdate,mb_gender,mb_type)
+        values (#{mb_id},#{mb_pw},#{mb_birthdate},#{mb_gender},u)
     </insert>
     
     <select id="idCheck" resultType="Member">

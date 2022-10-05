@@ -35,7 +35,7 @@ public class LoginCon implements Controller {
 				session.setAttribute("loginDto", loginDto);
 				
 			}
-	        return "Login_ok.jsp";
+	        return "member/Login_ok";
 	        
 		
 		
