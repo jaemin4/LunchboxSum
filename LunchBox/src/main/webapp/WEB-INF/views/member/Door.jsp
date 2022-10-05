@@ -42,23 +42,34 @@
 		</div>	
 		<!-- Modal body -->
 		<div class="modal-body">
-            <form action="login.do" class="was-validated">
+            <form action="Login.do" method = "post" class="was-validated">
                 <div class="form-group">
-                    <label for="MbId">아이디  </label>
-                    <input type="text" class="form-control" id="MbId" placeholder="ID를 입력하세요." name="MbId" required>
+                    <label>아이디  </label>
+                    <input type="text" class="form-control" name="mb_Id" placeholder="ID를 입력하세요." required>
                     <div class="valid-feedback">입력 완료</div>
                     <div class="invalid-feedback">필수 입력 공간</div>
                 </div>
                 <div class="form-group">
-                    <label for="MbPw">비밀번호 </label>
-                    <input type="password" class="form-control" id="MbPw" placeholder="PW를 입력하세요." name="MbPw" required>
+                    <label>비밀번호 </label>
+                    <input type="password" class="form-control" name="mb_Pw" placeholder="PW를 입력하세요." required>
                     <div class="valid-feedback">입력 완료</div>
                     <div class="invalid-feedback">필수 입력 공간</div>
                 </div>
                 <button type="submit" class="btn btn-primary" style="margin-left:50%;">로그인</button>
+                <button type="button" class="btn btn-primary" style="margin-left:50%;" onclick="winopen()">비밀번호 찾기</button>
                 <button type="button" onclick="location='Join.do'" class="btn btn-primary">회원가입</button> 
             </form>
 		</div>
-</nav>
+	</nav>
+	<script>
+    function winopen(){
+    	var popupX = (document.body.offsetWidth / 2) - (200 / 2);
+    	// 만들 팝업창 좌우 크기의 1/2 만큼 보정값으로 빼주었음
+
+    	var popupY= (window.screen.height / 2) - (300 / 2);
+    	// 만들 팝업창 상하 크기의 1/2 만큼 보정값으로 빼주었음
+    		window.open("GoSearchPw.do","",'status=no, height=200, width=650, left='+ popupX + ', top='+ popupY);
+    	}
+	</script>
 </body>
 </html>

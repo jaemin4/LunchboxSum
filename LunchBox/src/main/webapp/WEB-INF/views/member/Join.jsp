@@ -10,20 +10,20 @@
 </head>
 <body>
 	<caption><h1>LUNCHBOX SIMULATOR</h1></caption>
-    <form name="join" action="Door.do" method="post">
+    <form name="insertMember" action="JoinOK.do" method="post">
         <table>
             <tr>
                 <th>ID</th>
-                <td><input type="text" name="MbId" placeholder="ID를 입력하세요."></td>
-                <td><input type="button" name="CheckMbId" oninput="idcheck()" value="중복체크"></td>
+                <td><input type="text" name="mb_Id" placeholder="ID를 입력하세요." maxlength="20"></td>
+                <td><input type="button" onclick="winopen()" value="중복체크"></td>
             </tr>
             <tr>
                 <th>PW</th>
-                <td><input type="password" name="MbPw" placeholder="PW를 입력하세요."></td>
+                <td><input type="password" name="mb_Pw" placeholder="PW를 입력하세요." maxlength="20"></td>
             </tr>
             <tr>
                 <th>PW<br>체크</th>
-                <td><input type="password" name="CheckMbPw" oninput="pwCheck()" placeholder="입력한 PW를 확인해 주세요."></td>
+                <td><input type="password" name="mb_Pw2" oninput="pwCheck()" placeholder="입력한 PW를 확인해 주세요." maxlength="20"></td>
             </tr>
             <tr align="right">
                 <td></td>
@@ -31,12 +31,35 @@
             </tr>
             <tr>
                 <th>성별</th>
-                <td align="center"><input type="radio" name="gender" value="M" checked>남자</td>
-                <td><input type="radio" name="gender" value="F">여자</td>
+                <td align="center"><input type="radio" name="mb_Gender" value="M" checked>남자</td>
+                <td><input type="radio" name="mb_Gender" value="F">여자</td>
             </tr>
             <tr>
-                <th>나이</th>
-                <td><input type="date" name="MbBirthdate"></td>
+            	<th>생년월일</th>
+	            <td>
+	                <input type="text" name="yy" placeholder="년(4자)" aria-label="년(4자)" class="int" maxlength="4">
+	            </td>
+	            <td>
+	                <select name="mm" id="sel" aria-label="월">
+	                    <option value>월</option>
+	                    <option value="01">" 1 "</option>
+	                    <option value="02">" 2 "</option>
+	                    <option value="03">" 3 "</option>
+	                    <option value="04">" 4 "</option>
+	                    <option value="05">" 5 "</option>
+	                    <option value="06">" 6 "</option>
+	                    <option value="07">" 7 "</option>
+	                    <option value="08">" 8 "</option>
+	                    <option value="09">" 9 "</option>
+	                    <option value="10">" 10 "</option>
+	                    <option value="11">" 11 "</option>
+	                    <option value="12">" 12 "</option>
+	                </select>
+	            </td>
+	            <td>
+	                <input type="text" name="dd" placeholder="일" aria-label="일" class="int" maxlength="2">
+	                <label for="dd" class="lbl"></label>
+	            </td>
             </tr><br>
             <tr align="right">
                 <td colspan="2">
@@ -46,18 +69,20 @@
         </table>
     </form>
     <script>
-    function idCheck(){
-        confirmID();
-        if(result>0){
-            alert("중복된 아이디입니다.");
-        }else{
-            alert("사용 가능한 아이디입니다.");
-        }
-        
+    <!-- 아이디중복체크 -->
+    function winopen(){
+    	//새창을 열어서 페이지를 오픈 후 -> 회원아이디정보를 가지고 중복체크
+    	//1. 아이디가 없으면 알림창과 진행x
+    	if(document.insertMember.mb_Id.value =="" || document.insertMember.mb_Id.value.length < 0){
+    		alert("아이디를 먼저 입력해주세요")
+    		document.insertMember.mb_Id.focus();
+    	}else{
+    		window.open("GoIdCheck.do","","width=500, height=300");
+    	}
     }
     function pwCheck(){
-        var pw1 = document.getElementsByName("MbPw")[0].value;
-        var pw2 = document.getElementsByName("CheckMbPw")[0].value;
+        var pw1 = document.getElementsByName("mb_Pw")[0].value;
+        var pw2 = document.getElementsByName("mb_Pw2")[0].value;
         let pw3 = document.getElementById("pwCheck");
         console.log(pw1);
         console.log(pw2);

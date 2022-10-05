@@ -6,8 +6,18 @@ public class Member {
 
 	// 사용자 아이디 
     private String mb_Id;
+    
+    private String mb_Idck;
+    
+    public String getMb_Idck() {
+		return mb_Idck;
+	}
 
-    // 사용자 비밀번호 
+	public void setMb_Idck(String mb_Idck) {
+		this.mb_Idck = mb_Idck;
+	}
+
+	// 사용자 비밀번호 
     private String mb_Pw;
 
     // 사용자 생년월일 
@@ -22,11 +32,6 @@ public class Member {
     // 사용자 유형 
     private String mb_Type;
 
-	public Member(String mb_Id, String mb_Pw) {
-		super();
-		this.mb_Id = mb_Id;
-		this.mb_Pw = mb_Pw;
-	}
 
 	public String getMb_Id() {
 		return mb_Id;
@@ -75,5 +80,6 @@ public class Member {
 	public void setMb_Type(String mb_Type) {
 		this.mb_Type = mb_Type;
 	}
+	
 	
 }
