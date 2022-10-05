@@ -38,6 +38,10 @@ public class CalendarDetailCon implements Controller {
 		
 		Lunchbox date_lunch = dao.lunch_DateList(lunch);
 		
+		double lb_seq = date_lunch.getLb_Seq();
+		
+		
+		
 		request.setAttribute("date_lunch", date_lunch);
 		
 		return "WEB-INF/views/lunchbox/Calendar_detail.jsp";
