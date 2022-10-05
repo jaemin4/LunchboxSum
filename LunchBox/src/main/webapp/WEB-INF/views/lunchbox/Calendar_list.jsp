@@ -1,11 +1,11 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-	pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page isELIgnored="false"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -28,7 +28,7 @@
 			contentHeight : 500,
 			events : [
 				{
-				title: '´ÙÀÌ¾îÆ® µµ½Ã¶ô',
+				title: 'ë‹¤ì´ì–´íŠ¸ ë„ì‹œë½',
                 start: '2022-09-20'
 				}
 			],
@@ -54,14 +54,14 @@
 <body>
 
 	<!-- 
-		¸ŞÀÎ±â´É2 - ·±Ä¡¹Ú½º ÇÃ·¡³Ê
+		ë©”ì¸ê¸°ëŠ¥2 - ëŸ°ì¹˜ë°•ìŠ¤ í”Œë˜ë„ˆ
 		
-		´Ş·ÂÆäÀÌÁö!
-		ÀúÀåÇØµĞ ºÎºĞ¸¸ »öÀ» ÀÔÇô¼­ Ãâ·Â
-		>> ´©¸£¸é ÇØ´ç³¯Â¥¿¡ ÀúÀåµÈ µµ½Ã¶ô»ó¼¼ÆäÀÌÁö·Î ÀÌµ¿
+		ë‹¬ë ¥í˜ì´ì§€!
+		ì €ì¥í•´ë‘” ë¶€ë¶„ë§Œ ìƒ‰ì„ ì…í˜€ì„œ ì¶œë ¥
+		>> ëˆ„ë¥´ë©´ í•´ë‹¹ë‚ ì§œì— ì €ì¥ëœ ë„ì‹œë½ìƒì„¸í˜ì´ì§€ë¡œ ì´ë™
 	-->
 
-	<h1>´Ş·ÂÆäÀÌÁö Å×½ºÆ®</h1>
+	<h1>ë‹¬ë ¥í˜ì´ì§€ í…ŒìŠ¤íŠ¸</h1>
 	<hr>
 	
 	<div id='calendar'></div>
@@ -69,8 +69,8 @@
 	<div id='user_date'> <!--  style='display: none;'>-->
 		<c:forEach  var="Lunchlist" items="${user_lunchList}">
 			<p>
-					µµ½Ã¶ô : ${Lunchlist.lb_Name}
-				<br>³¯Â¥ : ${Lunchlist.ld_Date}
+					ë„ì‹œë½ : ${Lunchlist.lb_Name}
+				<br>ë‚ ì§œ : ${Lunchlist.ld_Date}
 			</p>
 		</c:forEach>
 	</div>

@@ -1,14 +1,14 @@
 <%@page import="com.smhrd.model.Lunchbox"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="org.apache.ibatis.reflection.SystemMetaObject"%>
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-	pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page isELIgnored="false"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -23,14 +23,22 @@
 </head>
 <body>
 
+
+
+
+
+
+	
+
 	<!-- 
-		¸ŞÀÎ±â´É2 - ·±Ä¡¹Ú½º ÇÃ·¡³Ê
+		ë©”ì¸ê¸°ëŠ¥2 - ëŸ°ì¹˜ë°•ìŠ¤ í”Œë˜ë„ˆ
 		
-		ÇØ´ç³¯Â¥¿¡ ÀúÀåµÈ µµ½Ã¶ô»ó¼¼ÆäÀÌÁö
+		í•´ë‹¹ë‚ ì§œì— ì €ì¥ëœ ë„ì‹œë½ìƒì„¸í˜ì´ì§€
 	-->
 
-	<h1>´Ş·Â »ó¼¼ ÆäÀÌÁö</h1>
+	<h1>ë‹¬ë ¥ ìƒì„¸ í˜ì´ì§€</h1>
 
 
+>>>>>>> branch 'main' of https://github.com/nemutai123/Lunchbox_simulator.git
 </body>
 </html>

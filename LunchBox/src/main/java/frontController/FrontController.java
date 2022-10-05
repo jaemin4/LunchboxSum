@@ -24,6 +24,7 @@ import com.smhrd.controller.GoSearchPwCon;
 import com.smhrd.controller.GoUpdateCon;
 import com.smhrd.controller.GoViewmemberCon;
 import com.smhrd.controller.IdCheckCon;
+import com.smhrd.controller.GoLunchCon;
 import com.smhrd.controller.JoinCon;
 import com.smhrd.controller.JoinOKCon;
 import com.smhrd.controller.LoginCon;
@@ -31,7 +32,7 @@ import com.smhrd.controller.LogoutCon;
 import com.smhrd.controller.MainCon;
 import com.smhrd.controller.SearchPwCon;
 import com.smhrd.controller.UpdateCon;
-
+import com.smhrd.controller.Re_SearchCon;
 
 
 @WebServlet("*.do")
@@ -49,6 +50,8 @@ public class FrontController extends HttpServlet {
 		mappings.put("/Main.do", new MainCon());
 		mappings.put("/GoCalendar.do", new CalendarCon());
 		mappings.put("/GoCalendarDetail.do", new CalendarDetailCon());
+		mappings.put("/GoLunch.do", new GoLunchCon());
+		mappings.put("/ajax.do", new Re_SearchCon());
 		mappings.put("/Join.do", new JoinCon());
 		mappings.put("/Door.do", new DoorCon());
 		mappings.put("/Login.do", new LoginCon());
@@ -66,7 +69,8 @@ public class FrontController extends HttpServlet {
 		mappings.put("/SearchPw.do", new SearchPwCon());
 		
 	}
-	
+
+
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		request.setCharacterEncoding("EUC-KR");

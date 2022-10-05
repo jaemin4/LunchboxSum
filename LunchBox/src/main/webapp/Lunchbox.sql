@@ -486,3 +486,4 @@ ALTER TABLE tbl_cooking
     ADD CONSTRAINT FK_tbl_cooking_ingre_seq_tbl_i FOREIGN KEY (ingre_seq)
         REFERENCES tbl_ingredient (ingre_seq)
 /
+
