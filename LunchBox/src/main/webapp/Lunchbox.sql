@@ -1,5 +1,7 @@
 -- 테이블 순서는 관계를 고려하여 한 번에 실행해도 에러가 발생하지 않게 정렬되었습니다.
-
+select * from TBL_MEMBER
+select mb_pw from TBL_MEMBER where mb_id = 1234 and mb_birthdate = 2020022
+select mb_id,mb_pw,mb_birthdate,mb_gender,mb_joindate,mb_type from tbl_member
 -- tbl_member Table Create SQL
 CREATE TABLE tbl_member
 (

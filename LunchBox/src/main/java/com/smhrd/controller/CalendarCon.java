@@ -17,7 +17,7 @@ public class CalendarCon implements Controller {
 		// 완성된 도시락 테이블에서 정보 꺼내기 >> ajax컨트롤러에서 정보처리
 		// 이 컨트롤러는 이동만 가능
 		
-		String mb_id = request.getParameter("mb_id");
+		String mb_id = request.getParameter("mb_Id");
 		
 		request.setAttribute("mb_id", mb_id);
 		
