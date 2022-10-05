@@ -64,7 +64,7 @@ public class FrontController extends HttpServlet {
 				response.sendRedirect(nextView.split(":/")[1]);
 			} else {
 				// forward
-				RequestDispatcher rd = request.getRequestDispatcher("WEB-INF/views/"+nextView+".jsp");
+				RequestDispatcher rd = request.getRequestDispatcher(nextView);
 				rd.forward(request, response);
 			}
 		}

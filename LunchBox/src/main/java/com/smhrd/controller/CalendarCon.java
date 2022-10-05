@@ -21,7 +21,7 @@ public class CalendarCon implements Controller {
 		
 		request.setAttribute("mb_id", mb_id);
 		
-		return "lunchbox/Calendar_list";
+		return "WEB-INF/views/lunchbox/Calendar_list.jsp";
 	}
 
 }

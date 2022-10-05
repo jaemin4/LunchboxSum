@@ -6,7 +6,11 @@
   <mapper namespace="com.smhrd.model.lunchboxDAO">
   
   	<select id="lunchlist" resultType="Lunchbox">
-		select * from tbl_lunchbox where mb_id = #{mb_id}
+		select * from tbl_lunchbox where mb_Id = #{mb_Id}
+	</select>
+	
+	<select id="lunchlistDate" resultType="Lunchbox" parameterType="Lunchbox">
+		select * from tbl_lunchbox where mb_Id = #{mb_Id} and ld_Date like #{ld_Date}
 	</select>
 	
   </mapper>
