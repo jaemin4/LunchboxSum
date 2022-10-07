@@ -4,14 +4,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>로그아웃 처리</title>
+<title>Insert title here</title>
 </head>
 <body>
-    <%
-        session.removeAttribute("loginDto");
 
-        response.sendRedirect("Door.jsp");
-
-    %>
 </body>
 </html>

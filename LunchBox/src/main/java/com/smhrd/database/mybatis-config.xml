@@ -12,25 +12,41 @@
   		<typeAlias type="com.smhrd.model.Recipe" alias="Recipe"/>
   		<typeAlias type="com.smhrd.model.Lunchbox" alias="Lunchbox"/>
   		<typeAlias type="com.smhrd.model.Member" alias="Member"/>
-  	</typeAliases>
-  	<!-- 2) DB 연결과 관련된 정의 기술 -->
+  		<typeAlias type="com.smhrd.model.Nutritionfact" alias="Nutritionfact"/>
+		<typeAlias type="com.smhrd.model.Board" alias="Board" />
+		<typeAlias type="com.smhrd.model.Comment" alias="Comment" />
+	</typeAliases>
+	<!-- 2) DB 연결과 관련된 정의 기술 -->
 	<environments default="development">
 		<environment id="development">
-			<transactionManager type="JDBC"/>
+			<transactionManager type="JDBC" />
 			<dataSource type="POOLED">
 				<!-- 3) DB정보(user, pw, url)를 기술 -->
-				<property name="driver" value="oracle.jdbc.driver.OracleDriver"/>
-				<property name="url" value="jdbc:oracle:thin:@project-db-stu.ddns.net:1524:xe"/>
-				<property name="username" value="cgi_3_0924_1"/>
-				<property name="password" value="smhrd1"/>
+				<property name="driver"
+					value="oracle.jdbc.driver.OracleDriver" />
+				<property name="url"
+					value="jdbc:oracle:thin:@project-db-stu.ddns.net:1524:xe" />
+				<property name="username" value="cgi_3_0924_1" />
+				<property name="password" value="smhrd1" />
 			</dataSource>
 		</environment>
-	</environments>  
-  	
-  	<!-- 4) sql구문을 가지고 있는 파일과 연결 (\\ = /)-->
-  	<mappers>
-  		<!-- 만약 mapper 파일이 여러 개 라면 mapper 태그를 여러 개 잡아주기! -->
-  		<mapper resource="com/smhrd/database/LunchboxMapper.xml" />
-  	</mappers>
+	</environments>
+
+	<!-- 4) sql구문을 가지고 있는 파일과 연결 (\\ = /) -->
+	<mappers>
+		<!-- 만약 mapper 파일이 여러 개 라면 mapper 태그를 여러 개 잡아주기! -->
+		<mapper resource="com/smhrd/database/LunchboxMapper.xml" />
+
+		<mapper resource="com/smhrd/database/MemberMapper.xml" />
+
+  		<mapper resource="com/smhrd/database/RecipeMapper.xml" />
+  		
+		<mapper resource="com/smhrd/database/NutritionfactMapper.xml"/>
   
-  </configuration>
+		<mapper resource="com/smhrd/database/RecipeMapper.xml" />
+
+		<mapper resource="com/smhrd/database/BoardMapper.xml" />
+
+		<mapper resource="com/smhrd/database/CommentMapper.xml" />
+	</mappers>
+</configuration>

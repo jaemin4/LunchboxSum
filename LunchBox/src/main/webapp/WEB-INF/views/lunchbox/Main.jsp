@@ -1,8 +1,16 @@
+<<<<<<< HEAD
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
 	pageEncoding="EUC-KR"%>
+=======
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page isELIgnored="false" %>
+>>>>>>> branch 'main' of https://github.com/nemutai123/Lunchbox_simulator.git
 <!DOCTYPE html>
 <html>
 <head>
+<<<<<<< HEAD
 <meta charset="EUC-KR">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css">
@@ -11,6 +19,15 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+=======
+<meta charset="UTF-8">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+>>>>>>> branch 'main' of https://github.com/nemutai123/Lunchbox_simulator.git
 
 <link rel="stylesheet" href="asset/owl/owl.carousel.min.css">
 <link rel="stylesheet" href="asset/owl/owl.theme.default.min.css">
@@ -26,6 +43,7 @@
 </head>
 <body>
 
+<<<<<<< HEAD
 	<div id="layout" align="center">
 
 		<div id="header">
@@ -88,7 +106,12 @@
 			<img class="search_box"	id="search_box4" src="asset/image/exsearch4.PNG">
 			<img class="search_box" id="search_box5" src="asset/image/exsearch5.PNG">
 		</div>
+=======
+	<!-- 
+		메인 서비스 페이지!
+>>>>>>> branch 'main' of https://github.com/nemutai123/Lunchbox_simulator.git
 		
+<<<<<<< HEAD
 		
 		<div id = "slideimg">
 		<div id="ingi" align="center">
@@ -156,6 +179,13 @@
 			}
 		})
 	</script>
+=======
+		>> 모든 페이지로 이동가능하게!
+	-->
+	<h1>메인페이지</h1>
+	<button onclick="location.href='GoCalendar.do?mb_id=admin'" class="btn btn-primary btn-sm">달력</button>
+	<button onclick="location.href='GoLunch.do'" class="btn btn-primary btn-sm">런치</button>
+>>>>>>> branch 'main' of https://github.com/nemutai123/Lunchbox_simulator.git
 	
 	
 </body>

@@ -1,5 +1,17 @@
 -- 테이블 순서는 관계를 고려하여 한 번에 실행해도 에러가 발생하지 않게 정렬되었습니다.
+select count(*) from TBL_MEMBER where MB_GENDER = 'F'
+delete from TBL_MEMBER where mb_id= 'ww'
+select * from TBL_NUTRITIONFACT
+delete from TBL_NUTRITIONFACT where mb_id = 'ww'
+select * from TBL_MEMBER where MB_GENDER = 'M'
+select count(*)
+from tbl_member
+where mb_gender = 'M'
+and mb_birthdate between 19840101 and 19931231
 
+select * from tbl_member
+select mb_pw from TBL_MEMBER where mb_id = 1234 and mb_birthdate = 2020022
+select mb_id,mb_pw,mb_birthdate,mb_gender,mb_joindate,mb_type from tbl_member
 -- tbl_member Table Create SQL
 CREATE TABLE tbl_member
 (
@@ -484,3 +496,4 @@ ALTER TABLE tbl_cooking
     ADD CONSTRAINT FK_tbl_cooking_ingre_seq_tbl_i FOREIGN KEY (ingre_seq)
         REFERENCES tbl_ingredient (ingre_seq)
 /
+

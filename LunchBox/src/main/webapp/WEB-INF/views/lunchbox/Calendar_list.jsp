@@ -1,11 +1,14 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-	pageEncoding="EUC-KR"%>
+<%@page import="com.smhrd.model.Lunchbox"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="org.apache.ibatis.reflection.SystemMetaObject"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page isELIgnored="false"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -20,57 +23,137 @@
 <link href='.//resources/fullcalendar-5.11.3/lib/main.css'
 	rel='stylesheet' />
 <script src='.//resources/fullcalendar-5.11.3/lib/main.js'></script>
-<script>
+<script src=".//resources/js/jquery-3.6.1.min.js"></script>
+<script type="text/javascript">
+
 	document.addEventListener('DOMContentLoaded', function() {
+		
+		// ajax ìš”ì²­
+		// ajax ìš”ì²­ìœ¼ë¡œ events ë°›ì•„ì˜¤ê¸°
+		$.ajax({
+			url : 'calAjax.do',
+			type : 'get', // get? post?
+			data : {
+				"mb_id" : '${mb_id}'
+			},
+			dataType : 'json',
+			success : function(res){
+				console.log(res);
+				
+				data = [];
+				
+				for(let i = 0; i < res.length; i++){
+					data.push({
+						title: res[i].lb_Name,
+			            start: res[i].ld_Date,
+			            allDay: true,
+			            color: 'yellow',
+			            interactive : true,
+			            backgroundColor : 'orange'
+					})
+				}
+				
+				console.log(data)
+				
+				loadCal(data)
+			},
+			error : function(e){
+				alert("error!");
+			}
+			
+		})
+		
+		
+	});	
+	
+	function loadCal(data){
 		var calendarEl = document.getElementById('calendar');
+		var user_id = document.getElementById('user_id')
 		var calendar = new FullCalendar.Calendar(calendarEl, {
 			initialView : 'dayGridMonth',
 			contentHeight : 500,
+			locale : 'ko',
+			events : data,
+			/*dateClick: function(date, allDay, jsEvent, view) {
+				/* var yy=moment.format("YYYY");
+				var mm=moment.format("MM");
+				var dd=moment.format("DD");
+				var ss=moment.format("dd");
+				let day = date.toISOString().split('T')[0];
+				location.href = 'GoCalendarDetail.do?day='+day;
+			},*/
 			events : [
 				{
-				title: '´ÙÀÌ¾îÆ® µµ½Ã¶ô',
+				title: 'ë‹¤ì´ì–´íŠ¸ ë„ì‹œë½',
                 start: '2022-09-20'
 				}
 			],
 			navLinks : true,
 			navLinkDayClick : function(date, jsEvent) {
+				let nowYear = new Date(date).getFullYear();
+				let nowMonth = new Date(date).getMonth() + 1;
+				let nowday = new Date(date).getDate();
+				let userID = user_id.innerText;
 				
-				console.log('day', date.toISOString());
-				console.log('coords', jsEvent.pageX, jsEvent.pageY);
-				let day = date.toISOString().split('T')[0];
-				console.log('day', day);
-				location.href = 'GoCalendarDetail.do?day=' + day;
-
+				console.log('userIDì²´í¬', user_id);
+				console.log('yearì²´í¬', nowYear);
+				console.log('monthì²´í¬', nowMonth);
+				console.log('dayì²´í¬', nowday);
+				// console.log('day', date.toISOString()); // ë‚ ì§œí™•ì¸(í•˜ë£¨ì–´ê¸‹ë‚¨)
+				// console.log('coords', jsEvent.pageX, jsEvent.pageY); // ë‹¬ë ¥ìœ„ì¹˜
+				// let day = date.toISOString().split('T')[0];
+				// console.log('day', day);
+				location.href = 'GoCalendarDetail.do?year='+nowYear+"&month="+nowMonth+"&day="+nowday+"&userID="+userID;
+			},
+			eventContent: {
+				  html: `<div><img src="https://creazilla-store.fra1.digitaloceanspaces.com/emojis/56590/bento-box-emoji-clipart-md.png" class="event-icon" />
+				  	${data}
+				  </div>`,
 			},
 		});
 		calendar.render();
-	});
-	
+	}
 	
 </script>
-
+<style type="text/css">
+.event-icon {
+  width: 24px;
+};
+.fc-day-number.fc-sat.fc-past {
+ color:#0000FF; 
+};
+.fc-day-number.fc-sun.fc-past {
+ color:#FF0000; 
+};
+</style>
 <title>Insert title here</title>
 </head>
 <body>
 
 	<!-- 
-		¸ŞÀÎ±â´É2 - ·±Ä¡¹Ú½º ÇÃ·¡³Ê
+		ë©”ì¸ê¸°ëŠ¥2 - ëŸ°ì¹˜ë°•ìŠ¤ í”Œë˜ë„ˆ
 		
-		´Ş·ÂÆäÀÌÁö!
-		ÀúÀåÇØµĞ ºÎºĞ¸¸ »öÀ» ÀÔÇô¼­ Ãâ·Â
-		>> ´©¸£¸é ÇØ´ç³¯Â¥¿¡ ÀúÀåµÈ µµ½Ã¶ô»ó¼¼ÆäÀÌÁö·Î ÀÌµ¿
+		ë‹¬ë ¥í˜ì´ì§€!
+		ì €ì¥í•´ë‘” ë¶€ë¶„ë§Œ ìƒ‰ì„ ì…í˜€ì„œ ì¶œë ¥
+		>> ëˆ„ë¥´ë©´ í•´ë‹¹ë‚ ì§œì— ì €ì¥ëœ ë„ì‹œë½ìƒì„¸í˜ì´ì§€ë¡œ ì´ë™
 	-->
+	
+	<% String mb_id = (String)request.getAttribute("mb_id"); %>
+	<h1 style="color:gold">LUNCH PLANNER</h1>
+	
 
-	<h1>´Ş·ÂÆäÀÌÁö Å×½ºÆ®</h1>
+	<h1>ë‹¬ë ¥í˜ì´ì§€ í…ŒìŠ¤íŠ¸</h1>
 	<hr>
 	
-	<div id='calendar'></div>
+	<div id='calendar' style="overflow:auto;"></div>
 	
+	<div id='user_id' style='display: none;'>
+		<%=mb_id%>
 	<div id='user_date'> <!--  style='display: none;'>-->
 		<c:forEach  var="Lunchlist" items="${user_lunchList}">
 			<p>
-					µµ½Ã¶ô : ${Lunchlist.lb_Name}
-				<br>³¯Â¥ : ${Lunchlist.ld_Date}
+					ë„ì‹œë½ : ${Lunchlist.lb_Name}
+				<br>ë‚ ì§œ : ${Lunchlist.ld_Date}
 			</p>
 		</c:forEach>
 	</div>
