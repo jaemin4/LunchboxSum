@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- sql구문을 설정하는 파일 -->
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+    <mapper namespace="com.smhrd.model.MemberDAO">
+	
+    <select id="loginCheck" parameterType="Member" resultType="int">
+        select count(*) from tbl_member 
+        where mb_id ='${mb_Id}' and mb_pw ='${mb_Pw}'
+    </select>
+    <insert id="insertMember" parameterType="Member">
+        insert into tbl_member (mb_id,mb_pw,mb_birthdate,mb_gender,mb_joindate,mb_type)
+        values ('${mb_Id}','${mb_Pw}','${mb_Birthdate}','${mb_Gender}',sysdate,'u')
+    </insert>
+    <select id="idCheck" parameterType="Member" resultType="int">
+        select count(*) from tbl_member where mb_id = #{mb_Idck}
+    </select>
+    <update id="updateMember" parameterType="Member">
+        update tbl_member
+        set mb_birthdate='${mb_Birthdate}', mb_gender='${mb_Gender}'
+        where mb_id='${mb_Id}'
+    </update>
+    <delete id="deleteMember" parameterType="Member">
+    	delete from tbl_member
+    	where mb_id='${mb_Id}' and mb_pw='${mb_Pw}'
+    </delete>
+    <select id="selectMember" parameterType="Member" resultType="Member">
+    	select * from tbl_member
+    </select>
+    <select id="searchpassword" parameterType="Member" resultType="Member">
+    	select mb_pw from tbl_member
+    	where mb_id='${mb_Id}' and mb_birthdate='${mb_Birthdate}'
+    </select>
+    <select id="selectGender" parameterType="Member" resultType="int">
+    	select count(*) from tbl_member
+    	where mb_gender='${mb_Gender}'
+    </select>
+    <select id="selectGenderBirth20" parameterType="Member" resultType="int">
+    	select count(*) from tbl_member
+    	where mb_gender='${mb_Gender}'
+    	and mb_birthdate between 19940101 and 20031231
+    </select>
+    <select id="selectGenderBirth30" parameterType="Member" resultType="int">
+    	select count(*) from tbl_member
+    	where mb_gender='${mb_Gender}'
+    	and mb_birthdate between 19840101 and 19931231
+    </select>
+    <select id="selectGenderBirth40" parameterType="Member" resultType="int">
+    	select count(*) from tbl_member
+    	where mb_gender='${mb_Gender}'
+    	and mb_birthdate between 19740101 and 19831231
+    </select>
+    <select id="selectGenderBirth50" parameterType="Member" resultType="int">
+    	select count(*) from tbl_member
+    	where mb_gender='${mb_Gender}'
+    	and mb_birthdate between 19640101 and 19731231
+    </select>
+</mapper>

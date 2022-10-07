@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  <mapper namespace="com.smhrd.model.RecipeboxDAO">
+	
+	<!-- 
+		select mb_id from tbl_member where mb_id = #{mb_id}
+		select mb_id from tbl_member where mb_id = 'smart'
+		#{} : '' 자동으로 붙음
+		
+		'%#{123}%' -> '%'123'%' -> Error
+		
+		
+		${} : ''생략, getter주입가능
+	-->
+	  
+	<select id = "SelectAll" resultType = "Recipe">
+		select * from tbl_recipe where ingredient like #{keyword}
+	</select>
+	
+  </mapper>
