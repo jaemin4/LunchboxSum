@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+.0<%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -9,7 +9,7 @@
 <title>회원가입</title>
 </head>
 <body>
-	<caption><h1>LUNCHBOX SIMULATOR</h1></caption>
+	<h1>LUNCHBOX SIMULATOR</h1>
     <form name="join" action="Door.do" method="post">
         <table>
             <tr>

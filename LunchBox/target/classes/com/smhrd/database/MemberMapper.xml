@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- sql구문을 설정하는 파일 -->
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+    <mapper namespace="com.smhrd.model.DAO">
+
+    <select id="loginCheck" resultType="Member">
+        select count(*) from tbl_member where mb_id =#{mb_id} and mb_pw =#{mb_id}
+    </select>
+    <insert id="join" parameterType="Member">
+        insert into tbl_member(mb_id,mb_pw,mb_birthdate,mb_gender,mb_type)
+        values (#{mb_id},#{mb_pw},#{mb_birthdate},#{mb_gender},u)
+    </insert>
+    <select id="idCheck" resultType="Member">
+        select mb_id from tbl_member where mb_id =#{mb_id}
+    </select>
+    <update id="updateMember" parameterType="Member">
+        update tbl_member
+        set mb_birthdate=#{mb_birthdate}, mb_gender=#{mb_gender}
+        where mb_id=#{mb_id}
+    </update>
+</mapper>
