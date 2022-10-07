@@ -10,7 +10,7 @@
 	
 	
 	
-	<jsp:forward page="Main.do"></jsp:forward>
+	<jsp:forward page="Door.do"></jsp:forward>
 	
 </body>
 </html>
