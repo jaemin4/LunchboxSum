@@ -11,7 +11,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
+import com.smhrd.controller.CalendarAjaxCon;
 import com.smhrd.controller.AdminCon;
 import com.smhrd.controller.AdminUserCon;
 import com.smhrd.controller.CalendarCon;
@@ -51,6 +51,7 @@ public class FrontController extends HttpServlet {
 		mappings.put("/Main.do", new MainCon());
 		mappings.put("/GoCalendar.do", new CalendarCon());
 		mappings.put("/GoCalendarDetail.do", new CalendarDetailCon());
+		mappings.put("/calAjax.do", new CalendarAjaxCon());
 		mappings.put("/GoLunch.do", new GoLunchCon());
 		mappings.put("/ajax.do", new Re_SearchCon());
 		mappings.put("/Join.do", new JoinCon());
@@ -89,15 +90,16 @@ public class FrontController extends HttpServlet {
 		nextView = con.execute(request, response);
 		
 		// 페이지 이동
-		if(nextView.contains("redirect:/")) {
-			// redirect
-			response.sendRedirect(nextView.split(":/")[1]);
-		} else {
-			// forward
-			RequestDispatcher rd = request.getRequestDispatcher("WEB-INF/views/"+nextView+".jsp");
-			rd.forward(request, response);
+		if(nextView != null) {
+			if(nextView.contains("redirect:/")) {
+				// redirect
+				response.sendRedirect(nextView.split(":/")[1]);
+			} else {
+				// forward
+				RequestDispatcher rd = request.getRequestDispatcher(nextView);
+				rd.forward(request, response);
+			}
 		}
-		
 	}
 
 }

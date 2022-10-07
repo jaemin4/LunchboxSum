@@ -22,6 +22,15 @@ public class LunchboxDAO {
 		return list;
 	}
 	
+	public Lunchbox lunch_DateList(Lunchbox lunch) {
+		
+		SqlSession sqlSession = sqlSessionFactory.openSession(true);
+		
+		Lunchbox box = (Lunchbox)sqlSession.selectOne("com.smhrd.model.lunchboxDAO.lunchlistDate", lunch);
+		sqlSession.close();
+		
+		return box;
+	}
 	/*
 	 * public ArrayList<Recipe> Search_Keyword(String keyword) {
 	 * 
