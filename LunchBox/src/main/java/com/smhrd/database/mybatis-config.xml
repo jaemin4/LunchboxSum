@@ -13,14 +13,6 @@
   		<typeAlias type="com.smhrd.model.Lunchbox" alias="Lunchbox"/>
   		<typeAlias type="com.smhrd.model.Member" alias="Member"/>
   		<typeAlias type="com.smhrd.model.Nutritionfact" alias="Nutritionfact"/>
-  	</typeAliases>
-  	<!-- 2) DB 연결과 관련된 정의 기술 -->
-	</configuration>
-	<configuration>
-	<typeAliases>
-		<typeAlias type="com.smhrd.model.Recipe" alias="Recipe" />
-		<typeAlias type="com.smhrd.model.Lunchbox" alias="Lunchbox" />
-		<typeAlias type="com.smhrd.model.Member" alias="Member" />
 		<typeAlias type="com.smhrd.model.Board" alias="Board" />
 		<typeAlias type="com.smhrd.model.Comment" alias="Comment" />
 	</typeAliases>
