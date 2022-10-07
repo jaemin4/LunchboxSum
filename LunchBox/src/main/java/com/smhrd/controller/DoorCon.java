@@ -8,7 +8,7 @@ public class DoorCon implements Controller {
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
 		// TODO Auto-generated method stub
-		return "member/Door";
+		return "WEB-INF/views/member/Door.jsp";
 	}
 
 }

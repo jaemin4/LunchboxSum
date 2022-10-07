@@ -33,7 +33,7 @@ public class LoginCon implements Controller {
 		        	session.setAttribute("session", mb_Id);
 		        	System.out.println(session);
 		        	System.out.println("로그인 성공");
-		        	return "member/Login_ok";
+		        	return "WEB-INF/views/member/Login_ok.jsp";
 		        }else {
 		        	response.setContentType("text/html; charset=UTF-8");
 		        	PrintWriter out = response.getWriter();

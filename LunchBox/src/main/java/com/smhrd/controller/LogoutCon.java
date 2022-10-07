@@ -11,7 +11,7 @@ public class LogoutCon implements Controller {
 		
 		HttpSession session = request.getSession();
 		session.invalidate();
-		return "member/Door";
+		return "WEB-INF/views/member/Door.jsp";
 	}
 
 }

@@ -14,25 +14,41 @@ import javax.servlet.http.HttpServletResponse;
 import com.smhrd.controller.CalendarAjaxCon;
 import com.smhrd.controller.AdminCon;
 import com.smhrd.controller.AdminUserCon;
+import com.smhrd.controller.BestlistAllCon;
+import com.smhrd.controller.BoardDeleteCon;
+import com.smhrd.controller.BoardUpdateCon;
 import com.smhrd.controller.CalendarCon;
 import com.smhrd.controller.CalendarDetailCon;
+import com.smhrd.controller.CommentAllCon;
 import com.smhrd.controller.Controller;
+import com.smhrd.controller.DeleteCommentCon;
 import com.smhrd.controller.DeleteCon;
 import com.smhrd.controller.DoorCon;
+import com.smhrd.controller.FlaskCon;
+import com.smhrd.controller.FlaskImageCon;
+import com.smhrd.controller.GoAskCon;
 import com.smhrd.controller.GoDeleteCon;
 import com.smhrd.controller.GoIdCheckCon;
+import com.smhrd.controller.GoInsertCon;
 import com.smhrd.controller.GoSearchPwCon;
 import com.smhrd.controller.GoUpdateCon;
 import com.smhrd.controller.GoViewmemberCon;
 import com.smhrd.controller.IdCheckCon;
+import com.smhrd.controller.InsertCommentCon;
+import com.smhrd.controller.InsertCon;
 import com.smhrd.controller.GoLunchCon;
+import com.smhrd.controller.GoNutritionCon;
 import com.smhrd.controller.JoinCon;
 import com.smhrd.controller.JoinOKCon;
 import com.smhrd.controller.LoginCon;
 import com.smhrd.controller.LogoutCon;
 import com.smhrd.controller.MainCon;
 import com.smhrd.controller.SearchPwCon;
+import com.smhrd.controller.SelectAllCon;
+import com.smhrd.controller.SelectOneCon;
 import com.smhrd.controller.UpdateCon;
+import com.smhrd.controller.UpdateLikeCon;
+import com.smhrd.controller.UpdateReadCon;
 import com.smhrd.controller.Re_SearchCon;
 
 
@@ -70,7 +86,22 @@ public class FrontController extends HttpServlet {
 		mappings.put("/GoSearchPw.do", new GoSearchPwCon());
 		mappings.put("/SearchPw.do", new SearchPwCon());
 		mappings.put("/AdminUser.do", new AdminUserCon());
-		
+		mappings.put("/SelectAll.do", new SelectAllCon());
+		mappings.put("/GoInsert.do", new GoInsertCon());
+		mappings.put("/Insert.do", new InsertCon());
+		mappings.put("/SelectOne.do", new SelectOneCon());
+		mappings.put("/BoardUpdate.do", new BoardUpdateCon());
+		mappings.put("/BoardDelete.do", new BoardDeleteCon());
+		mappings.put("/Flask.do", new FlaskCon());
+		mappings.put("/FlaskImage.do", new FlaskImageCon());
+		mappings.put("/UpdateRead.do", new UpdateReadCon());
+		mappings.put("/UpdateLike.do", new UpdateLikeCon());
+		mappings.put("/InsertComment.do", new InsertCommentCon());
+		mappings.put("/CommentAll.do", new CommentAllCon());
+		mappings.put("/DeleteComment.do", new DeleteCommentCon());
+		mappings.put("/BestlistAll.do", new BestlistAllCon());
+		mappings.put("/GoAsk.do", new GoAskCon());
+		mappings.put("/GoNutrition.do", new GoNutritionCon());
 	}
 
 

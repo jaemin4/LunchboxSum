@@ -54,7 +54,7 @@ public class DeleteCon implements Controller {
 	        	System.out.println("회원 탈퇴 성공!");
 			}else {
 	        	System.out.println("오류 발생!");
-	        	return "member/Login_ok";
+	        	return "WEB-INF/views/member/Login_ok.jsp";
 	        }
 			} catch (IOException e) {
 				e.printStackTrace();

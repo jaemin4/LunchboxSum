@@ -158,7 +158,7 @@ public class UpdateCon implements Controller {
 	        	out.close();
 			}else {
 	        	System.out.println("오류가 발생했습니다.");
-	        	return "member/Edit_userinfo";
+	        	return "WEB-INF/views/member/Edit_userinfo.jsp";
 	        }
 			} catch (IOException e) {
 				// TODO Auto-generated catch block

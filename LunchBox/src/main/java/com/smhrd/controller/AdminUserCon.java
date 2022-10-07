@@ -72,7 +72,7 @@ public class AdminUserCon implements Controller {
 		session.setAttribute("countGenderFBirth50",countGenderFBirth50);
 		System.out.println("세션에 담긴 성별이 여자이고 50대인 회원은 총 "+session.getAttribute("countGenderFBirth50")+"명입니다.");
 		
-		return "member/Viewmemberdetail";
+		return "WEB-INF/views/member/Viewmemberdetail.jsp";
 	}
 
 }

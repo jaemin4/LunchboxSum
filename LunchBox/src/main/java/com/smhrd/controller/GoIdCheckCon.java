@@ -8,7 +8,7 @@ public class GoIdCheckCon implements Controller {
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
 		// 아이디 중복체크 창으로 이동!
-		return "member/IdCheck";
+		return "WEB-INF/views/member/IdCheck.jsp";
 	}
 
 }
