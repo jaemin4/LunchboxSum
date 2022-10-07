@@ -33,4 +33,28 @@
     	select mb_pw from tbl_member
     	where mb_id='${mb_Id}' and mb_birthdate='${mb_Birthdate}'
     </select>
+    <select id="selectGender" parameterType="Member" resultType="int">
+    	select count(*) from tbl_member
+    	where mb_gender='${mb_Gender}'
+    </select>
+    <select id="selectGenderBirth20" parameterType="Member" resultType="int">
+    	select count(*) from tbl_member
+    	where mb_gender='${mb_Gender}'
+    	and mb_birthdate between 19940101 and 20031231
+    </select>
+    <select id="selectGenderBirth30" parameterType="Member" resultType="int">
+    	select count(*) from tbl_member
+    	where mb_gender='${mb_Gender}'
+    	and mb_birthdate between 19840101 and 19931231
+    </select>
+    <select id="selectGenderBirth40" parameterType="Member" resultType="int">
+    	select count(*) from tbl_member
+    	where mb_gender='${mb_Gender}'
+    	and mb_birthdate between 19740101 and 19831231
+    </select>
+    <select id="selectGenderBirth50" parameterType="Member" resultType="int">
+    	select count(*) from tbl_member
+    	where mb_gender='${mb_Gender}'
+    	and mb_birthdate between 19640101 and 19731231
+    </select>
 </mapper>

@@ -13,7 +13,7 @@
 	<%
 	response.setCharacterEncoding("UTF-8");
     String user_id = (String)session.getAttribute("session");
-	System.out.print(user_id);
+	System.out.println(user_id);
     if(user_id == null){
         response.sendRedirect("Door.do");
     }
@@ -29,7 +29,8 @@
     <button onclick="location.href='Logout.do'">로그아웃</button>
     <button onclick="location.href='GoDelete.do'">회원탈퇴</button>
 	<%if(user_id.equals("admin")){ %>
-		<button onclick="location.href='Admin.do'">회원 정보 관리</button>
+		<button onclick="location.href='Admin.do'">회원 목록 조회</button>
+		<button onclick="location.href='AdminUser.do'">회원 정보 분석</button>
 	<%}%>
     </div>
     <a href="Main.do"style="margin-left:3%">도시락 만들러 가기</a></div><br>

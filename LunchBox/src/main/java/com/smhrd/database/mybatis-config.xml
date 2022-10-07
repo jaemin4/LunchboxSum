@@ -12,6 +12,7 @@
   		<typeAlias type="com.smhrd.model.Recipe" alias="Recipe"/>
   		<typeAlias type="com.smhrd.model.Lunchbox" alias="Lunchbox"/>
   		<typeAlias type="com.smhrd.model.Member" alias="Member"/>
+  		<typeAlias type="com.smhrd.model.Nutritionfact" alias="Nutritionfact"/>
   	</typeAliases>
   	<!-- 2) DB 연결과 관련된 정의 기술 -->
 	<environments default="development">
@@ -36,7 +37,7 @@
 
   		<mapper resource="com/smhrd/database/RecipeMapper.xml" />
   		
-
+		<mapper resource="com/smhrd/database/NutritionfactMapper.xml"/>
   	</mappers>
   
   </configuration>

@@ -68,5 +68,41 @@ public class MemberDAO {
 		sqlSession.close();
 		return result;
 	}
-
+	// 회원 성별 분석 기능
+	public int selectGender(Member member) {
+		int result = 0;
+		SqlSession sqlSession = sqlSessionFactory.openSession(true);
+		result = sqlSession.selectOne("com.smhrd.model.MemberDAO.selectGender", member);
+		sqlSession.close();
+		return result;
+	}
+	// 회원 성별+연령대 분석 기능
+	public int selectGenderBirth20(Member member) {
+		int result = 0;
+		SqlSession sqlSession = sqlSessionFactory.openSession(true);
+		result = sqlSession.selectOne("com.smhrd.model.MemberDAO.selectGenderBirth20",member);
+		sqlSession.close();
+		return result;
+	}
+	public int selectGenderBirth30(Member member) {
+		int result = 0;
+		SqlSession sqlSession = sqlSessionFactory.openSession(true);
+		result = sqlSession.selectOne("com.smhrd.model.MemberDAO.selectGenderBirth30",member);
+		sqlSession.close();
+		return result;
+	}
+	public int selectGenderBirth40(Member member) {
+		int result = 0;
+		SqlSession sqlSession = sqlSessionFactory.openSession(true);
+		result = sqlSession.selectOne("com.smhrd.model.MemberDAO.selectGenderBirth40",member);
+		sqlSession.close();
+		return result;
+	}
+	public int selectGenderBirth50(Member member) {
+		int result = 0;
+		SqlSession sqlSession = sqlSessionFactory.openSession(true);
+		result = sqlSession.selectOne("com.smhrd.model.MemberDAO.selectGenderBirth50",member);
+		sqlSession.close();
+		return result;
+	}
 }

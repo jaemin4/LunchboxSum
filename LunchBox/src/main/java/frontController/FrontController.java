@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.smhrd.controller.AdminCon;
+import com.smhrd.controller.AdminUserCon;
 import com.smhrd.controller.CalendarCon;
 import com.smhrd.controller.CalendarDetailCon;
 import com.smhrd.controller.Controller;
@@ -67,6 +68,7 @@ public class FrontController extends HttpServlet {
 		mappings.put("/GoViewmember.do", new GoViewmemberCon());
 		mappings.put("/GoSearchPw.do", new GoSearchPwCon());
 		mappings.put("/SearchPw.do", new SearchPwCon());
+		mappings.put("/AdminUser.do", new AdminUserCon());
 		
 	}
 
