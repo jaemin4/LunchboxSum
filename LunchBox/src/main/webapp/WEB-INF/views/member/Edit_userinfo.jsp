@@ -81,11 +81,7 @@ li a:hover {
 				<li><a href="GoAsk.do">자주묻는질문</a></li>
 				<li><a href="SelectAll.do">도시락정보공유게시판</a></li>
 			</ul>
-
 		</div>
-    
-    
-    
     <%
 	response.setCharacterEncoding("UTF-8");
     String user_id = (String)session.getAttribute("sessionID");

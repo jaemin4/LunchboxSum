@@ -124,16 +124,11 @@ li a:hover {
 		</div>
 		</div><!-- 슬라이딩이미지 div 마무리 -->
 		</div>
-	
-	
-
 	<div>
 		<a id="dosistart" href="#" data-toggle="modal" data-target="#login">
 		<button type="button" class="btn btn-warning btn-lg">
 			도시락만들기!</button></a>
 	</div>
-
-
 	<!-- The Modal -->
 	<div class="modal" id="login">
 		<div class="modal-dialog">
@@ -244,7 +239,7 @@ li a:hover {
 	<p id="tname">
 		<b>팀명 : 도시락박스</b>
 	</p>
-										<script>
+<script>
     $("#myModal2").on('show.bs.modal', function (e) {
         $("#myModal1").modal("hide");
     });
@@ -332,7 +327,5 @@ li a:hover {
        }
     }
 </script>
-					
-
 </body>
 </html>

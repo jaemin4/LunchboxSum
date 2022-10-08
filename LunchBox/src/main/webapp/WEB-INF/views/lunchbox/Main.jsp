@@ -44,19 +44,13 @@
 			<ul>
 				<li><b>LunchBoxsimulator</b></li>
 				<li><a href="#main"> Main</a></li>
-<<<<<<< HEAD
-				<li><a href="Nutrition.do">영양소 및 칼로리</a></li>
 				<li><a href="GoAsk.do">자주묻는질문</a></li>
+				<li><a href="GoNutrition.do">영양소 및 칼로리</a></li>
 				<li><a href="SelectAll.do">도시락정보공유게시판</a></li>
 				<%if(user_id.equals("admin")){ %>
 					<li><a href="Admin.do">회원 목록 조회</a></li>
 					<li><a href="AdminUser.do">회원 정보 분석</a></li>
 				<%}%>
-=======
-				<li><a href="GoNutrition.do">����� �� Į�θ�</a></li>
-				<li><a href="GoAsk.do">���ֹ�������</a></li>
-				<li><a href="SelectAll.do">���ö����������Խ���</a></li>
->>>>>>> branch 'main' of https://github.com/nemutai123/Lunchbox_simulator.git
 			</ul>
 
 		</div>
@@ -113,30 +107,17 @@
 		<b>오늘의 인기 반찬!!</b>
 		<div class="owl-carousel owl-theme">
 
-<<<<<<< HEAD
-		<img  src="../asset/image/닭강정.jpg">
-		<img  src="../asset/image/소시지볶음.jpg">
-		<img  src="../asset/image/소시지야채볶음.jpg">
-		<img  src="../asset/image/어묵볶음.jpg">
-		<img  src="../asset/image/파프리카볶음.jpg">
-		<img  src="../asset/image/닭강정.jpg">
-		<img  src="../asset/image/소시지볶음.jpg">
-		<img  src="../asset/image/소시지야채볶음.jpg">
-		<img  src="../asset/image/어묵볶음.jpg">
-		<img  src="../asset/image/파프리카볶음.jpg">
-=======
-		<img  src="asset/image/�߰���.jpg">
-		<img  src="asset/image/�ҽ�������.jpg">
-		<img  src="asset/image/�ҽ�����ä����.jpg">
-		<img  src="asset/image/�����.jpg">
-		<img  src="asset/image/������ī����.jpg">
-		<img  src="asset/image/�߰���.jpg">
-		<img  src="asset/image/�ҽ�������.jpg">
-		<img  src="asset/image/�ҽ�����ä����.jpg">
-		<img  src="asset/image/�����.jpg">
-		<img  src="asset/image/������ī����.jpg">
+		<img  src="asset/image/닭강정.jpg">
+		<img  src="asset/image/소시지볶음.jpg">
+		<img  src="asset/image/소시지야채볶음.jpg">
+		<img  src="asset/image/어묵볶음.jpg">
+		<img  src="asset/image/파프리카볶음.jpg">
+		<img  src="asset/image/닭강정.jpg">
+		<img  src="asset/image/소시지볶음.jpg">
+		<img  src="asset/image/소시지야채볶음.jpg">
+		<img  src="asset/image/어묵볶음.jpg">
+		<img  src="asset/image/파프리카볶음.jpg">
 		</div>
->>>>>>> branch 'main' of https://github.com/nemutai123/Lunchbox_simulator.git
 		</div>
 		</div><!-- 슬라이딩이미지 div 마무리 -->
 		</div>
