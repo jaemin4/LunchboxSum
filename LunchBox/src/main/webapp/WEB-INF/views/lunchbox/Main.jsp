@@ -45,8 +45,8 @@
 				<li><b>LunchBoxsimulator</b></li>
 
 				<li><a href="GoMain.do"> Main</a></li>
-				<li><a href="GoAsk.do">자주묻는질문</a></li>
 				<li><a href="GoNutrition.do">영양소 및 칼로리</a></li>
+				<li><a href="GoAsk.do">자주묻는질문</a></li>
 				<li><a href="SelectAll.do">도시락정보공유게시판</a></li>
 				<%if(user_id.equals("admin")){ %>
 					<li><a href="Admin.do">회원 목록 조회</a></li>

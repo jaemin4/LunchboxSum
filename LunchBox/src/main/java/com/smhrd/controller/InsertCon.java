@@ -36,7 +36,7 @@ public class InsertCon implements Controller {
 		String article_file = multi.getFilesystemName("article_file");
 		
 		String article_title = multi.getParameter("article_title");
-		String mb_id = (String)session.getAttribute("session");
+		String mb_id = (String)session.getAttribute("sessionID");
 		String article_contgent = multi.getParameter("article_contgent");
 
 		Board board = new Board();
