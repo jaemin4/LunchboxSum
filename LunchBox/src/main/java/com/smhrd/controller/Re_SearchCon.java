@@ -23,42 +23,36 @@ import com.smhrd.model.RecipeboxDAO;
 import lombok.RequiredArgsConstructor;
 
 
-@WebServlet("/LunchBox")
+//@WebServlet("/LunchBox")
 public class Re_SearchCon implements Controller{
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
 		
 		try {
+			
 			response.setContentType("application/x-json; charset=utf-8");
 			Gson gson = new Gson(); 
 			
 			String search = request.getParameter("Search");
-			System.out.println(search);
+			
+			System.out.println("Re_SearchCon");
+			System.out.println("받아온 데이터 : "+search);
 
 			RecipeboxDAO dao = new RecipeboxDAO();
 			ArrayList<Recipe> list = new ArrayList<>();
 			
 			list = dao.Search_Keyword(search);
 
-			for (int i = 0; i < list.size(); i++) {
-				System.out.println("레시피 코드 : "+list.get(i).getRecipe_code());
-				System.out.println("레시피 이름 : "+list.get(i).getRecipe_name());
-				System.out.println("레시피 이미지 : "+list.get(i).getRecipe_img());
-			}
-			
-			System.out.println(list.size());
-			
 			//==================================================================================
 			String jsonArr = gson.toJson(list);
-			System.out.println(jsonArr);
+			System.out.println("Re_SearchCon");
+			System.out.println("보내준 데이터 : "+jsonArr);
 			
 			PrintWriter out = response.getWriter();
 			out.print(jsonArr);
 			
-			
-			//request.setAttribute("data", gson.toJson(list.get(1).getCooking_img()));
-			
+		
 		}
 		
 		catch(Exception e){

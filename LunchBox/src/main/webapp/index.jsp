@@ -8,7 +8,7 @@
 </head>
 <body>
 	
-	<jsp:forward page="Door.do"></jsp:forward>
+	<jsp:forward page="GoLunch.do"></jsp:forward>
 	
 </body>
 </html>

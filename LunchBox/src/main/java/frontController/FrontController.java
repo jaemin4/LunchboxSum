@@ -17,10 +17,13 @@ import com.smhrd.controller.CalendarDetailCon;
 import com.smhrd.controller.Controller;
 import com.smhrd.controller.DoorCon;
 import com.smhrd.controller.GoLunchCon;
+import com.smhrd.controller.Insert_CompleteLB;
 import com.smhrd.controller.JoinCon;
 import com.smhrd.controller.LoginCon;
 import com.smhrd.controller.MainCon;
 import com.smhrd.controller.Re_SearchCon;
+import com.smhrd.controller.Select_lbnumCon;
+import com.smhrd.controller.Send_lbseqCon;
 
 
 @WebServlet("*.do")
@@ -41,6 +44,9 @@ public class FrontController extends HttpServlet {
 
 		mappings.put("/GoLunch.do", new GoLunchCon());
 		mappings.put("/ajax.do", new Re_SearchCon());
+		mappings.put("/ajax_LunchSuB.do", new Select_lbnumCon());
+		mappings.put("/ajax_Send_lbseqCon.do", new Send_lbseqCon());
+		mappings.put("/ajax_Insert_CompleteLB.do", new Insert_CompleteLB());
 
 		mappings.put("/Join.do", new JoinCon());
 		mappings.put("/Door.do", new DoorCon());
@@ -65,15 +71,17 @@ public class FrontController extends HttpServlet {
 		nextView = con.execute(request, response);
 		
 		// 페이지 이동
-		if(nextView.contains("redirect:/")) {
-			// redirect
-			response.sendRedirect(nextView.split(":/")[1]);
-		} else {
-			// forward
-			RequestDispatcher rd = request.getRequestDispatcher("WEB-INF/views/"+nextView+".jsp");
-			rd.forward(request, response);
-		}
+		if(nextView!=null) {
+			if(nextView.contains("redirect:/")) {
+				// redirect
+				response.sendRedirect(nextView.split(":/")[1]);
+			} else {
+				// forward
+				RequestDispatcher rd = request.getRequestDispatcher("WEB-INF/views/"+nextView+".jsp");
+				rd.forward(request, response);
+			}
 		
+	}
 	}
 
 }

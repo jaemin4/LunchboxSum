@@ -22,18 +22,7 @@ public class LunchboxDAO {
 		return list;
 	}
 	
-	/*
-	 * public ArrayList<Recipe> Search_Keyword(String keyword) {
-	 * 
-	 * ArrayList<Recipe> list = null; SqlSession sqlSession =
-	 * sqlSessionFactory.openSession(true);
-	 * 
-	 * list =
-	 * (ArrayList)sqlSession.selectList("com.smhrd.model.RecipeDAO.SelectAll",
-	 * keyword); sqlSession.close();
-	 * 
-	 * return list; }
-	 */
+	
 	
 	
 
