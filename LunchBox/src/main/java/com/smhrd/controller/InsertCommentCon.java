@@ -14,7 +14,7 @@ public class InsertCommentCon implements Controller {
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
 		HttpSession session = request.getSession();
 		String cmt_content = request.getParameter("cmt_content");
-		String mb_id = (String)session.getAttribute("session");
+		String mb_id = (String)session.getAttribute("sessionID");
 		String article_seq = request.getParameter("article_seq");
 		
 		
