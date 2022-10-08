@@ -1,14 +1,17 @@
 package com.smhrd.controller;
 
+
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
 
 public class JoinCon implements Controller {
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
-		// TODO Auto-generated method stub
-		return "member/Join";
+		// 회원가입 창으로 이동시키는 곳
+		return "WEB-INF/views/member/Join.jsp";
 	}
 
 }

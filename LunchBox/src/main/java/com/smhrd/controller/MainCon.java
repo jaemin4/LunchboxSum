@@ -7,7 +7,7 @@ public class MainCon implements Controller {
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
-		return "lunchbox/Main";
+		return "WEB-INF/views/lunchbox/Main.jsp";
 	}
 
 }

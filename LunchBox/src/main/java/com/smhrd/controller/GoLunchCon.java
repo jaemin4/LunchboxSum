@@ -19,7 +19,7 @@ public class GoLunchCon implements Controller{
 
 		System.out.println("이동중");
 
-        return  "lunchbox/LunchBox";
+        return "WEB-INF/views/lunchbox/LunchBox.jsp";
 	}
 
 }

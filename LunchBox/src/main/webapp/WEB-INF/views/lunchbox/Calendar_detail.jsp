@@ -37,8 +37,15 @@
 	-->
 
 	<h1>달력 상세 페이지</h1>
+	
+	<%Lunchbox box = (Lunchbox)request.getAttribute("date_lunch"); %>
+	<%=box.getLd_Date().split("-")[0]%>년
+	<%=box.getLd_Date().split("-")[1]%>월
+	<%=box.getLd_Date().split("-")[2].split(" ")[0]%>일 도시락
+	
+	<%=box.getLb_Img()%>
+	
+	<input type="image" src="https://img.freepik.com/free-vector/calendar-icon-on-white-background_1308-84634.jpg?w=740&t=st=1664847862~exp=1664848462~hmac=a360141333cf295e0d70d83d3fe69da92f344785f0f45b610b920f1afcf2f7dd" width="250"	height="200" onclick="location.href='GoCalendar.do?mb_id=<%=box.getMb_Id()%>'"> 
 
-
->>>>>>> branch 'main' of https://github.com/nemutai123/Lunchbox_simulator.git
 </body>
 </html>

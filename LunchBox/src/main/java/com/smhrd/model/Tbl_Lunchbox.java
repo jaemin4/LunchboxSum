@@ -13,23 +13,9 @@ public class Tbl_Lunchbox {
 	
 	private String ld_date;
 	
+	private double lb_calories;
+	
 	public Tbl_Lunchbox() {}
-	
-	
-	
-	
-	
-	public Tbl_Lunchbox(int lb_seq, String lb_name, String lb_img, String mb_id, String ld_date, int lb_calories) {
-		super();
-		this.lb_seq = lb_seq;
-		this.lb_name = lb_name;
-		this.lb_img = lb_img;
-		this.mb_id = mb_id;
-		this.ld_date = ld_date;
-		this.lb_calories = lb_calories;
-	}
-	
-	
 
 	public int getLb_seq() {
 		return lb_seq;
@@ -71,18 +57,23 @@ public class Tbl_Lunchbox {
 		this.ld_date = ld_date;
 	}
 
-	public int getLb_calories() {
+	public double getLb_calories() {
 		return lb_calories;
 	}
 
-	public void setLb_calories(int lb_calories) {
+	public void setLb_calories(double lb_calories) {
 		this.lb_calories = lb_calories;
 	}
 
-	private int lb_calories;
-	
-	
-	
+	public Tbl_Lunchbox(int lb_seq, String lb_name, String lb_img, String mb_id, String ld_date, double lb_calories) {
+		super();
+		this.lb_seq = lb_seq;
+		this.lb_name = lb_name;
+		this.lb_img = lb_img;
+		this.mb_id = mb_id;
+		this.ld_date = ld_date;
+		this.lb_calories = lb_calories;
+	}
 	
 	
 	

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- sql구문을 설정하는 파일 -->
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+    <mapper namespace="com.smhrd.model.NutritionfactDAO">
+    <insert id="insertNutritionfact" parameterType="Nutritionfact">
+    	insert into tbl_nutritionfact (mb_id,r_carbohydrate,r_protein,r_fat,r_calories)
+    	values ('${mb_Id}','${r_Carbohydrate}','${r_Protein}','${r_Fat}','${r_Calories}')
+    </insert>
+    <delete id="deleteNutritionfact" parameterType="Nutritionfact">
+    	delete from tbl_nutritionfact
+    	where mb_id='${mb_Id}'
+    </delete>
+    <update id="updateNutritionfact" parameterType="Nutritionfact">
+    	update tbl_nutritionfact
+    	set r_carbohydrate='${r_Carbohydrate}',r_protein='${r_Protein}',r_fat='${r_Fat}',r_calories='${r_Calories}'
+    	where mb_id='${mb_Id}'
+    </update>
+    </mapper>

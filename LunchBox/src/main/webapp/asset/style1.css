@@ -1,0 +1,71 @@
+@charset "UTF-8";
+
+
+.panel-heading, .panel-footer {
+	background-image: url("image/background.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+body {
+	background-image: url("image/background.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+#slideimg{
+		width: 1900px;
+        height: 100px;
+        top: 10%;
+        position: absolute;
+}
+
+
+#dosistart {
+    font-size: 40px;
+    width: 350px;
+    height: 100px;
+    left: 41%;
+    top: 60%;
+    position: absolute;
+}
+       
+#tname{
+		bottom : 10px;
+		position: absolute;
+}
+
+/* 네비게이션바 스타일*/
+ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background-color: rgba(0,24,113,1);
+}
+
+li {
+	float: left;
+}
+
+li a {
+	display: block;
+	color: white;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+}
+
+li b {
+	display: block;
+	color: rgba(255,181,73,1);
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+}
+
+
+
+li a:hover {
+	background-color: #111;
+}

@@ -75,7 +75,17 @@ public class RecipeboxDAO {
 	}
 	
 	
+	  public int Insert_Completelb(Tbl_Lunchbox tlx) { int result = 0;
+	  
+	  Tbl_Lunchbox tbl_lunchbox = tlx;
+	  
+	  SqlSession sqlSession = sqlSessionFactory.openSession(true); result =
+	  sqlSession.insert("com.smhrd.model.RecipeboxDAO.Insert_CompleteData",
+	  tbl_lunchbox); sqlSession.close();
+	  
+	  return result; }
+	 
 	
-	
+
 
 }

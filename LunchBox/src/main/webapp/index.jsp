@@ -8,7 +8,12 @@
 </head>
 <body>
 	
+
 	<jsp:forward page="GoLunch.do"></jsp:forward>
+
+	
+	
+
 	
 </body>
 </html>

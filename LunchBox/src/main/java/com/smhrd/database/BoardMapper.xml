@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- sql구문을 설정하는 파일 -->
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.smhrd.model.BoardDAO">
+
+	<select id="selectAll"  resultType="Board">
+		
+		select * from tbl_community 
+		order by article_date desc
+
+	</select>
+	
+	<select id = "countAll" resultType="int">
+		select count(*) from tbl_community
+	</select>
+
+
+	<insert id="insert" parameterType="Board">
+		insert into
+		tbl_community(article_file, article_title, mb_id,
+		article_contgent,
+		article_seq)
+		values(#{article_file,jdbcType=VARCHAR}, #{article_title}, #{mb_id},
+		#{article_contgent}, article_seq.nextval)
+
+
+	</insert>
+
+	<select id="selectOne" resultType="Board">
+		select * from tbl_community
+		where article_seq=#{article_seq}
+	</select>
+
+	<select id="BestlistAll" resultType="Board">
+
+		select article_title, article_date, article_likes
+		from (select *
+		from tbl_community order by article_likes desc)
+		where rownum between 1 and 3
+		order by rownum asc
+
+	</select>
+
+	<update id="UpdateRead" parameterType="Board">
+		update tbl_community
+		set
+		article_cnt = #{article_cnt}+1
+		where article_seq = #{article_seq}
+	</update>
+
+	<update id="UpdateLike" parameterType="Board">
+		update tbl_community
+		set
+		article_likes = #{article_likes}+1
+		where article_seq = #{article_seq}
+
+	</update>
+
+	<update id="Update" parameterType="Board">
+		update tbl_community
+		set
+		article_title = #{article_title} , mb_id = #{mb_id} ,
+		article_contgent
+		= #{article_contgent}, article_date = sysdate
+		where article_seq = #{article_seq}
+	</update>
+
+	<delete id="Delete" parameterType="Board">
+		delete from tbl_community
+		where article_seq = #{article_seq}
+	</delete>
+
+
+</mapper>

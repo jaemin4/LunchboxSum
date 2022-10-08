@@ -88,10 +88,10 @@
 	<button class="snip1535" id="Temp_Button4">4</button>
 	<button class="snip1535" id="Temp_Button5">5</button>
 	<button class="snip1535" id="Lun_CompleteB">도시락 완성하기</button>
-	
-	<div id = "lunName_area"></div>
 
-	
+	<div id="lunName_area"></div>
+
+
 	<div id="recipe_area"></div>
 
 	<div class="search-box" id="search_model"></div>
