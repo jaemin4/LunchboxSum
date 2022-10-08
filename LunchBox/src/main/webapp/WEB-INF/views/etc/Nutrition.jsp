@@ -146,9 +146,9 @@
       <img style = "float:left;"src = "asset/image/30x.png"  height = 250px width = 300px style="vertical-align:middle;">
       <span style="margin-top:20px;font-size:18px;" >
       <br><br>
-      &nbsp;&nbsp;30대가 신경써서 먹어야 할 식품은 귀리, 현미 등 통곡물, 엽산은 임신하고자<br>
+      &nbsp;&nbsp;30대가 신경써서 먹어야 할 식품은 귀리, 현미 등 통곡물이다. 엽산은 임신하고자<br>
       &nbsp;&nbsp;하는 여성에 좋고 통곡물은 체중관리에 도움이 되며 비타민B의 공급원이기도 하다.<br>
-      &nbsp;&nbsp;또한 소화를 돕고 섬유질이 풍부해 장을 건강하게 유지하느데 도움을 준다.<br>
+      &nbsp;&nbsp;또한 소화를 돕고 섬유질이 풍부해 장을 건강하게 유지하는데 도움을 준다.<br>
       <br><br><br><br><br><br><br>
       </span>
       </div>
@@ -182,7 +182,7 @@
       <span style="margin-top:20px;font-size:18px;" >
       <br><br>
       &nbsp;&nbsp;40대는 항산화물질이 함유된 식품을 먹어야 하는 나이다. 항산화물질은<br>
-      &nbsp;&nbsp;토마토, 블루베리 등 알록달록한 색깔의 과일과 채소가 들어있다.<br>
+      &nbsp;&nbsp;토마토, 블루베리 등 알록달록한 색깔의 과일과 채소에 들어있다.<br>
       <br><br><br><br><br><br><br><br>
       </span>
       </div>

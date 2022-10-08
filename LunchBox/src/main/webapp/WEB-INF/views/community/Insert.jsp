@@ -37,8 +37,8 @@
 							type="text" class="form-control">
 					</div>
 					<div class="form-group">
-						<label>작성자:</label> <input name="mb_id" id="mb_id" type="text"
-							class="form-control">
+						<label></label> <input name="mb_id" id="mb_id" type="hidden"
+							class="form-control" >
 					</div>
 
 					<div class="from-group">
@@ -48,7 +48,7 @@
 					</div>
 
 
-
+					<br>
 					<div class="form-group">
 						<label>내용:</label>
 

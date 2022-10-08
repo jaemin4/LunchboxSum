@@ -35,16 +35,63 @@
 .pagination a:hover:not(.active) {
 	color: orange;
 }
+
+body{
+	background-image: url("asset/image/bgbg5.JPG");
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background-color: rgba(0,24,113,1);
+}
+
+li {
+	float: left;
+}
+
+li a {
+	display: block;
+	color: white;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+}
+
+li b {
+	display: block;
+	color: rgba(255,181,73,1);
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+}
+
+
+
+li a:hover {
+	background-color: #111;
+}
+
 </style>
 </head>
 <body>
-	<div class="jumbotron text-center">
-		<h1>LunchBox Simulator</h1>
-		<p>각종 의견과 본인만의 레시피를 자랑해주세요!</p>
-	</div>
+		<div id="header">
+			<ul>
+				<li><b>LunchBoxsimulator</b></li>
+				<li><a href="GoMain.do"> Main</a></li>
+				<li><a href="GoNutrition.do">영양소 및 칼로리</a></li>
+				<li><a href="GoAsk.do">자주묻는질문</a></li>
+				<li><a href="SelectAll.do">도시락정보공유게시판</a></li>
+			</ul>
+
+		</div>
 	<div class="container">
 		<div class="panel panel-default">
 			<div class="panel-heading">
+		<h1 align="center">각종 의견과 본인만의 레시피를 자랑해주세요!</h1>
 				<h2>도시락 게시판</h2>
 			</div>
 			<div class="panel-body">
@@ -56,9 +103,7 @@
 						<th>조회수</th>
 						<th>좋아요</th>
 					</tr>
-					<%
 
-					%>
 					<!-- el표현식을 활용하면 scope영역에 객체바인딩 된 데이터를 바로 꺼내올 수 있다. -->
 					<c:forEach var="board" items="${list2}">
 						<tr>
@@ -75,8 +120,6 @@
 						<td colspan="5" align="right">
 							<button onclick="location.href='GoInsert.do'"
 								class="btn btn-primary btn-sm" id="write">글쓰기</button>
-							<button onclick="location.href='GoAsk.do'"
-								class="btn btn-primary btn-sm" id="Ask">문의하기</button>
 						</td>
 					</tr>
 

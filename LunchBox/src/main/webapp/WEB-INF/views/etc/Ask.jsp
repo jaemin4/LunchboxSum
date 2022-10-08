@@ -17,18 +17,26 @@ html{
  width: 100%;
  height: 100%;
 }
-
+ footer {
+      position : absolute;
+      bottom : 0;
+      background-color: #555;
+      color: white;
+      padding: 15px;
+      width : 100%
+      
+    }
 
 .accordion {
-  background-color: #eee;
+  background-color: #C4DEFF;
   color: #444;
   cursor: pointer;
-  padding: 25px;
+  padding: 35px;
   width: 100%;
   border: none;
   text-align: center;
   outline: none;
-  font-size: 20px;
+  font-size: 25px;
   transition: 0.4s;
 }
 
@@ -38,10 +46,11 @@ html{
 
 .panel {
   text-align:center;
-  padding: 0 18px;
+  padding:  0px;
   display: none;
   background-color: white;
   overflow: hidden;
+  font-size: 20px;
 }
 
 h1{
@@ -49,6 +58,7 @@ h1{
 	color: #5D5D5D;
 
 }
+
 /* 네비게이션바 스타일*/
 ul {
 	list-style-type: none;
@@ -102,27 +112,29 @@ li a:hover {
 <h1>자주 묻는 질문</h1>
 
 <div>
-<button class="accordion">Q1 성별 및 나이 정보를 수정하고 싶습니다. 어떻게 변경해야 하나요?</button>
+<button class="accordion"><b>Q1. 성별 및 나이 정보를 수정하고 싶습니다. 어떻게 변경해야 하나요?</b></button>
 <div class="panel">
   <p>-> 각 페이지의 우측상단 정보수정 버튼을 클릭하면 정보수정이 가능합니다.</p>
 </div>
 
-<button class="accordion">Q2 내가 저장한 과거의 도시락 메뉴를 확인하고 싶습니다. 어디서 확인하나요?</button>
+<button class="accordion"><b>Q2. 내가 저장한 과거의 도시락 메뉴를 확인하고 싶습니다. 어디서 확인하나요?</b></button>
 <div class="panel">
   <p>-> 메인 페이지에서 달력을 클릭하면 해당 날짜에 구성한 도시락결과 페이지로 이동합니다.</p>
 </div>
 
-<button class="accordion">Q3 초보자를 위한 레시피도 제공되나요?</button>
+<button class="accordion"><b>Q3. 초보자를 위한 레시피도 제공되나요?</b></button>
 <div class="panel">
   <p>-> 레시피 선택화면에서 난이도에 따라 레시피가 분류되어 있습니다. 난이도(고급,중급,초급)를 설정하여 레시피를 제공 받으실 수 있습니다.</p>
 </div>
 
-<button class="accordion">Q4 레시피에 들어가는 식재료가 없을 경우는 어떻게 하나요?</button>
+<button class="accordion"><b>Q4. 레시피에 들어가는 식재료가 없을 경우는 어떻게 하나요?</b></button>
 <div class="panel">
   <p>-> 레시피 선택 페이지에 최저가 검색 버튼을 누르면 최저가 쇼핑 사이트로 바로 연결됩니다.</p>
 </div>
 </div>
-
+<footer class= "container-fluid">
+  <p style="font-size:24px;position: relative; left:700px">관리자 - 홍길동(010-123-4567)  // abc123@naver.com</p> 
+</footer>
 
 <script>
 var acc = document.getElementsByClassName("accordion");
