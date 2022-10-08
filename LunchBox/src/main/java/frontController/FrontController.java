@@ -37,8 +37,12 @@ import com.smhrd.controller.IdCheckCon;
 import com.smhrd.controller.InsertCommentCon;
 import com.smhrd.controller.InsertCon;
 import com.smhrd.controller.GoLunchCon;
+
+import com.smhrd.controller.Insert_CompleteLB;
+
 import com.smhrd.controller.GoMainCon;
 import com.smhrd.controller.GoNutritionCon;
+
 import com.smhrd.controller.JoinCon;
 import com.smhrd.controller.JoinOKCon;
 import com.smhrd.controller.LoginCon;
@@ -51,6 +55,8 @@ import com.smhrd.controller.UpdateCon;
 import com.smhrd.controller.UpdateLikeCon;
 import com.smhrd.controller.UpdateReadCon;
 import com.smhrd.controller.Re_SearchCon;
+import com.smhrd.controller.Select_lbnumCon;
+import com.smhrd.controller.Send_lbseqCon;
 
 
 @WebServlet("*.do")
@@ -71,6 +77,9 @@ public class FrontController extends HttpServlet {
 		mappings.put("/calAjax.do", new CalendarAjaxCon());
 		mappings.put("/GoLunch.do", new GoLunchCon());
 		mappings.put("/ajax.do", new Re_SearchCon());
+		mappings.put("/ajax_LunchSuB.do", new Select_lbnumCon());
+		mappings.put("/ajax_Send_lbseqCon.do", new Send_lbseqCon());
+		mappings.put("/ajax_Insert_CompleteLB.do", new Insert_CompleteLB());
 		mappings.put("/Join.do", new JoinCon());
 		mappings.put("/Door.do", new DoorCon());
 		mappings.put("/Login.do", new LoginCon());
@@ -122,7 +131,6 @@ public class FrontController extends HttpServlet {
 		
 		nextView = con.execute(request, response);
 		
-		// 페이지 이동
 		if(nextView != null) {
 			if(nextView.contains("redirect:/")) {
 				// redirect
@@ -134,5 +142,6 @@ public class FrontController extends HttpServlet {
 			}
 		}
 	}
+	
 
 }

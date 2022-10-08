@@ -5,19 +5,31 @@
   
   <mapper namespace="com.smhrd.model.RecipeboxDAO">
 	
-	<!-- 
-		select mb_id from tbl_member where mb_id = #{mb_id}
-		select mb_id from tbl_member where mb_id = 'smart'
-		#{} : '' 자동으로 붙음
-		
-		'%#{123}%' -> '%'123'%' -> Error
-		
-		
-		${} : ''생략, getter주입가능
-	-->
 	  
 	<select id = "SelectAll" resultType = "Recipe">
 		select * from tbl_recipe where ingredient like #{keyword}
 	</select>
 	
+ 	<select id = "Select_lb_num"  resultType ="LunchBox_Detail">
+		select  distinct lb_seq from tbl_lunchbox where lb_seq = (select max(lb_seq) from tbl_lunchbox) 
+	</select> 
+
+	<delete id = "delete_overlap_lb_button" parameterType="LunchBox_Detail">
+		delete from tbl_lunchbox_detail where lb_seq = #{lb_seq} and lb_num = #{lb_num} 
+	</delete>
+	
+	<insert id = "Insert_lbdetail" parameterType="LunchBox_Detail">
+		insert into tbl_lunchbox_detail (lb_seq,recipe_code,lb_num) values (#{lb_seq},#{recipe_code},#{lb_num})
+	</insert>																
+	
+	<select id = "Select_lunchbox_indata" resultType = "Recipe" parameterType="int">
+		select recipe_img,calories from tbl_recipe where recipe_code in (select recipe_code from tbl_lunchbox_detail where lb_seq = #{lb_seq})
+	</select>
+	
+	<insert id = "Insert_CompleteData" parameterType = "Tbl_Lunchbox">
+		insert into tbl_lunchbox values(#{lb_seq} , #{lb_name}, #{lb_img}, #{mb_id},#{ld_date},#{lb_calories})
+	</insert>
+ 	
+ 	
+   
   </mapper>

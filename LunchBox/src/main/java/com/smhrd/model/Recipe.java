@@ -7,7 +7,7 @@ public class Recipe {
 
     public Recipe(String recipe_code, String recipe_name, String recipe_method, String recipe_time,
 			String recipe_difficulty, String recipe_img, String cooking_img, String recipe_detail, String ingredient,
-			String carbohydrate, Double protein, Double fat, Double calories) {
+			double carbohydrate, Double protein, Double fat, Double calories) {
 		super();
 		this.recipe_code = recipe_code;
 		this.recipe_name = recipe_name;
@@ -126,14 +126,14 @@ public class Recipe {
 
 
 
-	public String getCarbohydrate() {
+	public double getCarbohydrate() {
 		return carbohydrate;
 	}
 
 
 
 
-	public void setCarbohydrate(String carbohydrate) {
+	public void setCarbohydrate(double carbohydrate) {
 		this.carbohydrate = carbohydrate;
 	}
 
@@ -181,7 +181,7 @@ public class Recipe {
     private String recipe_detail;
     private String ingredient;
     
-    private String carbohydrate;
+    private Double carbohydrate;
     private Double protein;
     private Double fat;
     private Double calories;
