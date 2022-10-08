@@ -74,16 +74,16 @@
         <table>
             <tr>
                 <th>ID</th>
-                <td><input type="text" name="mb_Id" placeholder="ID를 입력하세요." maxlength="20"></td>
+                <td><input type="text" name="mb_Id" id="id" placeholder="ID를 입력하세요." maxlength="20"></td>
                 <td><input type="button" onclick="winopen1()" value="중복체크"></td>
             </tr>
             <tr>
                 <th>PW</th>
-                <td><input type="password" name="mb_Pw1" placeholder="PW를 입력하세요." maxlength="20"></td>
+                <td><input type="password" name="mb_Pw1" id="pw" placeholder="PW를 입력하세요." maxlength="20"></td>
             </tr>
             <tr>
                 <th>PW<br>체크</th>
-                <td><input type="password" name="mb_Pw2" oninput="pwCheck()" placeholder="입력한 PW를 확인해 주세요." maxlength="20"></td>
+                <td><input type="password" name="mb_Pw2" id="pW" oninput="pwCheck()" placeholder="입력한 PW를 확인해 주세요." maxlength="20"></td>
             </tr>
             <tr align="right">
                 <td></td>
@@ -91,16 +91,16 @@
             </tr>
             <tr>
                 <th>성별</th>
-                <td align="center"><input type="radio" name="mb_Gender" value="M" checked>남자</td>
-                <td><input type="radio" name="mb_Gender" value="F">여자</td>
+                <td align="center"><input type="radio" name="mb_Gender" id="male" value="M" checked>남자</td>
+                <td><input type="radio" name="mb_Gender" id="female" value="F">여자</td>
             </tr>
             <tr>
                <th>생년월일</th>
                <td>
-                   <input type="text" name="yy" oninput="yyCheck()" placeholder="년(4자)" aria-label="년(4자)" class="int" maxlength="4">
+                   <input type="text" name="yy" id="y" oninput="yyCheck()" placeholder="년(4자)" aria-label="년(4자)" class="int" maxlength="4">
                </td>
                <td>
-                   <select name="mm" id="sel" aria-label="월">
+                   <select name="mm" id="m" aria-label="월">
                        <option >월</option>
                        <option value="01"> 1 </option>
                        <option value="02"> 2 </option>
@@ -117,7 +117,7 @@
                    </select>
                </td>
                <td>
-                   <input type="text" name="dd" placeholder="일" aria-label="일" class="int" maxlength="2">
+                   <input type="text" name="dd" id="d" placeholder="일" aria-label="일" class="int" maxlength="2">
                    <label for="dd" class="lbl"></label>
                </td>
             </tr>
@@ -127,7 +127,7 @@
             </tr>
             <tr align="right">
                 <td colspan="2">
-                   <input type="submit" value="회원가입">
+                   <input type="button" onclick="joinform_check();" value="회원가입">
                 </td>        
             </tr>    
         </table>
@@ -136,6 +136,44 @@
     $("#myModal2").on('show.bs.modal', function (e) {
         $("#myModal1").modal("hide");
     });
+    function joinform_check(){
+    	var id = document.getElementById("id");
+    	var pw = document.getElementById("pw");
+    	var pW = document.getElementById("pW");
+    	var y = document.getElementById("y");
+    	var m = document.getElementById("m");
+    	var d = document.getElementById("d");
+    	if(id.value == ""){
+    		alert("아이디를 입력해주세요.")
+    		id.focus();
+    		return false;
+    	}
+    	if(pw.value == ""){
+    		alert("비밀번호를 입력해주세요.")
+    		pw.focus();
+    		return false;
+    	}
+    	if(pW.value == ""){
+    		alert("비밀번호를 체크 해주세요.")
+    		pW.focus();
+    		return false;
+    	}
+    	if(y.value == ""){
+    		alert("태어난 연도를 입력해주세요.");
+    		y.focus();
+    		return false;
+    	}
+    	if(m.value == "월"){
+    		alert("태어난 달을 선택해주세요.")
+    		return false;
+    	}
+    	if(d.value == ""){
+    		alert("태어난 날을 입력해주세요.");
+    		d.focus();
+    		return false;
+    	}
+    	document.insertMember.submit();
+    }
     <!-- 아이디중복체크 -->
     function winopen1(){
        var popupX1 = (document.body.offsetWidth / 2) - (200 / 2);
