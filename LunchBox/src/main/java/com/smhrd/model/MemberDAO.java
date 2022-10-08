@@ -105,4 +105,12 @@ public class MemberDAO {
 		sqlSession.close();
 		return result;
 	}
+	// 로그인 시 사용한 아이디와 비밀번호 값을 받아서 나이와 성별을 조회하는 기능
+	public ArrayList<Member> selectGetgenderage(Member member) {
+		ArrayList<Member> list = null;
+		SqlSession sqlSession = sqlSessionFactory.openSession(true);
+		list = (ArrayList)sqlSession.selectList("com.smhrd.model.MemberDAO.selectGetgenderage", member);
+		sqlSession.close();
+		return list;
+	}
 }

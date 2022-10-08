@@ -7,20 +7,20 @@
 <title>비밀번호 찾기</title>
 </head>
 <body>
-	<form action="SearchPw.do" method="post">
+	<form name="pwcheck" action="SearchPw.do" method="post">
         <table>
             <tr>
                 <th>ID</th>
-                <td><input type="text" name="Id" placeholder="ID를 입력하세요." maxlength="20"></td>
+                <td><input type="text" name="Id" id="id" placeholder="ID를 입력하세요." maxlength="20"></td>
             </tr>
             <tr>
             	<th>생년월일</th>
 	            <td>
-	                <input type="text" name="y" placeholder="년(4자)" aria-label="년(4자)" class="int" maxlength="4">
+	                <input type="text" name="y" id="y" placeholder="년(4자)" aria-label="년(4자)" class="int" maxlength="4">
 	            </td>
 	            <td>
-	                <select name="m" aria-label="월">
-	                    <option value>월</option>
+	                <select name="m" id="m" aria-label="월">
+	                    <option >월</option>
 	                    <option value="01"> 1 </option>
 	                    <option value="02"> 2 </option>
 	                    <option value="03"> 3 </option>
@@ -36,15 +36,43 @@
 	                </select>
 	            </td>
 	            <td>
-	                <input type="text" name="d" placeholder="일" aria-label="일" class="int" maxlength="2">
+	                <input type="text" name="d" id="d" placeholder="일" aria-label="일" class="int" maxlength="2">
 	                <label for="dd" class="lbl"></label>
 	            </td>
 	            <tr align="right">
                 <td colspan="2">
-                    <input type="submit" value="제출">
+                    <input type="button" onclick="pwform_check();" value="제출">
                 </td>        
             </tr>    
         </table>
     </form>
+    <script>
+    function pwform_check(){
+    	var id = document.getElementById("id");
+    	var y = document.getElementById("y");
+    	var m = document.getElementById("m");
+    	var d = document.getElementById("d");
+    	if(id.value == ""){
+    		alert("아이디를 입력해주세요.")
+    		id.focus();
+    		return false;
+    	}
+    	if(y.value == ""){
+    		alert("태어난 연도를 입력해주세요.");
+    		y.focus();
+    		return false;
+    	}
+    	if(m.value == "월"){
+    		alert("태어난 달을 선택해주세요.")
+    		return false;
+    	}
+    	if(d.value == ""){
+    		alert("태어난 날을 입력해주세요.");
+    		d.focus();
+    		return false;
+    	}
+    	document.pwcheck.submit();
+    }
+    </script>
 </body>
 </html>

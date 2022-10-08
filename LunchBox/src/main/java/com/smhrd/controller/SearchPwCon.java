@@ -47,7 +47,7 @@ public class SearchPwCon implements Controller {
 				response.setContentType("text/html; charset=UTF-8");
 		        PrintWriter out;
 				out = response.getWriter();
-				out.println("<script>alert('오류가 발생했습니다.!');window.close();</script>");
+				out.println("<script>alert('잘못된 정보를 입력 확인 후 다시 실행해주세요!');window.close();</script>");
 	        	out.flush();
 	        	out.close();
 	        	System.out.println("오류 발생!");

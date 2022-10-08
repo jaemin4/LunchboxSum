@@ -19,7 +19,7 @@ public class SelectOneCon implements Controller {
 		HttpSession session = request.getSession();
 		
 		String article_seq = request.getParameter("article_seq");
-		String mb_id = (String)session.getAttribute("session");
+		String mb_id = (String)session.getAttribute("sessionID");
 		CommentDAO dao = new CommentDAO();
 
 		ArrayList<Comment> list2 = dao.commentAll(article_seq);

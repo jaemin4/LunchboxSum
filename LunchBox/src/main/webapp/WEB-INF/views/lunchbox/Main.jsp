@@ -1,9 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
-	pageEncoding="EUC-KR"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -22,19 +22,36 @@
 <link rel="stylesheet" type="text/css" href="asset/lunchboxloc.css">
 <link rel="stylesheet" type="text/css" href="asset/mainstyle.css">
 
-<title>�����������Դϴ�.</title>
+<title>메인페이지입니다.</title>
 </head>
 <body>
-
+		<%
+			response.setCharacterEncoding("UTF-8");
+			String user_id = (String)session.getAttribute("sessionID");
+			String user_gender = (String)session.getAttribute("sessionGender");
+			int user_age = (int)session.getAttribute("sessionBirthdate");
+			System.out.println("세션에 저장된 아이디는 "+session.getAttribute("sessionID")+"입니다.");
+			System.out.println("세션에 저장된 성별은 "+session.getAttribute("sessionGender")+"입니다.");
+			System.out.println("세션에 저장된 나이는 "+session.getAttribute("sessionBirthdate")+"입니다.");
+			System.out.println(user_id);
+			if(user_id == null){
+				response.sendRedirect("Door.do");
+			}
+    	%> 	
 	<div id="layout" align="center">
 
 		<div id="header">
 			<ul>
 				<li><b>LunchBoxsimulator</b></li>
+
 				<li><a href="GoMain.do"> Main</a></li>
-				<li><a href="GoNutrition.do">����� �� Į�θ�</a></li>
-				<li><a href="GoAsk.do">���ֹ�������</a></li>
-				<li><a href="SelectAll.do">���ö����������Խ���</a></li>
+				<li><a href="GoAsk.do">자주묻는질문</a></li>
+				<li><a href="GoNutrition.do">영양소 및 칼로리</a></li>
+				<li><a href="SelectAll.do">도시락정보공유게시판</a></li>
+				<%if(user_id.equals("admin")){ %>
+					<li><a href="Admin.do">회원 목록 조회</a></li>
+					<li><a href="AdminUser.do">회원 정보 분석</a></li>
+				<%}%>
 			</ul>
 
 		</div>
@@ -56,22 +73,21 @@
 			
 			<div id="ad">
 				<div id="main_box">
-					<!-- �α��ΰ� �޷� -->
+					<!-- 로그인과 달럭 -->
 					<div class="loginst">
 					<br>
-					<% String name = request.getParameter("name");%>
-					<%= name %>���� ����
+					
+					
+					<%=user_id%>님의 정보
 					<br>
-					<% String gender = request.getParameter("gender");%> 	
-					���� : <%= gender %>				
-					<% String age = request.getParameter("age"); %>
-					���� : <%= age %>
+					성별 : <%=user_gender%>				
+					나이 : <%=user_age%>
 					
 					<br><br>
 					<div class="btn-group-sm">
-  					<button type="button" class="btn btn-warning">��������</button>
-  					<button type="button" class="btn btn-warning">�α׾ƿ�</button>
- 					<button type="button" class="btn btn-warning">ȸ��Ż��</button>
+  					<button type="button" class="btn btn-warning" onclick="location.href='GoUpdate.do'">정보수정</button>
+  					<button type="button" class="btn btn-warning" onclick="location.href='Logout.do'">로그아웃</button>
+ 					<button type="button" class="btn btn-warning" onclick="location.href='GoDelete.do'">회원탈퇴</button>
 					</div>
 					
 					</div>
@@ -89,22 +105,22 @@
 		</div>
 		<div id = "slideimg">
 		<div id="ingi" align="center">
-		<b>������ �α� ����!!</b>
+		<b>오늘의 인기 반찬!!</b>
 		<div class="owl-carousel owl-theme">
 
-		<img  src="asset/image/�߰���.jpg">
-		<img  src="asset/image/�ҽ�������.jpg">
-		<img  src="asset/image/�ҽ�����ä����.jpg">
-		<img  src="asset/image/�����.jpg">
-		<img  src="asset/image/������ī����.jpg">
-		<img  src="asset/image/�߰���.jpg">
-		<img  src="asset/image/�ҽ�������.jpg">
-		<img  src="asset/image/�ҽ�����ä����.jpg">
-		<img  src="asset/image/�����.jpg">
-		<img  src="asset/image/������ī����.jpg">
+		<img  src="asset/image/닭강정.jpg">
+		<img  src="asset/image/소시지볶음.jpg">
+		<img  src="asset/image/소시지야채볶음.jpg">
+		<img  src="asset/image/어묵볶음.jpg">
+		<img  src="asset/image/파프리카볶음.jpg">
+		<img  src="asset/image/닭강정.jpg">
+		<img  src="asset/image/소시지볶음.jpg">
+		<img  src="asset/image/소시지야채볶음.jpg">
+		<img  src="asset/image/어묵볶음.jpg">
+		<img  src="asset/image/파프리카볶음.jpg">
 		</div>
 		</div>
-		</div><!-- �����̵��̹��� div ������ -->
+		</div><!-- 슬라이딩이미지 div 마무리 -->
 		</div>
 
 	<script>
@@ -153,9 +169,9 @@
 			}
 		})
 	</script>
-	<h1>����������</h1>
-	<button onclick="location.href='GoCalendar.do?mb_id=admin'" class="btn btn-primary btn-sm">�޷�</button>
-	<button onclick="location.href='GoLunch.do'" class="btn btn-primary btn-sm">��ġ</button>
+	<h1>메인페이지</h1>
+	<button onclick="location.href='GoCalendar.do?mb_id=admin'" class="btn btn-primary btn-sm">달력</button>
+	<button onclick="location.href='GoLunch.do'" class="btn btn-primary btn-sm">런치</button>
 	
 	
 </body>
