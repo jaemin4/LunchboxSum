@@ -32,7 +32,7 @@
 			<ul>
 				<li><b>LunchBoxsimulator</b></li>
 				<li><a href="#main"> Main</a></li>
-				<li><a href="Nutrition.do">영양소 및 칼로리</a></li>
+				<li><a href="GoNutrition.do">영양소 및 칼로리</a></li>
 				<li><a href="GoAsk.do">자주묻는질문</a></li>
 				<li><a href="SelectAll.do">도시락정보공유게시판</a></li>
 			</ul>
@@ -92,19 +92,19 @@
 		<b>오늘의 인기 반찬!!</b>
 		<div class="owl-carousel owl-theme">
 
-		<img  src="../asset/image/닭강정.jpg">
-		<img  src="../asset/image/소시지볶음.jpg">
-		<img  src="../asset/image/소시지야채볶음.jpg">
-		<img  src="../asset/image/어묵볶음.jpg">
-		<img  src="../asset/image/파프리카볶음.jpg">
-		<img  src="../asset/image/닭강정.jpg">
-		<img  src="../asset/image/소시지볶음.jpg">
-		<img  src="../asset/image/소시지야채볶음.jpg">
-		<img  src="../asset/image/어묵볶음.jpg">
-		<img  src="../asset/image/파프리카볶음.jpg">
+		<img  src="asset/image/닭강정.jpg">
+		<img  src="asset/image/소시지볶음.jpg">
+		<img  src="asset/image/소시지야채볶음.jpg">
+		<img  src="asset/image/어묵볶음.jpg">
+		<img  src="asset/image/파프리카볶음.jpg">
+		<img  src="asset/image/닭강정.jpg">
+		<img  src="asset/image/소시지볶음.jpg">
+		<img  src="asset/image/소시지야채볶음.jpg">
+		<img  src="asset/image/어묵볶음.jpg">
+		<img  src="asset/image/파프리카볶음.jpg">
+		</div>
 		</div>
 		</div><!-- 슬라이딩이미지 div 마무리 -->
-		</div>
 		</div>
 
 	<script>
