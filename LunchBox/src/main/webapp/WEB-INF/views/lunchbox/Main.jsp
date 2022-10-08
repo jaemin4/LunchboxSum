@@ -44,6 +44,7 @@
 			<ul>
 				<li><b>LunchBoxsimulator</b></li>
 				<li><a href="#main"> Main</a></li>
+<<<<<<< HEAD
 				<li><a href="Nutrition.do">ì˜ì–‘ì†Œ ë° ì¹¼ë¡œë¦¬</a></li>
 				<li><a href="GoAsk.do">ìì£¼ë¬»ëŠ”ì§ˆë¬¸</a></li>
 				<li><a href="SelectAll.do">ë„ì‹œë½ì •ë³´ê³µìœ ê²Œì‹œíŒ</a></li>
@@ -51,6 +52,11 @@
 					<li><a href="Admin.do">íšŒì› ëª©ë¡ ì¡°íšŒ</a></li>
 					<li><a href="AdminUser.do">íšŒì› ì •ë³´ ë¶„ì„</a></li>
 				<%}%>
+=======
+				<li><a href="GoNutrition.do">¿µ¾ç¼Ò ¹× Ä®·Î¸®</a></li>
+				<li><a href="GoAsk.do">ÀÚÁÖ¹¯´ÂÁú¹®</a></li>
+				<li><a href="SelectAll.do">µµ½Ã¶ôÁ¤º¸°øÀ¯°Ô½ÃÆÇ</a></li>
+>>>>>>> branch 'main' of https://github.com/nemutai123/Lunchbox_simulator.git
 			</ul>
 
 		</div>
@@ -107,6 +113,7 @@
 		<b>ì˜¤ëŠ˜ì˜ ì¸ê¸° ë°˜ì°¬!!</b>
 		<div class="owl-carousel owl-theme">
 
+<<<<<<< HEAD
 		<img  src="../asset/image/ë‹­ê°•ì •.jpg">
 		<img  src="../asset/image/ì†Œì‹œì§€ë³¶ìŒ.jpg">
 		<img  src="../asset/image/ì†Œì‹œì§€ì•¼ì±„ë³¶ìŒ.jpg">
@@ -117,9 +124,21 @@
 		<img  src="../asset/image/ì†Œì‹œì§€ì•¼ì±„ë³¶ìŒ.jpg">
 		<img  src="../asset/image/ì–´ë¬µë³¶ìŒ.jpg">
 		<img  src="../asset/image/íŒŒí”„ë¦¬ì¹´ë³¶ìŒ.jpg">
+=======
+		<img  src="asset/image/´ß°­Á¤.jpg">
+		<img  src="asset/image/¼Ò½ÃÁöººÀ½.jpg">
+		<img  src="asset/image/¼Ò½ÃÁö¾ßÃ¤ººÀ½.jpg">
+		<img  src="asset/image/¾î¹¬ººÀ½.jpg">
+		<img  src="asset/image/ÆÄÇÁ¸®Ä«ººÀ½.jpg">
+		<img  src="asset/image/´ß°­Á¤.jpg">
+		<img  src="asset/image/¼Ò½ÃÁöººÀ½.jpg">
+		<img  src="asset/image/¼Ò½ÃÁö¾ßÃ¤ººÀ½.jpg">
+		<img  src="asset/image/¾î¹¬ººÀ½.jpg">
+		<img  src="asset/image/ÆÄÇÁ¸®Ä«ººÀ½.jpg">
+		</div>
+>>>>>>> branch 'main' of https://github.com/nemutai123/Lunchbox_simulator.git
 		</div>
 		</div><!-- ìŠ¬ë¼ì´ë”©ì´ë¯¸ì§€ div ë§ˆë¬´ë¦¬ -->
-		</div>
 		</div>
 
 	<script>

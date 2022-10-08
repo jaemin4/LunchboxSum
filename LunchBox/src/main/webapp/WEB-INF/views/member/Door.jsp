@@ -1,47 +1,149 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>시작화면</title>
-<!-- Latest compiled and minified CSS -->
+<title>로그인</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-
-<!-- jQuery library -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
-<!-- Popper JS -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-
-<!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script src="asset/owl/jquery.min.js"></script>
+
+<link rel="stylesheet" href="asset/owl/owl.carousel.min.css">
+<link rel="stylesheet" href="asset/owl/owl.theme.default.min.css">
+<script src="asset/owl/owl.carousel.min.js"></script>
+<script src="asset/owl/owl.carousel.js"></script>
+<script src="asset/owl/atuo.js"></script>
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+<style>
+
+
+body {
+	background-image: url("asset/image/bgbg5.JPG");
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+#slideimg{
+		width: 1900px;
+        height: 100px;
+        top: 10%;
+        position: absolute;
+}
+
+
+#dosistart {
+    font-size: 40px;
+    width: 350px;
+    height: 100px;
+    left: 41%;
+    top: 60%;
+    position: absolute;
+}
+       
+#tname{
+		bottom : 10px;
+		position: absolute;
+}
+
+/* 네비게이션바 스타일*/
+ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background-color: rgba(0,24,113,1);
+}
+
+li {
+	float: left;
+}
+
+li a {
+	display: block;
+	color: white;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+}
+
+li b {
+	display: block;
+	color: rgba(255,181,73,1);
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+}
+
+
+
+li a:hover {
+	background-color: #111;
+}
+
+</style>
 </head>
 <body>
-<nav class="navbar navbar-expand-md bg-dark navbar-dark">
-<!-- Brand -->
-<h1 class="navbar-brand" href="#">LUNCHBOX SIMULATOR</h1>
+	<div id="layout" align="center">
 
-<!-- Toggler/collapsibe Button -->
-<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-    <span class="navbar-toggler-icon"></span>
-</button>
+		<div id="header">
+			<ul>
+				<li><b>LunchBoxsimulator</b></li>
+				<li><a href="#main"> Main</a></li>
+				<li><a href="Nutrition.do">영양소 및 칼로리</a></li>
+				<li><a href="GoAsk.do">자주묻는질문</a></li>
+				<li><a href="SelectAll.do">도시락정보공유게시판</a></li>
+			</ul>
 
-<!-- Navbar links -->
-<div class="collapse navbar-collapse" id="collapsibleNavbar">
-    <ul class="navbar-nav">
-        <li class="nav-item">
-            <a class="nav-link" href="#" data-toggle="modal" data-target="#login">로그인</a>
-        <!-- The Modal -->
-        <div class="modal" id="login">
-      <div class="modal-dialog">
-      <div class="modal-content">
-        <!-- Modal Header -->
-        <div class="modal-header">
-        <h4 class="modal-title">로그인</h4>
-      </div>   
-      <!-- Modal body -->
-      <div class="modal-body" id="myModal1">
+		</div>
+
+	<div id = "slideimg">
+		<div id="ingi" align="center">
+		<h1 style="font-size:80px;"><i>LunchBoxsimulator</i></h1>
+		<p style="font-size:30px; color:blue" ><b>오늘의 인기 레시피!</b></p>
+		<div class="owl-carousel owl-theme">
+
+		<img  src="asset/image/1_.png">
+		<img  src="asset/image/2_.png">
+		<img  src="asset/image/3_.png">
+		<img  src="asset/image/4_.png">
+		<img  src="asset/image/5_.png">
+		<img  src="asset/image/1_.png">
+		<img  src="asset/image/2_.png">
+		<img  src="asset/image/3_.png">
+		<img  src="asset/image/4_.png">
+		<img  src="asset/image/5_.png">
+		<img  src="asset/image/4_.png">
+		<img  src="asset/image/5_.png">
+		</div>
+		</div><!-- 슬라이딩이미지 div 마무리 -->
+		</div>
+	
+	
+
+	<div>
+		<a id="dosistart" href="#" data-toggle="modal" data-target="#login">
+		<button type="button" class="btn btn-warning btn-lg">
+			도시락만들기!</button></a>
+	</div>
+
+
+	<!-- The Modal -->
+	<div class="modal" id="login">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<!-- Modal Header -->
+				<div class="modal-header">
+					<h3 class="modal-title">로그인</h3>
+				</div>
+				<!-- Modal body -->
+				<div class="modal-body" id="myModal1">
             <form action="Login.do" method = "post" class="was-validated">
                 <div class="form-group">
                     <label>아이디  </label>
@@ -59,16 +161,18 @@
                 <a data-toggle="modal" href="#myModal2" class="btn btn-primary">회원가입</a>
                 <button type="button" class="btn btn-primary" style="margin-left:50%;" onclick="winopen2()">비밀번호 찾기</button>
             </form>
-      </div>
-   </nav>
-    <div class="modal" id="myModal2">
-        <div class="modal-dialog">
+      		</div>
+			</div>
+			</div>
+		</div>
+ 		<!-- 회원가입모달 -->
+ 		 <div class="modal" id="myModal2">
+ 		<div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
                     <h4 class="modal-title">LUNCHBOX SIMULATOR</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                 </div>
-                <div class="container"></div>
                 <div class="modal-body">
        <form name="insertMember" action="JoinOK.do" method="post">
         <table>
@@ -132,7 +236,15 @@
             </tr>    
         </table>
     </form>
-<script>
+ 		</div>
+ 		</div>
+ 		</div>
+ 		</div>
+		</div>
+	<p id="tname">
+		<b>팀명 : 도시락박스</b>
+	</p>
+										<script>
     $("#myModal2").on('show.bs.modal', function (e) {
         $("#myModal1").modal("hide");
     });
@@ -220,5 +332,7 @@
        }
     }
 </script>
+					
+
 </body>
 </html>
