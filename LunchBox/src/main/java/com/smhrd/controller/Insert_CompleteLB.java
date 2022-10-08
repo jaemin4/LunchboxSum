@@ -35,8 +35,10 @@ public class Insert_CompleteLB implements Controller {
 		  
 		  String lb_img = null; double lb_calories = 0;
 		  
-		  for(int i = 0; i<list.size(); i++) { lb_img +=
-		  list.get(i).getRecipe_img()+"|"; lb_calories += list.get(i).getCalories(); }
+		  for(int i = 0; i<list.size(); i++) { 
+			  lb_img +=
+		      list.get(i).getRecipe_img()+"|"; lb_calories += list.get(i).getCalories();
+		   }
 		  
 		  //임시 데이터 
 		  String mb_id = "man";
