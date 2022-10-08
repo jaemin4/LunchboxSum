@@ -37,6 +37,7 @@ import com.smhrd.controller.IdCheckCon;
 import com.smhrd.controller.InsertCommentCon;
 import com.smhrd.controller.InsertCon;
 import com.smhrd.controller.GoLunchCon;
+import com.smhrd.controller.GoMainCon;
 import com.smhrd.controller.GoNutritionCon;
 import com.smhrd.controller.JoinCon;
 import com.smhrd.controller.JoinOKCon;
@@ -102,6 +103,7 @@ public class FrontController extends HttpServlet {
 		mappings.put("/BestlistAll.do", new BestlistAllCon());
 		mappings.put("/GoAsk.do", new GoAskCon());
 		mappings.put("/GoNutrition.do", new GoNutritionCon());
+		mappings.put("/GoMain.do",new GoMainCon());
 	}
 
 
