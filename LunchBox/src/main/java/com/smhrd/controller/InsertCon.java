@@ -4,6 +4,7 @@ import java.io.IOException;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
@@ -21,7 +22,9 @@ public class InsertCon implements Controller {
 
 		String encoding = "EUC-KR";
 		MultipartRequest multi = null;
-
+		HttpSession session = request.getSession();
+		
+		
 		try {
 			multi = new MultipartRequest(request, savePath, maxSize, encoding, new DefaultFileRenamePolicy()
 
@@ -31,9 +34,9 @@ public class InsertCon implements Controller {
 		}
 
 		String article_file = multi.getFilesystemName("article_file");
-
+		
 		String article_title = multi.getParameter("article_title");
-		String mb_id = multi.getParameter("mb_id");
+		String mb_id = (String)session.getAttribute("session");
 		String article_contgent = multi.getParameter("article_contgent");
 
 		Board board = new Board();

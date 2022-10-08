@@ -206,6 +206,7 @@ ALTER TABLE tbl_lunchbox
         REFERENCES tbl_member (mb_id)
 /
 
+select * from tbl_community
 
 -- tbl_community Table Create SQL
 CREATE TABLE tbl_community
