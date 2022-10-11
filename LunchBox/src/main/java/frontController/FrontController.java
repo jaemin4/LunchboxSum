@@ -114,11 +114,11 @@ public class FrontController extends HttpServlet {
 		mappings.put("/GoAsk.do", new GoAskCon());
 		mappings.put("/GoNutrition.do", new GoNutritionCon());
 		mappings.put("/GoMain.do",new GoMainCon());
-<<<<<<< HEAD
+
 		mappings.put("/GoLunchResult.do",new GoLunchResult());
-=======
+
 		mappings.put("/GoResult.do", new ResultCon());
->>>>>>> branch 'main' of https://github.com/nemutai123/Lunchbox_simulator.git
+
 	}
 
 
