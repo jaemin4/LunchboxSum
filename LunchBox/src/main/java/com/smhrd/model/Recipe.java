@@ -27,6 +27,29 @@ public class Recipe {
 
 
 
+
+
+	public Recipe(String recipe_method, String recipe_time, String recipe_difficulty, String ingredient) {
+		super();
+		this.recipe_method = recipe_method;
+		this.recipe_time = recipe_time;
+		this.recipe_difficulty = recipe_difficulty;
+		this.ingredient = ingredient;
+	}
+	
+	public Recipe(String[] method_r, String recipe_time, String recipe_difficulty, String ingredient) {
+		super();
+		this.method_r = method_r;
+		this.recipe_time = recipe_time;
+		this.recipe_difficulty = recipe_difficulty;
+		this.ingredient = ingredient;
+	}
+
+
+
+
+
+
 	public String getRecipe_code() {
 		return recipe_code;
 	}
@@ -169,10 +192,21 @@ public class Recipe {
 		this.calories = calories;
 	}
 
+	public String[] getMethod_r() {
+		return method_r;
+	}
+
+	public void setMethod_r(String[] method_r) {
+		this.method_r = method_r;
+	}
+
+
+
 
 	private String recipe_code;
     private String recipe_name;
     private String recipe_method;
+    private String[] method_r;
     private String recipe_time;
     private String recipe_difficulty;
     
