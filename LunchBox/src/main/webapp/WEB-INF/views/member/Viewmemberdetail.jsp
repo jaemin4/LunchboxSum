@@ -32,13 +32,13 @@
 		int countGenderFBirth50 = (int)session.getAttribute("countGenderFBirth50");
 		System.out.println(countGenderFBirth50);
 	%>
-	<div>
-		 <tr>
+	<table>
+		<tr>
 			<td><div id="gender" style="width: 500px; height: 500px;"></div><td>
 			<td><div id="genderMBirth" style="width: 500px; height: 500px;"></div><td>
 			<td><div id="genderFBirth" style="width: 500px; height: 500px;"></div><td>
 		</tr>
-	</div>
+	</table>
 	<script type="text/javascript">
 	google.charts.load('current', {'packages':['corechart']}); 
 	google.charts.setOnLoadCallback(drawChart1);

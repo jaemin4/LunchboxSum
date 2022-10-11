@@ -24,6 +24,14 @@
 <style>
 
 
+
+
+
+.modal-body{
+	background-color:gold;
+}
+
+
 body {
 	background-image: url("asset/image/bgbg5.JPG");
 	background-repeat: no-repeat;
@@ -252,7 +260,7 @@ li a:hover {
             <tr class="birth">
                <th>생년월일</th>
                <td>
-                   <input type="text" name="yy" id="y" oninput="yyCheck()" placeholder="년(4자)" aria-label="년(4자)" class="int" maxlength="4">
+                   <input type="text" name="yy" id="y" oninput="yyCheck();" placeholder="년(4자)" aria-label="년(4자)" class="int" maxlength="4">
                </td>
                <td>
                    <select name="mm" id="m" aria-label="월">
@@ -278,11 +286,11 @@ li a:hover {
             </tr>
             <tr align="center">
                 <td></td>
-                <td id="yyCheck"></td>
+                <td id="yyCheck" style="color:red;"></td>
             </tr>
             <tr align="right">
                 <td colspan="2">
-                   <input type="button" onclick="joinform_check();" value="회원가입">
+                   <input type="button" class="btn btn-primary" onclick="joinform_check();" value="회원가입">
                 </td>        
             </tr>    
         </table>
@@ -344,7 +352,7 @@ li a:hover {
     function winopen1(){
        var popupX1 = (document.body.offsetWidth / 2) - (200 / 2);
        var popupY1= (window.screen.height / 2) - (300 / 2);
-       window.open("GoIdCheck.do","",'status=no, width=500, height=300, left='+ popupX1 + ', top='+ popupY1);
+       window.open("GoIdCheck.do","",'status=no, width=500, height=150, left='+ popupX1 + ', top='+ popupY1);
     }
     function pwCheck(){
         var pw1 = document.getElementsByName("mb_Pw1")[0].value;
@@ -367,7 +375,7 @@ li a:hover {
 
        var popupY2= (window.screen.height / 2) - (300 / 2);
        // 만들 팝업창 상하 크기의 1/2 만큼 보정값으로 빼주었음
-          window.open("GoSearchPw.do","",'status=no, height=200, width=650, left='+ popupX2 + ', top='+ popupY2);
+          window.open("GoSearchPw.do","",'status=no, height=130, width=500, left='+ popupX2 + ', top='+ popupY2);
        }
     function yyCheck(){
        var yy = document.getElementsByName("yy")[0].value;
@@ -376,7 +384,10 @@ li a:hover {
        if(yy > 2003){
           // 2003년생보다 큰값이면 20세 미만이다. 20세미만의 영양정보는 다루지 않는다.
           return yyy.innerText = "20세 미만은 가입할 수 없습니다. 다시 입력해주세요!";
+       }else{
+    	  return yyy.innerText = ""; 
        }
+       
     }
 </script>
 </body>
