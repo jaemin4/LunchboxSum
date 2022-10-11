@@ -146,22 +146,22 @@ function search_Model(){
     
         						<input class="search-txt" type="text" placeholder="검색어를 입력해 주세요" id = "Input_Search">
                                 	<div class = "Search_Type" id = "Search_Type_id">
-                        				<button id = "Method" onclick = "click_method">조리방식</button>
+                        				<button id = "Method">조리방식</button>
                         					<div id = "method_area"></div>
                         					
-                        				<button id = "Level" onclick = "click_level">난이도</button>
+                        				<button id = "Level" onclick = "click_level()">난이도</button>
                         					<div id = "time_area"></div>
                         					
-                        				<button id = "Time" onclick = "click_time">소요시간</button>
+                        				<button id = "Time" onclick = "click_time()">소요시간</button>
                         					<div id = "level_area"></div>
                         			</div>
                         		<button class="search-btn" type="submit" id = 'searchbar' >찾기</button>
                         		
                             </div>`;
         //조리방식 , 소요시간 , 난이도 function ========================================        
-       
-        function click_method(){
-        	let method_area = document.getElementById("method_area")''
+       let method = document.getElementById("Method");
+       function click_method(){
+        	
         	method_area.innerHtml = `
         	<div>
         	
@@ -190,6 +190,8 @@ function search_Model(){
         	
         	</div>`;
         }
+        method.addEventListener("click",click_method);
+        
         
         function click_level(){
         	

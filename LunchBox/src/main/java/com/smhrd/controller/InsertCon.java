@@ -44,7 +44,8 @@ public class InsertCon implements Controller {
 		board.setMb_id(mb_id);
 		board.setArticle_contgent(article_contgent);
 		board.setArticle_file(article_file);
-
+		
+		
 		BoardDAO dao = new BoardDAO();
 		int row = dao.insert(board);
 
