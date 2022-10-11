@@ -16,14 +16,11 @@
   		<typeAlias type="com.smhrd.model.LunchBox_Detail" alias="LunchBox_Detail"/>
   		<typeAlias type="com.smhrd.model.Tbl_Lunchbox" alias="Tbl_Lunchbox"/>
   	
-  		
-  
-  	<!-- 2) DB 연결과 관련된 정의 기술 -->
-	
   		<typeAlias type="com.smhrd.model.Nutritionfact" alias="Nutritionfact"/>
 		<typeAlias type="com.smhrd.model.Board" alias="Board" />
 		<typeAlias type="com.smhrd.model.Comment" alias="Comment" />
 	</typeAliases>
+  
 	<!-- 2) DB 연결과 관련된 정의 기술 -->
 
 	<environments default="development">
@@ -47,6 +44,8 @@
 		<mapper resource="com/smhrd/database/LunchboxMapper.xml" />
 
 		<mapper resource="com/smhrd/database/MemberMapper.xml" />
+		
+		<mapper resource="com/smhrd/database/LunchboxDetailMapper.xml" />
 
   		<mapper resource="com/smhrd/database/RecipeMapper.xml" />
   		

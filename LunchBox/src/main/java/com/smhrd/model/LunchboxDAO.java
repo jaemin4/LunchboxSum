@@ -13,6 +13,8 @@ public class LunchboxDAO {
 
 	public ArrayList<Lunchbox> lunchList(String mb_id) {
 		
+		System.out.println(mb_id+" dao ID체크");
+		
 		ArrayList<Lunchbox> list = null;
 		SqlSession sqlSession = sqlSessionFactory.openSession(true);
 		

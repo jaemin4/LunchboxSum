@@ -31,7 +31,7 @@ public class IdCheckCon implements Controller {
 		        response.setContentType("text/html; charset=UTF-8");
 		        PrintWriter out;
 				out = response.getWriter();
-				out.println("<script>alert('중복된 아이디입니다! 다른 아이디를 사용해주세요!');window.close();</script>");
+				out.println("<script>alert('중복된 아이디입니다! 다른 아이디를 사용해주세요!');</script>");
 	        	out.flush();
 	        	out.close();
 	        	System.out.println("중복된 아이디입니다!");
@@ -39,7 +39,8 @@ public class IdCheckCon implements Controller {
 				response.setContentType("text/html; charset=UTF-8");
 		        PrintWriter out;
 				out = response.getWriter();
-				out.println("<script>alert('사용 가능한 아이디입니다!');window.close();</script>");
+				//out.println("<script>alert('사용 가능한 아이디입니다!');window.close();</script>");
+				out.println("<script>opener.window.document.insertMember.mb_Id.value = '" + idck + "';alert('사용 가능한 아이디입니다!');window.close();</script>");
 	        	out.flush();
 	        	out.close();
 	        	System.out.println("사용 가능한 아이디입니다!");

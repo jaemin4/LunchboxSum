@@ -96,6 +96,13 @@ li a:hover {
 			</div>
 			<div class="panel-body">
 				<table class="table table-striped table-hover">
+					<colgroup>
+						<col width="45%">
+						<col width="15%">
+						<col width="20%">
+						<col width="8%">
+						<col width="8%">
+					</colgroup>
 					<tr>
 						<th>제목</th>
 						<th>작성자</th>
@@ -106,9 +113,8 @@ li a:hover {
 
 					<!-- el표현식을 활용하면 scope영역에 객체바인딩 된 데이터를 바로 꺼내올 수 있다. -->
 					<c:forEach var="board" items="${list2}">
-						<tr>
-							<td><a
-								href="UpdateRead.do?article_seq=${board.article_seq}&article_cnt=${board.article_cnt}">${board.article_title}</a></td>
+						<tr onclick='location.href="UpdateRead.do?article_seq=${board.article_seq}&article_cnt=${board.article_cnt}"' style="cursor: pointer;">
+							<td>${board.article_title}</td>
 							<td>${board.mb_id}</td>
 							<td>${board.article_date}</td>
 							<td>${board.article_cnt}</td>

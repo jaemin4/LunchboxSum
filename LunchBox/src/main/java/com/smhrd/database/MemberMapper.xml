@@ -61,4 +61,7 @@
     	select * from tbl_member
     	where mb_id='${mb_Id}' and mb_pw='${mb_Pw}'
     </select>
+    <select id="selectUserinfo" parameterType="Member" resultType="Member">
+    	select mb_birthdate, mb_gender from tbl_member where mb_Id = #{mb_Id}
+    </select>
 </mapper>
