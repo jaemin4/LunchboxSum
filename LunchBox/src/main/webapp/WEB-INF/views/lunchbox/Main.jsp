@@ -101,12 +101,14 @@
   					<button type="button" class="btn btn-warning" onclick="location.href='GoUpdate.do'">정보수정</button>
   					<button type="button" class="btn btn-warning" onclick="location.href='Logout.do'">로그아웃</button>
  					<button type="button" class="btn btn-warning" onclick="location.href='GoDelete.do'">회원탈퇴</button>
+					<button onclick="location.href='GoResult.do?mb_id=admin&lb_seq=1'" class="btn btn-primary btn-sm">결과</button>
 					</div>
 					
 					</div>
 					<div>
-					<a href ="#"><button><img width="240" height="393" src="asset/image/cal.jpg"></button></a>
-					
+					<button type="button" onclick="location.href='GoCalendar.do?mb_id=<%=user_id%>'" class="btn btn-primary btn-sm">
+					<img width="240" height="393" src="asset/image/cal.jpg">
+					달력</button>
 					</div>
 				</div>
 			</div>
@@ -192,7 +194,7 @@
 		})
 	</script>
 	<h1>메인페이지</h1>
-	<button onclick="location.href='GoCalendar.do?mb_id=admin'" class="btn btn-primary btn-sm">달력</button>
+
 	<button onclick="location.href='GoLunch.do'" class="btn btn-primary btn-sm">런치</button>
 	
 	

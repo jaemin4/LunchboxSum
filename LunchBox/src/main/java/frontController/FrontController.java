@@ -55,6 +55,7 @@ import com.smhrd.controller.UpdateCon;
 import com.smhrd.controller.UpdateLikeCon;
 import com.smhrd.controller.UpdateReadCon;
 import com.smhrd.controller.Re_SearchCon;
+import com.smhrd.controller.ResultCon;
 import com.smhrd.controller.Select_lbnumCon;
 import com.smhrd.controller.Send_lbseqCon;
 
@@ -113,6 +114,7 @@ public class FrontController extends HttpServlet {
 		mappings.put("/GoAsk.do", new GoAskCon());
 		mappings.put("/GoNutrition.do", new GoNutritionCon());
 		mappings.put("/GoMain.do",new GoMainCon());
+		mappings.put("/GoResult.do", new ResultCon());
 	}
 
 

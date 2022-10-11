@@ -18,4 +18,7 @@
     	set r_carbohydrate='${r_Carbohydrate}',r_protein='${r_Protein}',r_fat='${r_Fat}',r_calories='${r_Calories}'
     	where mb_id='${mb_Id}'
     </update>
+    <select id="selectUserNutri" resultType="Nutritionfact">
+    	select * from tbl_nutritionfact where mb_Id = #{mb_Id}
+    </select>
     </mapper>

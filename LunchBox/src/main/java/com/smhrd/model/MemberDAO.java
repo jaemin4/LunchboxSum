@@ -113,4 +113,13 @@ public class MemberDAO {
 		sqlSession.close();
 		return list;
 	}
+	
+	// 회원 아이디로 성별 나이 출력
+	public Member selectUserinfo(String mb_Id) {
+		Member userInfo = null;
+		SqlSession sqlSession = sqlSessionFactory.openSession(true);
+		userInfo = sqlSession.selectOne("com.smhrd.model.MemberDAO.selectUserinfo",mb_Id);
+		sqlSession.close();
+		return userInfo;
+	}
 }
