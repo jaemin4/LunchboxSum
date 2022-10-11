@@ -151,25 +151,11 @@ tr :hover{
 				<c:forEach begin="1" end="${sum}" var="i">
 					<a href="SelectAll.do?page=${i}">${i}</a>
 				</c:forEach>
-         </div>
-<<<<<<< HEAD
-         <!-- a태그 쿼리스트링 방식 어떻게 하나요? -->
-         <div class="pagination">
-
-
-            <a href="#">&laquo;</a>
-           
-            <c:forEach begin="1" end="${sum}" var="i">
-               <a href="SelectAll.do?page=${i}">${i}</a>
-            </c:forEach>
-
-            <a href="SelectAll.do?page=${i+1}">&raquo;</a>
-         </div>
-=======
-     
 				<a href="SelectAll.do?page=${i+1}">&raquo;</a>
+         </div>
+
+     
 			</div>
->>>>>>> branch 'main' of https://github.com/nemutai123/Lunchbox_simulator.git
 
 
          <div class="panel-footer">

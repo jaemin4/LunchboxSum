@@ -2,6 +2,7 @@ package com.smhrd.controller;
 
 import java.awt.Window;
 import java.io.IOException;
+import java.io.PrintWriter;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -47,8 +48,19 @@ public class InsertCon implements Controller {
 		board.setArticle_file(article_file);
 
 		if (board.getArticle_contgent().equals("") || board.getArticle_title().equals("")) {
-			return "WEB-INF/views/community/Insert.jsp";
-		}
+	         try {
+	            response.setCharacterEncoding("UTF-8");
+	            response.setContentType("text/html; charset=UTF-8");
+	              PrintWriter out;
+	            out = response.getWriter();
+	            out.println("<script>alert('빈칸을 채워주세요!');location.href='GoInsert.do';</script>");
+	             out.flush();
+	             out.close();
+	         } catch (IOException e) {
+	            e.printStackTrace();
+	         }
+	         return "WEB-INF/views/community/Insert.jsp";
+	      }
 
 		BoardDAO dao = new BoardDAO();
 		int row = dao.insert(board);

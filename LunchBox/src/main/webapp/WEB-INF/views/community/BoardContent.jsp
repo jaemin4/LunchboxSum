@@ -5,6 +5,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+
 <meta charset="EUC-KR">
 <title>Insert title here</title>
 <!-- Latest compiled and minified CSS -->
