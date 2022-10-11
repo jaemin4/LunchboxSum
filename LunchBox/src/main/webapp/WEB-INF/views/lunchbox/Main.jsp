@@ -57,8 +57,6 @@
 			<ul>
 				<li><b>LunchBoxsimulator</b></li>
 
-				<li><a href="GoLunch.do"> Main</a></li>
-
 				<li><a href="GoMain.do"> Main</a></li>
 				<li><a href="GoNutrition.do">영양소 및 칼로리</a></li>
 				<li><a href="GoAsk.do">자주묻는질문</a></li>
@@ -91,30 +89,35 @@
 					<!-- 로그인과 달럭 -->
 					<div class="loginst">
 					<br>
-					
-					
+					<p style="font-size : 25px ;">
 					<%=user_id%>님의 정보
-					<br>
-					성별 : <%=user_gender%>				
-					나이 : <%=user_age%>
+					</p>
+					<div id="loginmsg">
+					성별 : <%=user_gender%>
+					나이 : <%=user_age%>			
+					<%if(user_gender=="남") { %>
+						<img src="https://cdn-icons-png.flaticon.com/512/3884/3884851.png" width="85" height="85">
+					<%} else { %>
+						<img src="https://cdn-icons-png.flaticon.com/512/1373/1373254.png" width="85" height="85">
+					<%} %>
+					</div>
 					
-					<br><br>
-					<div class="btn-group-sm">
+					<div class="btn-group">
   					<button type="button" class="btn btn-warning" onclick="location.href='GoUpdate.do'">정보수정</button>
   					<button type="button" class="btn btn-warning" onclick="location.href='Logout.do'">로그아웃</button>
  					<button type="button" class="btn btn-warning" onclick="location.href='GoDelete.do'">회원탈퇴</button>
-					<button onclick="location.href='GoResult.do?mb_id=admin&lb_seq=1'" class="btn btn-primary btn-sm">결과</button>
+					<!-- 지울예정!! -->
+					<button onclick="location.href='GoResult.do?mb_id=admin&lb_seq=1'" class="btn btn-primary">결과</button>
 					</div>
 					
 					</div>
-					<div>
-					<button type="button" onclick="location.href='GoCalendar.do?mb_id=<%=user_id%>'" class="btn btn-primary btn-sm">
-					<img width="240" height="393" src="asset/image/cal.jpg">
-					달력</button>
+					<div id = "calbutton">
+					<img  width="380" height="350" src="asset/image/cal.png" style="cursor: pointer;" onclick="location.href='GoCalendar.do?mb_id=<%=user_id%>'" >
 					</div>
 				</div>
 			</div>
-			<!-- <img class="search_box" id="search_box1" src="asset/image/exsearch1.PNG"> -->
+			<!-- 메인기능 들어가는부분입니다.
+			<img class="search_box" id="search_box1" src="asset/image/exsearch1.PNG"> -->
 			<div class="search_box" id="search_box1">
 				<input type="text">
 				<input type="button" value="검색">
@@ -122,7 +125,6 @@
 
 				</div>
 			</div>
-
 			
 			<img class="search_box"	id="search_box2" src="asset/image/exsearch2.PNG">
 			<img class="search_box" id="search_box3" src="asset/image/exsearch3.PNG">
@@ -147,7 +149,7 @@
 		</div>
 		</div>
 		</div><!-- 슬라이딩이미지 div 마무리 -->
-		</div>
+		</div><!-- 전체 div 마무리 -->
 
 	<script>
 		$("#first").click(function() {
@@ -195,10 +197,6 @@
 			}
 		})
 	</script>
-	<h1>메인페이지</h1>
-
-	<button onclick="location.href='GoLunch.do'" class="btn btn-primary btn-sm">런치</button>
-	
 	
 </body>
 </html>
