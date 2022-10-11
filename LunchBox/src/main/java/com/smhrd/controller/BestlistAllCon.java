@@ -16,6 +16,7 @@ public class BestlistAllCon implements Controller {
 	      String article_title = request.getParameter("article_title");
 	      String article_date = request.getParameter("article_date");
 	      String article_likes = request.getParameter("article_likes");
+	      String article_seq = request.getParameter("article_seq");
 	       BoardDAO dao = new BoardDAO();
 	         ArrayList<Board> list3 = dao.BestlistAll();
 

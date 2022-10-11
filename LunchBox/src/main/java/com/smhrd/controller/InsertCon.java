@@ -23,8 +23,7 @@ public class InsertCon implements Controller {
 		String encoding = "EUC-KR";
 		MultipartRequest multi = null;
 		HttpSession session = request.getSession();
-		
-		
+
 		try {
 			multi = new MultipartRequest(request, savePath, maxSize, encoding, new DefaultFileRenamePolicy()
 
@@ -34,9 +33,9 @@ public class InsertCon implements Controller {
 		}
 
 		String article_file = multi.getFilesystemName("article_file");
-		
+
 		String article_title = multi.getParameter("article_title");
-		String mb_id = (String)session.getAttribute("sessionID");
+		String mb_id = (String) session.getAttribute("sessionID");
 		String article_contgent = multi.getParameter("article_contgent");
 
 		Board board = new Board();
@@ -44,8 +43,11 @@ public class InsertCon implements Controller {
 		board.setMb_id(mb_id);
 		board.setArticle_contgent(article_contgent);
 		board.setArticle_file(article_file);
-		
-		
+
+		if (board.getArticle_contgent().equals("") || board.getArticle_title().equals("")) {
+			return "WEB-INF/views/community/Insert.jsp";
+		}
+
 		BoardDAO dao = new BoardDAO();
 		int row = dao.insert(board);
 

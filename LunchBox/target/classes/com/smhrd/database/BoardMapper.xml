@@ -36,7 +36,7 @@
 
 	<select id="BestlistAll" resultType="Board">
 
-		select article_title, article_date, article_likes
+		select article_seq, article_title, article_date, article_likes
 		from (select *
 		from tbl_community order by article_likes desc)
 		where rownum between 1 and 3

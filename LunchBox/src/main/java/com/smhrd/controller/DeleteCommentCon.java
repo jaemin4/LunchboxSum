@@ -15,7 +15,7 @@ public class DeleteCommentCon implements Controller {
 		CommentDAO dao = new CommentDAO();
 		int row = dao.DeleteComment(cmt_seq);
 
-		return "CommentAll.do";
+		return "SelectOne.do";
 	}
 
 }
