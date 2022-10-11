@@ -150,6 +150,7 @@ tr :hover{
 
 
             <a href="#">&laquo;</a>
+           
             <c:forEach begin="1" end="${sum}" var="i">
                <a href="SelectAll.do?page=${i}">${i}</a>
             </c:forEach>
