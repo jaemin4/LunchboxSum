@@ -86,30 +86,7 @@ li b {
 li a:hover {
 	background-color: #111;
 }
-
-</style>
-</head>
-<body>
-	<div id="layout" align="center">
-
-		<div id="header">
-			<ul>
-				<li><b>LunchBoxsimulator</b></li>
-				<li><a href="#" onclick="warning();"> Main</a></li>
-				<li><a href="GoNutrition.do">영양소 및 칼로리</a></li>
-				<li><a href="GoAsk.do">자주묻는질문</a></li>
-				<li><a href="#" onclick="warning();">도시락정보공유게시판</a></li>
-			</ul>
-
-
-
-
-
-
-		</div>
-
-        <style>
-            .login-btn-box{
+ .login-btn-box{
                 display: flex;
                 justify-content: end;
             }
@@ -149,7 +126,29 @@ li a:hover {
                 height: 30px;
             }
 
-        </style>
+
+</style>
+</head>
+<body>
+	<div id="layout" align="center">
+
+		<div id="header">
+			<ul>
+				<li><b>LunchBoxsimulator</b></li>
+				<li><a href="#" onclick="warning();"> Main</a></li>
+				<li><a href="GoNutrition.do">영양소 및 칼로리</a></li>
+				<li><a href="GoAsk.do">자주묻는질문</a></li>
+				<li><a href="#" onclick="warning();">도시락정보공유게시판</a></li>
+			</ul>
+
+
+
+
+
+
+		</div>
+
+
     <script>
         $(document).ready(function(){
             $("#id").click(function(){

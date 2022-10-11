@@ -75,6 +75,15 @@ li a:hover {
 	background-color: #111;
 }
 
+h1{
+    font-size : 50px;
+}
+
+tr :hover{
+   background-color: #A9D0F5
+
+}
+
 </style>
 </head>
 <body>
@@ -90,9 +99,9 @@ li a:hover {
 		</div>
 	<div class="container">
 		<div class="panel panel-default">
-			<div class="panel-heading">
-		<h1 align="center">각종 의견과 본인만의 레시피를 자랑해주세요!</h1>
-				<h2>도시락 게시판</h2>
+			<div class="panel-heading" align="center">
+		<h1>각종 의견과 본인만의 레시피를 자랑해주세요!</h1>
+		<h2>도시락 게시판</h2>
 			</div>
 			<div class="panel-body">
 				<table class="table table-striped table-hover">
@@ -147,17 +156,22 @@ li a:hover {
 
 			<div class="panel-footer">
 
-				<h3>베스트 좋아요수 TOP 3</h3>
+				<h3>베스트 좋아요 TOP 3</h3>
 				<table class="table table-striped table-hover">
+				<colgroup>
+                  <col width="60%">
+                  <col width="25%">
+                  <col width="15%">
+               	</colgroup>
 					<tr>
 						<th>제목</th>
 						<th>작성일</th>
 						<th>좋아요</th>
 					</tr>
 					<c:forEach var="board" items="${list3}">
-						<tr>
+						<tr onclick='location.href="SelectOne.do?article_seq=${board.article_seq}"' style="cursor: pointer;">
 
-							<td><a href="SelectOne.do?article_seq=${board.article_seq}">${board.article_title}</a></td>
+							<td>${board.article_title}</td>
 							<td>${board.article_date}</td>
 							<td>${board.article_likes}</td>
 
