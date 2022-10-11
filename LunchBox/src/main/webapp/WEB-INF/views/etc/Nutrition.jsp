@@ -12,15 +12,52 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <style>
  
+ /* 네비게이션바 스타일*/
+#navih {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background-color: rgba(0,24,113,1);
+}
+
+#c {
+	float: left;
+}
+
+#c a {
+	display: block;
+	color: white;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+}
+
+#c b {
+	display: block;
+	color: rgba(255,181,73,1);
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+}
+
+
+
+#c a:hover {
+	background-color: #111;
+}
+ 
+/* 네비게이션바 스타일종료*/
+ 
    .wrap{
      position: relative;
       min-height : 100%;
       padding-bottom: 100px;
    }
-   html, body{
+   html,body{
    height : 100%;
    }
-  
+
    /* Set height of the grid so .sidenav can be 100% (adjust if needed) */
     .row.content {height: 2100px}
     
@@ -53,10 +90,24 @@
    background-color: tomato;
    color: white;
 }
+
+
   </style>
 </head>
 <body>
-   
+<div id="header">
+			<ul id ="navih">
+				<li id = "c"><b>LunchBoxsimulator</b></li>
+				<li id = "c"><a href="GoMain.do"> Main</a></li>
+				<li id = "c"><a href="GoNutrition.do">영양소 및 칼로리</a></li>
+				<li id = "c"><a href="GoAsk.do">자주묻는질문</a></li>
+				<li id = "c"><a href="SelectAll.do">도시락정보공유게시판</a></li>
+			</ul>
+
+		</div>
+
+
+
 <div class = "wrap">
 <div class="container-fluid">
   <div class="row content">
@@ -76,8 +127,6 @@
     <div class="col-sm-9">
     <br>
       <h4>권장 영양 성분 및 칼로리 정보</h4>
-      <button onclick="location.href='SelectAll.do'"
-                              class="btn btn-primary btn-sm" id="Back">뒤로가기</button>
       <hr>
       <a id = section1></a>
       <h2>20대 남녀 권장 영양 성분 및 칼로리 & 추천 식재료</h2>
