@@ -30,10 +30,9 @@ public class Insert_CompleteLB implements Controller {
 		System.out.println(list.get(0).getRecipe_img());
 		System.out.println(list.get(0).getCalories() + "영양소 체크~");
 
-		
 		 //Insert_Completelb부분================================
 		  
-		  String lb_img = null; double lb_calories = 0;
+		  String lb_img = ""; double lb_calories = 0;
 		  
 		  for(int i = 0; i<list.size(); i++) { 
 			  lb_img +=

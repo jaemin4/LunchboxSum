@@ -77,6 +77,10 @@
 	height: 100%;
 	width: 100%;
 }
+ 
+
+
+
 </style>
 
 </head>
@@ -137,10 +141,71 @@ function search_Model(){
 		
 		search_model.innerHTML = "";
         recipe_area.innerHTML = "";
-        search_model.innerHTML = `
+        search_model.innerHTML = 
+        					`<div class = "Seach_Model">
+    
         						<input class="search-txt" type="text" placeholder="검색어를 입력해 주세요" id = "Input_Search">
-                                <button class="search-btn" type="submit" id = 'searchbar' >찾기</button>`;
-                                
+                                	<div class = "Search_Type" id = "Search_Type_id">
+                        				<button id = "Method" onclick = "click_method">조리방식</button>
+                        					<div id = "method_area"></div>
+                        					
+                        				<button id = "Level" onclick = "click_level">난이도</button>
+                        					<div id = "time_area"></div>
+                        					
+                        				<button id = "Time" onclick = "click_time">소요시간</button>
+                        					<div id = "level_area"></div>
+                        			</div>
+                        		<button class="search-btn" type="submit" id = 'searchbar' >찾기</button>
+                        		
+                            </div>`;
+        //조리방식 , 소요시간 , 난이도 function ========================================        
+       
+        function click_method(){
+        	let method_area = document.getElementById("method_area")''
+        	method_area.innerHtml = `
+        	<div>
+        	
+        		<fieldset>
+	        	  <label>
+	        	    <input type="radio" name="contact" value="method_1" checked />
+	        	    <span>조림,무침,절임,비빔</span>
+	        	    
+	        	  </label>
+	        	 
+	        	  <label>
+	        	    <input type="radio" name="contact" value="method_2" />
+	        	    <span>부침,튀김,굽기,삶기</span>
+	        	  </label>
+	        	  
+	        	  <label>
+	        	    <input type="radio" name="contact" value="method_3" disabled />
+	        	    <span>끓이기,찜,데치기</span>
+	        	  </label>
+	        	  
+	        	  <label>
+	        	    <input type="radio" name="contact" value="method_4" />
+	        	    <span>볶음,기타</span>
+	        	  </label>
+        		</fieldset>
+        	
+        	</div>`;
+        }
+        
+        function click_level(){
+        	
+        }
+        
+        function click_time(){
+        	
+        }
+        
+
+
+        	
+                            
+                            
+                            
+                            
 //jsquery//3.검색 클릭시 
 let InputSearch = document.getElementById("Input_Search");
 let SearchBar = document.getElementById("searchbar");
@@ -181,6 +246,7 @@ let SearchBar = document.getElementById("searchbar");
     					ingredient.push(data[i].ingredient),
     					recipe_method.push(data[i].recipe_method),
     					        
+
     					recipe_time.push(data[i].recipe_time),
     					recipe_difficulty.push(data[i].recipe_difficulty),
     					recipe_detail.push(data[i].recipe_detail),
@@ -417,7 +483,7 @@ let SearchBar = document.getElementById("searchbar");
     	   	         //도시락 순번
     	   	         function CompeteR_Click() {
     	   	         	if(CompleteR_Num_list.length >= 2){
-    	   	         		alert("저장완료")
+    	   	         		
     	   	         		//tbl_lunchbox_detail테이블을 이용해서 tbl_lunchbox에 최종저장
     	   	         		lunName_area.innerHTML = 
     	   	         			`<label>도시락 이름 : </label>
@@ -430,8 +496,8 @@ let SearchBar = document.getElementById("searchbar");
     	   	         		NameButton.addEventListener('click',function(){
     	   	         			let LunchboxName = document.getElementById("Lunchbox_Name");
     	   	         			let lun_name = LunchboxName.value;
-    	   	         			console.log("들 "+lun_name);
-    	   	         			
+    	   	         			alert("저장완료")
+    	   	         			location.href = "GoLunchResult.do";
 	    	   	         		$.ajax({
 	    	   						url : "ajax_Insert_CompleteLB.do",
 	            	    	        dataType:"json",
@@ -440,8 +506,8 @@ let SearchBar = document.getElementById("searchbar");
 	    	   						
 	    	   					});	 
     	   	         		})
+    	   	         
     	   					
-    	   	         	
     	   	         			
     	   	         	}
     	   	         	else {
