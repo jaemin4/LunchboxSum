@@ -11,6 +11,7 @@
 
 .box-wrap{
 	background-color:gold;
+	font-size: 20px;
 }
 
 * {

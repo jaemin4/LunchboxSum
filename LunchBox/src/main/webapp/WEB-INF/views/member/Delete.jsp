@@ -37,7 +37,8 @@
 }
 
 .box-wrap{
-	width: 190px;
+	font-size: 20px;
+	width: 200px;
 	background-color: gold;
 }
 
