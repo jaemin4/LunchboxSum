@@ -143,19 +143,18 @@ tr :hover{
                </tr>
 
             </table>
-
+			</div>
+			<!-- a태그 쿼리스트링 방식 어떻게 하나요? -->
+			<div  align="center">
+			<div class="pagination">
+				<a href="#">&laquo;</a>
+				<c:forEach begin="1" end="${sum}" var="i">
+					<a href="SelectAll.do?page=${i}">${i}</a>
+				</c:forEach>
          </div>
-         <!-- a태그 쿼리스트링 방식 어떻게 하나요? -->
-         <div class="pagination">
-
-
-            <a href="#">&laquo;</a>
-            <c:forEach begin="1" end="${sum}" var="i">
-               <a href="SelectAll.do?page=${i}">${i}</a>
-            </c:forEach>
-
-            <a href="SelectAll.do?page=${i+1}">&raquo;</a>
-         </div>
+     
+				<a href="SelectAll.do?page=${i+1}">&raquo;</a>
+			</div>
 
 
          <div class="panel-footer">
