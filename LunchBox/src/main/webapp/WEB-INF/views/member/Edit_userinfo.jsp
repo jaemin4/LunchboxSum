@@ -8,6 +8,11 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style type="text/css">
+
+.box-wrap{
+	background-color:gold;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -91,7 +96,7 @@ li a:hover {
     <div class="form-wrap">
     	<div class="button-wrap">
     		<h1>회원 정보 수정</h1>
-    		<div style="border:2px solid">
+    		<div class="box-wrap" style="border:2px solid">
 		    <form name="edit" action="Update.do" method="post">
 		        <table>
 		            <tr>

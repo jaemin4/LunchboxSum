@@ -22,6 +22,19 @@
 <link rel="stylesheet" type="text/css" href="asset/lunchboxloc.css">
 <link rel="stylesheet" type="text/css" href="asset/mainstyle.css">
 
+			<style>
+				#search_box1{
+					background-color: #fff;
+				}
+				.recepie-list-box{
+					padding: 20px;
+					height: 80%;
+					background-color: red;
+				}
+
+			</style>
+
+
 <title>메인페이지입니다.</title>
 </head>
 <body>
@@ -97,7 +110,16 @@
 					</div>
 				</div>
 			</div>
-			<img class="search_box" id="search_box1" src="asset/image/exsearch1.PNG">
+			<!-- <img class="search_box" id="search_box1" src="asset/image/exsearch1.PNG"> -->
+			<div class="search_box" id="search_box1">
+				<input type="text">
+				<input type="button" value="검색">
+				<div class="recepie-list-box">
+
+				</div>
+			</div>
+
+			
 			<img class="search_box"	id="search_box2" src="asset/image/exsearch2.PNG">
 			<img class="search_box" id="search_box3" src="asset/image/exsearch3.PNG">
 			<img class="search_box"	id="search_box4" src="asset/image/exsearch4.PNG">

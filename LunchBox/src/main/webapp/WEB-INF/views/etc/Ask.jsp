@@ -103,7 +103,7 @@ li a:hover {
 				<li><a href="Main.do"> Main</a></li>
 				<li><a href="GoNutrition.do">영양소 및 칼로리</a></li>
 				<li><a href="GoAsk.do">자주묻는질문</a></li>
-				<li><a href="SelectAll.do">도시락정보공유게시판</a></li>
+				<li><a href=# onclick="warning();">도시락정보공유게시판</a></li>
 			</ul>
 
 		</div>
@@ -137,6 +137,9 @@ li a:hover {
 </footer>
 
 <script>
+function warning(){
+	alert("로그인 후 이용해주세요.");
+}
 var acc = document.getElementsByClassName("accordion");
 var i;
 
