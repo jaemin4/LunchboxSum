@@ -69,6 +69,7 @@
 
       </div>
 
+<<<<<<< HEAD
       <div id="con">
          <div id="main">
             <div id="dosirak">
@@ -122,7 +123,23 @@
             <input type="text">
             <input type="button" value="검색">
             <div class="recepie-list-box">
+=======
+				</div>
+			</div>
+			
+			<img class="search_box"	id="search_box2" src="asset/image/exsearch2.PNG">
+			<img class="search_box" id="search_box3" src="asset/image/exsearch3.PNG">
+			<img class="search_box"	id="search_box4" src="asset/image/exsearch4.PNG">
+			<img class="search_box" id="search_box5" src="asset/image/exsearch5.PNG">
+		</div>
+		<div id = "slideimg">
+		<div id="ingi" align="center">
+		<b>오늘의 인기 반찬!!</b>
+		<div id="owl1">
+		<div class="owl-carousel owl-theme">
+>>>>>>> branch 'main' of https://github.com/nemutai123/Lunchbox_simulator.git
 
+<<<<<<< HEAD
             </div>
          </div>
          
@@ -135,6 +152,23 @@
       <div id="ingi" align="center">
       <b>오늘의 인기 반찬!!</b>
       <div class="owl-carousel owl-theme">
+=======
+		<img  src="asset/image/닭강정.jpg">
+		<img  src="asset/image/소시지볶음.jpg">
+		<img  src="asset/image/소시지야채볶음.jpg">
+		<img  src="asset/image/어묵볶음.jpg">
+		<img  src="asset/image/파프리카볶음.jpg">
+		<img  src="asset/image/닭강정.jpg">
+		<img  src="asset/image/소시지볶음.jpg">
+		<img  src="asset/image/소시지야채볶음.jpg">
+		<img  src="asset/image/어묵볶음.jpg">
+		<img  src="asset/image/파프리카볶음.jpg">
+		</div>
+		</div>
+		</div>
+		</div><!-- 슬라이딩이미지 div 마무리 -->
+		</div><!-- 전체 div 마무리 -->
+>>>>>>> branch 'main' of https://github.com/nemutai123/Lunchbox_simulator.git
 
       <img  src="asset/image/닭강정.jpg">
       <img  src="asset/image/소시지볶음.jpg">
