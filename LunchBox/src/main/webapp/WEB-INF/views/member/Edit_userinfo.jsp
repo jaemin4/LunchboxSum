@@ -90,7 +90,8 @@ li a:hover {
 <div class="wrap">
     <div class="form-wrap">
     	<div class="button-wrap">
-    		<h1>정보 수정</h1>
+    		<h1>회원 정보 수정</h1>
+    		<div style="border:2px solid">
 		    <form name="edit" action="Update.do" method="post">
 		        <table>
 		            <tr>
@@ -131,12 +132,13 @@ li a:hover {
 		            <tr align="right">
 		                <td colspan = "2">
 		                    <div>
-		                        <input type="button" onclick="editform_check();" value="정보수정">
+		                        <input type="button" onclick="editform_check();" value="수정하기">
 		                    </div>   
 		                </td>
 		            </tr>       
 		        </table>
 		    </form>
+		    </div>
 		 </div>
 	</div>
 </div>

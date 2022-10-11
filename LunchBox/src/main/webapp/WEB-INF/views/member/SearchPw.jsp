@@ -5,8 +5,14 @@
 <head>
 <meta charset="UTF-8">
 <title>비밀번호 찾기</title>
+<style type="text/css">
+.wrap{
+ 	background-color:gold;
+}
+</style>
 </head>
 <body>
+	<div class="wrap" style="border:2px solid">
 	<form name="pwcheck" action="SearchPw.do" method="post">
         <table>
             <tr>
@@ -46,6 +52,7 @@
             </tr>    
         </table>
     </form>
+    </div>
     <script>
     function pwform_check(){
     	var id = document.getElementById("id");

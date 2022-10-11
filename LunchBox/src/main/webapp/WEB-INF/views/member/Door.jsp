@@ -24,6 +24,14 @@
 <style>
 
 
+
+
+
+.modal-body{
+	background-color:gold;
+}
+
+
 body {
 	background-image: url("asset/image/bgbg5.JPG");
 	background-repeat: no-repeat;
@@ -157,9 +165,9 @@ li a:hover {
                     <div class="valid-feedback">입력 완료</div>
                     <div class="invalid-feedback">필수 입력 공간</div>
                 </div>
-                <button type="submit" class="btn btn-primary" style="margin-left:50%;">로그인</button>
+                <button type="submit" class="btn btn-primary">로그인</button>
                 <a data-toggle="modal" href="#myModal2" class="btn btn-primary">회원가입</a>
-                <button type="button" class="btn btn-primary" style="margin-left:50%;" onclick="winopen2()">비밀번호 찾기</button>
+                <button type="button" class="btn btn-primary" onclick="winopen2()">비밀번호 찾기</button>
             </form>
       		</div>
 			</div>
@@ -323,7 +331,7 @@ li a:hover {
 
        var popupY2= (window.screen.height / 2) - (300 / 2);
        // 만들 팝업창 상하 크기의 1/2 만큼 보정값으로 빼주었음
-          window.open("GoSearchPw.do","",'status=no, height=200, width=650, left='+ popupX2 + ', top='+ popupY2);
+          window.open("GoSearchPw.do","",'status=no, height=130, width=500, left='+ popupX2 + ', top='+ popupY2);
        }
     function yyCheck(){
        var yy = document.getElementsByName("yy")[0].value;
