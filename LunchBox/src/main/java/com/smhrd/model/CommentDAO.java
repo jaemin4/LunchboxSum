@@ -16,7 +16,7 @@ public class CommentDAO {
 		ArrayList<Comment> list2 = null;
 		SqlSession sqlSession = sqlSessionFactory.openSession(true);
 		list2 = (ArrayList) sqlSession.selectList("com.smhrd.model.CommentDAO.commentAll", article_seq);
-
+		sqlSession.close();
 		return list2;
 
 	}
