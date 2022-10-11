@@ -73,8 +73,13 @@ public class Re_SearchCon implements Controller{
 					method_r[i] = "%";
 				}
 			}
+			if(search.length()<1) {
+				search = "%";
+			}
+			else {
+				search = "%"+search+"%";
+			}
 			
-			search = "%"+search+"%";
 			time = time+"%"; 
 			level = level+"%";
 			

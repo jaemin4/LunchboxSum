@@ -19,7 +19,7 @@ public class UpdateCon implements Controller {
 		// 회원 정보 수정을 처리하는 공간!
 		response.setCharacterEncoding("UTF-8");
 		HttpSession session = request.getSession();
-		String userid = (String)session.getAttribute("session");
+		String userid = (String)session.getAttribute("sessionID");
         String gender = request.getParameter("mb_gender");
         String yy = request.getParameter("yy");
 		String mm = request.getParameter("mm");

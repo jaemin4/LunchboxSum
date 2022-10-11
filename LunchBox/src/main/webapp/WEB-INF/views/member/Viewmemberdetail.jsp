@@ -7,8 +7,79 @@
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 <meta charset="UTF-8">
 <title>회원의 성별과 연령대를 분석</title>
+<style>
+.panel-heading, .panel-footer {
+	background-image: url("asset/image/bgbg5.JPG");
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+body {
+	background-image: url("asset/image/bgbg5.JPG");
+	background-repeat: no-repeat;
+	background-size: cover;
+	width: 100%;
+	height: 100%;
+}
+
+/* 네비게이션바 스타일*/
+ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background-color: rgba(0,24,113,1);
+}
+
+li {
+	float: left;
+}
+
+li a {
+	display: block;
+	color: white;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+}
+
+li b {
+	display: block;
+	color: rgba(255,181,73,1);
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+}
+
+
+li a:hover {
+	background-color: #111;
+}
+
+#chart1{
+	bottom:20%;
+	left:12%;
+	background-color :white;
+	width: 300px;
+	height: 300px;
+	position:absolute;
+}
+
+
+</style>
 </head>
 <body>
+<div id="header">
+         <ul>
+            <li><b>LunchBoxsimulator</b></li>
+            <li><a href="GoMain.do"> Main</a></li>
+            <li><a href="GoNutrition.do">영양소 및 칼로리</a></li>
+            <li><a href="GoAsk.do">자주묻는질문</a></li>
+            <li><a href="SelectAll.do">도시락정보공유게시판</a></li>
+         </ul>
+		</div>
+
+
 	<%
 		response.setCharacterEncoding("UTF-8");
 		int countGenderM = (int)session.getAttribute("countGenderM");
@@ -32,13 +103,14 @@
 		int countGenderFBirth50 = (int)session.getAttribute("countGenderFBirth50");
 		System.out.println(countGenderFBirth50);
 	%>
-	<div>
-		 <tr>
+	<table id="chart1">
+		<tr>
 			<td><div id="gender" style="width: 500px; height: 500px;"></div><td>
 			<td><div id="genderMBirth" style="width: 500px; height: 500px;"></div><td>
 			<td><div id="genderFBirth" style="width: 500px; height: 500px;"></div><td>
 		</tr>
-	</div>
+	</table>
+	
 	<script type="text/javascript">
 	google.charts.load('current', {'packages':['corechart']}); 
 	google.charts.setOnLoadCallback(drawChart1);

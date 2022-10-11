@@ -26,6 +26,11 @@ public class SearchPwCon implements Controller {
 		Member member = new Member();
 		member.setMb_Id(id);
         member.setMb_Birthdate(y+m+d);
+        if(Integer.parseInt(d) < 10) {
+        	member.setMb_Birthdate(y+m+0+d);
+        }else {
+        	member.setMb_Birthdate(y+m+d);
+        }
         
         System.out.println(member.getMb_Id());
         System.out.println(member.getMb_Birthdate());

@@ -14,7 +14,7 @@
 }
 .wrap {
     height: 100%;
-    width: 115%;
+    width: 110%;
     background-image: url(asset/image/bgbg5.JPG);
     background-repeat : no-repeat;
     background-position: center;
@@ -34,6 +34,12 @@
     margin: 20px auto;
     position: relative;
     border-radius: 30px;
+}
+
+.box-wrap{
+	font-size: 20px;
+	width: 200px;
+	background-color: gold;
 }
 
 ul {
@@ -87,6 +93,7 @@ li a:hover {
     <div class="form-wrap">
     	<div class="button-wrap">
     		<h1>회원 탈퇴</h1>
+    		<div class="box-wrap" style="border:2px solid">
 			<form name="deleteMember" action="Delete.do" method="post">
 		        <table>
 		            <tr>
@@ -97,11 +104,12 @@ li a:hover {
 		                <th>PW</th>
 		                <td><input type="password" name="mb_PW" id="pw" placeholder="PW를 입력하세요."></td>
 		            </tr>
-		            <tr>
-		            	<td><input type="button" onclick="deleteform_check();" value="탈퇴하기"></td>
+		            <tr align="right">
+		            	<td colspan="2px"><input type="button" onclick="deleteform_check();" value="탈퇴하기"></td>
 		            </tr>
 		        </table>
 		    </form>
+		    </div>
 		</div>
 	</div>
 </div>

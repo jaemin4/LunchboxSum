@@ -16,7 +16,7 @@ public class BoardDAO {
 		SqlSession sqlSession = sqlSessionFactory.openSession(true);
 
 		list = (ArrayList) sqlSession.selectList("com.smhrd.model.BoardDAO.selectAll");
-
+		sqlSession.close();
 		return list;
 
 	}
@@ -27,7 +27,7 @@ public class BoardDAO {
 		SqlSession sqlSession = sqlSessionFactory.openSession(true);
 
 		result = sqlSession.insert("com.smhrd.model.BoardDAO.insert", board);
-
+		sqlSession.close();
 		return result;
 	}
 
@@ -36,7 +36,7 @@ public class BoardDAO {
 		SqlSession sqlSession = sqlSessionFactory.openSession(true);
 
 		result = sqlSession.selectOne("com.smhrd.model.BoardDAO.selectOne", article_seq);
-
+		sqlSession.close();
 		return result;
 	}
 
@@ -87,7 +87,7 @@ public class BoardDAO {
 		SqlSession sqlSession = sqlSessionFactory.openSession(true);
 
 		list3 = (ArrayList) sqlSession.selectList("com.smhrd.model.BoardDAO.BestlistAll");
-
+		sqlSession.close();
 		return list3;
 
 	}
@@ -97,7 +97,7 @@ public class BoardDAO {
 		SqlSession sqlSession = sqlSessionFactory.openSession(true);
 
 		result = sqlSession.selectOne("com.smhrd.model.BoardDAO.countAll");
-
+		sqlSession.close();
 		return result;
 	}
 
