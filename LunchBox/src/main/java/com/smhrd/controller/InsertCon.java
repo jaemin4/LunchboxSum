@@ -38,12 +38,18 @@ public class InsertCon implements Controller {
 		String article_title = multi.getParameter("article_title");
 		String mb_id = (String)session.getAttribute("sessionID");
 		String article_contgent = multi.getParameter("article_contgent");
+		
 
 		Board board = new Board();
 		board.setArticle_title(article_title);
 		board.setMb_id(mb_id);
 		board.setArticle_contgent(article_contgent);
 		board.setArticle_file(article_file);
+		
+		if(board.getArticle_contgent().equals("") || board.getArticle_title().equals("")) {
+			return "WEB-INF/views/community/Insert.jsp";
+		}
+		
 
 		BoardDAO dao = new BoardDAO();
 		int row = dao.insert(board);

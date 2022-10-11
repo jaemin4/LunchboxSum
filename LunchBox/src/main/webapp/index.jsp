@@ -9,7 +9,7 @@
 <body>
 	
 
-	<jsp:forward page="GoLunch.do"></jsp:forward>
+	<jsp:forward page="Door.do"></jsp:forward>
 
 	
 	
