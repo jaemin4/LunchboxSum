@@ -20,6 +20,7 @@ public class SelectOneCon implements Controller {
 		
 		String article_seq = request.getParameter("article_seq");
 		String mb_id = (String)session.getAttribute("sessionID");
+		String article_file = request.getParameter("article_file");
 		CommentDAO dao = new CommentDAO();
 
 		ArrayList<Comment> list2 = dao.commentAll(article_seq);
@@ -29,7 +30,8 @@ public class SelectOneCon implements Controller {
 		request.setAttribute("list2", list2);
 		request.setAttribute("board", board);
 		request.setAttribute("mb_id", mb_id);
-
+		request.setAttribute("article_file", article_file);
+		
 		return "WEB-INF/views/community/BoardContent.jsp";
 
 	}
