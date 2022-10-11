@@ -55,6 +55,7 @@ public class RecipeboxDAO {
 		SqlSession sqlSession = sqlSessionFactory.openSession(true);
 		
 		result = sqlSession.insert("com.smhrd.model.RecipeboxDAO.delete_overlap_lb_button",Data);
+		sqlSession.close();
 		
 		return result;
 	}

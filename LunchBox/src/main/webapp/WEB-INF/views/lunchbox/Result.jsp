@@ -175,14 +175,74 @@
 	});
 
 </script>
+<style>
+body {
+	background-image: url("asset/image/bgbg5.JPG");
+	background-repeat: no-repeat;
+	background-size: cover;
+	width: 100%;
+	height: 100%;
+}
 
-<title></title>
+
+ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background-color: rgba(0,24,113,1);
+}
+
+li {
+	float: left;
+}
+
+li a {
+	display: block;
+	color: white;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+}
+
+li b {
+	display: block;
+	color: rgba(255,181,73,1);
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+}
+
+
+
+li a:hover {
+	background-color: #111;
+}
+
+#result1{
+	background-color: white;
+}
+h1{
+    font-size : 60px;
+}
+
+</style>
+
+
+
+<title>도시락결과페이지</title>
 </head>
 <body>
-	<!-- 
-		완성된 도시락 영양소 및
-		사용자 권장 영양소 비교 페이지
-	-->
+      <div id="header">
+         <ul>
+            <li><b>LunchBoxsimulator</b></li>
+            <li><a href="GoMain.do"> Main</a></li>
+            <li><a href="GoNutrition.do">영양소 및 칼로리</a></li>
+            <li><a href="GoAsk.do">자주묻는질문</a></li>
+            <li><a href="SelectAll.do">도시락정보공유게시판</a></li>
+         </ul>
+		</div>
+
 	<%ArrayList<Recipe> recipe = (ArrayList<Recipe>)request.getAttribute("boxes");%>
 	<%Nutritionfact nutri = (Nutritionfact)request.getAttribute("nutri");%>
 	<%String gender = (String)request.getAttribute("gender");%>
@@ -190,7 +250,8 @@
 	<%String userCal = (String)request.getAttribute("userCal");%>
 	<%String CALORIES = (String)request.getAttribute("CALORIES");%>
 	
-	<h1>결과페이지</h1>
+	<div id="result1">
+	<h1 align="center">도시락 선택 결과페이지!</h1>
 	<hr>
 	<div style="float: left; width: 50%;">
 		<table>
@@ -273,7 +334,7 @@
 			<%} %>
 		<%}%>
 	</div>
-	
+	</div>
 	
 	
 </body>

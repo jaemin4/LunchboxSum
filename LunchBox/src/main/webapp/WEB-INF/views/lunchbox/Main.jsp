@@ -134,6 +134,7 @@
 		<div id = "slideimg">
 		<div id="ingi" align="center">
 		<b>오늘의 인기 반찬!!</b>
+		<div id="owl1">
 		<div class="owl-carousel owl-theme">
 
 		<img  src="asset/image/닭강정.jpg">
@@ -146,6 +147,7 @@
 		<img  src="asset/image/소시지야채볶음.jpg">
 		<img  src="asset/image/어묵볶음.jpg">
 		<img  src="asset/image/파프리카볶음.jpg">
+		</div>
 		</div>
 		</div>
 		</div><!-- 슬라이딩이미지 div 마무리 -->
