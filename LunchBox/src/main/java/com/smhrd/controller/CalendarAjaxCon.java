@@ -17,8 +17,10 @@ public class CalendarAjaxCon implements Controller {
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
 
 		String mb_id = request.getParameter("mb_id");
+
 		LunchboxDAO dao = new LunchboxDAO();
 		ArrayList<Lunchbox> user_lunchList = dao.lunchList(mb_id);
+		
 		
 		// 한글인코딩!
 		response.setCharacterEncoding("UTF-8");
@@ -37,7 +39,7 @@ public class CalendarAjaxCon implements Controller {
 		
 		Gson gson = new Gson();
 		String json = gson.toJson(user_lunchList);
-		System.out.println(json);
+		// System.out.println(json);
 		
 		out.print(json);
 		
