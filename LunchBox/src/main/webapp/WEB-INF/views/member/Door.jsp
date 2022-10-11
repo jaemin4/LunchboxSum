@@ -290,7 +290,7 @@ li a:hover {
             </tr>
             <tr align="right">
                 <td colspan="2">
-                   <input type="button" onclick="joinform_check();" value="회원가입">
+                   <input type="button" class="btn btn-primary" onclick="joinform_check();" value="회원가입">
                 </td>        
             </tr>    
         </table>
