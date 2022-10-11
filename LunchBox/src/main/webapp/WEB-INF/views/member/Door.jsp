@@ -86,6 +86,46 @@ li b {
 li a:hover {
 	background-color: #111;
 }
+ .login-btn-box{
+                display: flex;
+                justify-content: end;
+            }
+            .login-btn-box button, .login-btn-box a{
+                margin-left: 5px;
+            }
+
+            .reg-table{
+                width: 100%;
+            }
+            .reg-table th, .reg-table td{
+                display: inline-block;
+            }
+            .reg-table tr{
+                display: flex;
+                width: 100%;
+                margin-bottom: 10px;
+            }
+            .reg-table th{
+                width: 20%;
+            }
+            .reg-table td{
+                margin-right: 5px;
+            }
+            .reg-table td #id{
+                background-color: #fff;
+                cursor: pointer;
+            }
+            .reg-table .birth td input{
+                width: 80px;
+                padding: 3px;
+                height: 30px;
+            }
+            .reg-table .birth td select{
+                width: 50px;
+                padding: 3px;
+                height: 30px;
+            }
+
 
 </style>
 </head>
@@ -107,6 +147,15 @@ li a:hover {
 
 
 		</div>
+
+
+    <script>
+        $(document).ready(function(){
+            $("#id").click(function(){
+                winopen1();
+            })  
+        })
+    </script>
 
 	<div id = "slideimg">
 		<div id="ingi" align="center">
@@ -157,9 +206,11 @@ li a:hover {
                     <div class="valid-feedback">입력 완료</div>
                     <div class="invalid-feedback">필수 입력 공간</div>
                 </div>
-                <button type="submit" class="btn btn-primary" style="margin-left:50%;">로그인</button>
-                <a data-toggle="modal" href="#myModal2" class="btn btn-primary">회원가입</a>
-                <button type="button" class="btn btn-primary" style="margin-left:50%;" onclick="winopen2()">비밀번호 찾기</button>
+                <div class="login-btn-box">
+                    <button type="submit" class="btn btn-primary">로그인</button>
+                    <a data-toggle="modal" href="#myModal2" class="btn btn-primary">회원가입</a>
+                    <button type="button" class="btn btn-primary" onclick="winopen2()">비밀번호 찾기</button>
+                </div>
             </form>
       		</div>
 			</div>
@@ -174,20 +225,20 @@ li a:hover {
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                 </div>
                 <div class="modal-body">
+
        <form name="insertMember" action="JoinOK.do" method="post">
-        <table>
+        <table class="reg-table">
             <tr>
                 <th>ID</th>
-                <td><input type="text" name="mb_Id" id="id" placeholder="ID를 입력하세요." maxlength="20"></td>
-                <td><input type="button" onclick="winopen1()" value="중복체크"></td>
+                <td><input type="text" name="mb_Id" id="id" placeholder="ID를 입력하세요." maxlength="20" class="form-control" readonly></td>
             </tr>
             <tr>
                 <th>PW</th>
-                <td><input type="password" name="mb_Pw1" id="pw" placeholder="PW를 입력하세요." maxlength="20"></td>
+                <td><input type="password" name="mb_Pw1" id="pw" placeholder="PW를 입력하세요." maxlength="20" class="form-control"></td>
             </tr>
             <tr>
-                <th>PW<br>체크</th>
-                <td><input type="password" name="mb_Pw2" id="pW" oninput="pwCheck()" placeholder="입력한 PW를 확인해 주세요." maxlength="20"></td>
+                <th>PW 체크</th>
+                <td><input type="password" name="mb_Pw2" id="pW" oninput="pwCheck()" placeholder="입력한 PW를 확인해 주세요." maxlength="20" class="form-control"></td>
             </tr>
             <tr align="right">
                 <td></td>
@@ -198,7 +249,7 @@ li a:hover {
                 <td align="center"><input type="radio" name="mb_Gender" id="male" value="M" checked>남자</td>
                 <td><input type="radio" name="mb_Gender" id="female" value="F">여자</td>
             </tr>
-            <tr>
+            <tr class="birth">
                <th>생년월일</th>
                <td>
                    <input type="text" name="yy" id="y" oninput="yyCheck()" placeholder="년(4자)" aria-label="년(4자)" class="int" maxlength="4">
@@ -293,14 +344,7 @@ li a:hover {
     function winopen1(){
        var popupX1 = (document.body.offsetWidth / 2) - (200 / 2);
        var popupY1= (window.screen.height / 2) - (300 / 2);
-       //새창을 열어서 페이지를 오픈 후 -> 회원아이디정보를 가지고 중복체크
-       //1. 아이디가 없으면 알림창과 진행x
-       if(document.insertMember.mb_Id.value =="" || document.insertMember.mb_Id.value.length < 0){
-          alert("아이디를 먼저 입력해주세요")
-          document.insertMember.mb_Id.focus();
-       }else{
-          window.open("GoIdCheck.do","",'status=no, width=500, height=300, left='+ popupX1 + ', top='+ popupY1);
-       }
+       window.open("GoIdCheck.do","",'status=no, width=500, height=300, left='+ popupX1 + ', top='+ popupY1);
     }
     function pwCheck(){
         var pw1 = document.getElementsByName("mb_Pw1")[0].value;

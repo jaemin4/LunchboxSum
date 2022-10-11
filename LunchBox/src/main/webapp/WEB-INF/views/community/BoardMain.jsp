@@ -75,6 +75,15 @@ li a:hover {
    background-color: #111;
 }
 
+h1{
+    font-size : 50px;
+}
+
+tr :hover{
+   background-color: #A9D0F5
+
+}
+
 </style>
 </head>
 <body>
@@ -87,29 +96,32 @@ li a:hover {
             <li><a href="SelectAll.do">도시락정보공유게시판</a></li>
          </ul>
 
-      </div>
-   <div class="container">
-      <div class="panel panel-default">
-         <div class="panel-heading">
-      <h1 align="center">각종 의견과 본인만의 레시피를 자랑해주세요!</h1>
-            <h2>도시락 게시판</h2>
-         </div>
-         <div class="panel-body">
-            <table class="table table-striped table-hover">
-               <colgroup>
-                  <col width="45%">
-                  <col width="15%">
-                  <col width="20%">
-                  <col width="8%">
-                  <col width="8%">
-               </colgroup>
-               <tr>
-                  <th>제목</th>
-                  <th>작성자</th>
-                  <th>작성일</th>
-                  <th>조회수</th>
-                  <th>좋아요</th>
-               </tr>
+
+		</div>
+	<div class="container">
+		<div class="panel panel-default">
+			<div class="panel-heading" align="center">
+		<h1>각종 의견과 본인만의 레시피를 자랑해주세요!</h1>
+		<h2>도시락 게시판</h2>
+			</div>
+			<div class="panel-body">
+				<table class="table table-striped table-hover">
+					<colgroup>
+						<col width="45%">
+						<col width="15%">
+						<col width="20%">
+						<col width="8%">
+						<col width="8%">
+					</colgroup>
+					<tr>
+						<th>제목</th>
+						<th>작성자</th>
+						<th>작성일</th>
+						<th>조회수</th>
+						<th>좋아요</th>
+					</tr>
+
+
 
                <!-- el표현식을 활용하면 scope영역에 객체바인딩 된 데이터를 바로 꺼내올 수 있다. -->
                <c:forEach var="board" items="${list2}">
@@ -121,6 +133,7 @@ li a:hover {
                      <td>${board.article_likes}</td>
                   </tr>
                </c:forEach>
+
 
                <tr>
                   <td colspan="5" align="right">
@@ -147,20 +160,24 @@ li a:hover {
 
          <div class="panel-footer">
 
-            <h3>베스트 좋아요 TOP 3</h3>
-            <table class="table table-striped table-hover">
-               <tr>
-                  <th>제목</th>
-                  <th>작성일</th>
-                  <th>좋아요</th>
-               </tr>
-               <c:forEach var="board" items="${list3}">
-                  
+				<h3>베스트 좋아요 TOP 3</h3>
+				<table class="table table-striped table-hover">
+				<colgroup>
+                  <col width="60%">
+                  <col width="25%">
+                  <col width="15%">
+               	</colgroup>
+					<tr>
+						<th>제목</th>
+						<th>작성일</th>
+						<th>좋아요</th>
+					</tr>
+					<c:forEach var="board" items="${list3}">
+						<tr onclick='location.href="SelectOne.do?article_seq=${board.article_seq}"' style="cursor: pointer;">
 
-                     <tr onclick='location.href="SelectOne.do?article_seq=${board.article_seq}&article_cnt=${board.article_cnt}"' style="cursor: pointer;">
-                     <td>${board.article_title}</td>
-                     <td>${board.article_date}</td>
-                     <td>${board.article_likes}</td>
+							<td>${board.article_title}</td>
+							<td>${board.article_date}</td>
+							<td>${board.article_likes}</td>
 
                   </tr>
                </c:forEach>

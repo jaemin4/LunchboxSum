@@ -37,7 +37,7 @@ import com.smhrd.controller.IdCheckCon;
 import com.smhrd.controller.InsertCommentCon;
 import com.smhrd.controller.InsertCon;
 import com.smhrd.controller.GoLunchCon;
-
+import com.smhrd.controller.GoLunchResult;
 import com.smhrd.controller.Insert_CompleteLB;
 
 import com.smhrd.controller.GoMainCon;
@@ -55,6 +55,7 @@ import com.smhrd.controller.UpdateCon;
 import com.smhrd.controller.UpdateLikeCon;
 import com.smhrd.controller.UpdateReadCon;
 import com.smhrd.controller.Re_SearchCon;
+import com.smhrd.controller.ResultCon;
 import com.smhrd.controller.Select_lbnumCon;
 import com.smhrd.controller.Send_lbseqCon;
 
@@ -113,6 +114,11 @@ public class FrontController extends HttpServlet {
 		mappings.put("/GoAsk.do", new GoAskCon());
 		mappings.put("/GoNutrition.do", new GoNutritionCon());
 		mappings.put("/GoMain.do",new GoMainCon());
+
+		mappings.put("/GoLunchResult.do",new GoLunchResult());
+
+		mappings.put("/GoResult.do", new ResultCon());
+
 	}
 
 

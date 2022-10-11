@@ -24,6 +24,7 @@
 	rel='stylesheet' />
 <script src='.//resources/fullcalendar-5.11.3/lib/main.js'></script>
 <script src=".//resources/js/jquery-3.6.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
 <script type="text/javascript">
 
 	document.addEventListener('DOMContentLoaded', function() {
@@ -60,10 +61,7 @@
 			error : function(e){
 				alert("error!");
 			}
-			
 		})
-		
-		
 	});	
 	
 	function loadCal(data){
@@ -82,15 +80,18 @@
 				let day = date.toISOString().split('T')[0];
 				location.href = 'GoCalendarDetail.do?day='+day;
 			},*/
-			events : [
-				{
-				title: '다이어트 도시락',
-                start: '2022-09-20'
-				}
-			],
-			navLinks : true,
-			navLinkDayClick : function(date, jsEvent) {
-				let nowYear = new Date(date).getFullYear();
+			//navLinks : true,
+			//navLinkDayClick : function(date, jsEvent) {	
+			eventClick : function(e) {
+				console.log(e.event._def.title+" 체크");
+				console.log(moment(e.event._instance.range.start).format('YY/MM/DD'));
+				let time = moment(e.event._instance.range.start).format('YY/MM/DD');
+				let userID = user_id.innerText;
+				let lunch = e.event._def.title;
+				
+				location.href = 'GoCalendarDetail.do?time='+time+"&userID="+userID;
+		
+				/* let nowYear = new Date(date).getFullYear();
 				let nowMonth = new Date(date).getMonth() + 1;
 				let nowday = new Date(date).getDate();
 				let userID = user_id.innerText;
@@ -98,20 +99,45 @@
 				console.log('userID체크', user_id);
 				console.log('year체크', nowYear);
 				console.log('month체크', nowMonth);
-				console.log('day체크', nowday);
+				console.log('day체크', nowday);  */
 				// console.log('day', date.toISOString()); // 날짜확인(하루어긋남)
 				// console.log('coords', jsEvent.pageX, jsEvent.pageY); // 달력위치
 				// let day = date.toISOString().split('T')[0];
 				// console.log('day', day);
-				location.href = 'GoCalendarDetail.do?year='+nowYear+"&month="+nowMonth+"&day="+nowday+"&userID="+userID;
+				// location.href = 'GoCalendarDetail.do?year='+nowYear+"&month="+nowMonth+"&day="+nowday+"&userID="+userID;
 			},
+			eventContent: function(arg) {
+				console.log('여기',arg.event._def.title);  
+				let italicEl = document.createElement('div')
+				  let arrayOfDomNodes = []
+					  italicEl.innerHTML = '<img src="https://creazilla-store.fra1.digitaloceanspaces.com/emojis/56590/bento-box-emoji-clipart-md.png" class="event-icon" />';
+					  italicEl.innerHTML += arg.event._def.title;
+					  arrayOfDomNodes.push(italicEl)
+					console.log(arrayOfDomNodes);
+				  return { domNodes: arrayOfDomNodes }
+			}
+			/*
 			eventContent: {
-				  html: `<div><img src="https://creazilla-store.fra1.digitaloceanspaces.com/emojis/56590/bento-box-emoji-clipart-md.png" class="event-icon" />
-				  	${data}
-				  </div>`,
-			},
+				  html: `
+				  <div>
+					<img src="https://creazilla-store.fra1.digitaloceanspaces.com/emojis/56590/bento-box-emoji-clipart-md.png" class="event-icon" />
+				  	\${data}
+				  </div>`
+			}*/
 		});
 		calendar.render();
+		
+		
+	}
+	
+	function clickEvent(){
+	$('.fc-event-main').on('click', function(){
+			
+			result = $(this).parent().parent().parent().children('.fc-daygrid-day-top').children('a').attr('aria-label');
+			
+			console.log(result);
+			
+		})
 	}
 	
 </script>
@@ -141,15 +167,15 @@
 	<% String mb_id = (String)request.getAttribute("mb_id"); %>
 	<h1 style="color:gold">LUNCH PLANNER</h1>
 	
-
-	<h1>달력페이지 테스트</h1>
 	<hr>
 	
-	<div id='calendar' style="overflow:auto;"></div>
+	<div id='calendar'></div>
 	
 	<div id='user_id' style='display: none;'>
 		<%=mb_id%>
-	<div id='user_date'> <!--  style='display: none;'>-->
+	</div>
+	
+	<div id='user_date' style='display: none;'>
 		<c:forEach  var="Lunchlist" items="${user_lunchList}">
 			<p>
 					도시락 : ${Lunchlist.lb_Name}
