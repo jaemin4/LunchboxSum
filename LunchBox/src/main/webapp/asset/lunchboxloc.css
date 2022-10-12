@@ -6,10 +6,15 @@
 	align-items: center;
 }
 
+/*
+#dosirak div{
+	border: 1px solid black;
+}*/
+
 #dosirak {
 	display: flex;
 	flex-direction: column;
-	width: 650px;
+	width: 1200px;
 	height: 100%;
 	background-image: url(../asset/image/dosi.png);
 	background-repeat: no-repeat;
@@ -31,11 +36,11 @@
 }
 
 #first {
-	margin-left: 80px;
+	margin-left: 175px;
 }
 
 #second {
-	margin-left: 67px;
+	margin-left: 65px;
 }
 
 #third {
@@ -43,12 +48,12 @@
 }
 
 #fourth {
-	margin-left: 135px;
-	width: 300px;
-	height: 280px;
+	margin-left: 200px;
+	width: 337px;
+	height: 300px;
 }
 #fifth {
-	margin-left: 90px;
-	width: 300px;
-	height: 280px;
+	margin-left: 94px;
+	width: 337px;
+	height: 300px;
 }
