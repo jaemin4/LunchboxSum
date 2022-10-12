@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
-	pageEncoding="UTF-8"%>
+   pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,9 +12,14 @@
 	href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+<<<<<<< HEAD
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
+=======
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+   
+>>>>>>> branch 'main' of https://github.com/nemutai123/Lunchbox_simulator.git
 <!-- Latest compiled JavaScript -->
 <script
 	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
@@ -31,6 +36,21 @@
 
 <link rel="stylesheet" type="text/css" href="asset/lunchboxloc.css">
 <link rel="stylesheet" type="text/css" href="asset/mainstyle.css">
+<<<<<<< HEAD
+=======
+      <style>
+         #search_box1{
+               background-color: #fff;
+         }
+         .recepie-list-box{
+               padding: 20px;
+               height: 80%;
+               background-color: red;
+            }
+
+      
+
+>>>>>>> branch 'main' of https://github.com/nemutai123/Lunchbox_simulator.git
 <style>
 #search_box1 {
 	background-color: #fff;
@@ -53,6 +73,7 @@
 <title>메인페이지입니다.</title>
 </head>
 <body>
+<<<<<<< HEAD
 	<%
 	response.setCharacterEncoding("UTF-8");
 	String user_id = (String) session.getAttribute("sessionID");
@@ -67,7 +88,24 @@
 	}
 	%>
 	<div id="layout" align="center">
+=======
+      <%
+         response.setCharacterEncoding("UTF-8");
+         String user_id = (String)session.getAttribute("sessionID");
+         String user_gender = (String)session.getAttribute("sessionGender");
+         int user_age = (int)session.getAttribute("sessionBirthdate");
+         System.out.println("세션에 저장된 아이디는 "+session.getAttribute("sessionID")+"입니다.");
+         System.out.println("세션에 저장된 성별은 "+session.getAttribute("sessionGender")+"입니다.");
+         System.out.println("세션에 저장된 나이는 "+session.getAttribute("sessionBirthdate")+"입니다.");
+         System.out.println(user_id);
+         if(user_id == null){
+            response.sendRedirect("Door.do");
+         }
+       %>    
+   <div id="layout" align="center">
+>>>>>>> branch 'main' of https://github.com/nemutai123/Lunchbox_simulator.git
 
+<<<<<<< HEAD
 		<div id="header">
 			<ul>
 				<li><b>LunchBoxsimulator</b></li>
@@ -164,10 +202,20 @@
 
 
 			</div>
+=======
+      <div id="header">
+         <ul>
+            <li><b>LunchBoxsimulator</b></li>
+>>>>>>> branch 'main' of https://github.com/nemutai123/Lunchbox_simulator.git
 
 
+<<<<<<< HEAD
 		</div>
+=======
+            <li><a href="GoLunch.do"> Main</a></li>
+>>>>>>> branch 'main' of https://github.com/nemutai123/Lunchbox_simulator.git
 
+<<<<<<< HEAD
 		<script>
       $("#first").click(function() {
          $("#main_box").hide();
@@ -195,7 +243,11 @@
          $("#search_box5").fadeIn();
       });
    </script>
+=======
+            <li><a href="GoMain.do"> Main</a></li>
+>>>>>>> branch 'main' of https://github.com/nemutai123/Lunchbox_simulator.git
 
+<<<<<<< HEAD
 		<script>
       $('.owl-carousel').owlCarousel({
          loop : true,
@@ -235,6 +287,150 @@
 
 
 		<script>
+=======
+            <li><a href="GoNutrition.do">영양소 및 칼로리</a></li>
+            <li><a href="GoAsk.do">자주묻는질문</a></li>
+            <li><a href="SelectAll.do">도시락정보공유게시판</a></li>
+            <%if(user_id.equals("admin")){ %>
+               <li><a href="Admin.do">회원 목록 조회</a></li>
+               <li><a href="AdminUser.do">회원 정보 분석</a></li>
+            <%}%>
+         </ul>
+
+      </div>
+
+      <div id="con">
+         <div id="main">
+            <div id="dosirak">
+               <div class="dosirak-row rf">
+                  <div id="first" class="s"></div>
+                  <div id="second" class="s"></div>
+                  <div id="third" class="s"></div>
+               </div>
+               <div class="dosirak-row rs">
+                  <div id="fourth" class="s"></div>
+                  <div id="fifth" class="s"></div>
+               </div>
+            </div>
+         </div>
+         
+         <div id="ad">
+            <div id="main_box">
+               <!-- 로그인과 달럭 -->
+               <div class="loginst">
+               <br>
+               <p style="font-size : 25px ;">
+               <%=user_id%>님의 정보
+               </p>
+               <div id="loginmsg">
+               성별 : <%=user_gender%>
+               나이 : <%=user_age%>         
+               <%if(user_gender=="남") { %>
+                  <img src="https://cdn-icons-png.flaticon.com/512/3884/3884851.png" width="85" height="85">
+               <%} else { %>
+                  <img src="https://cdn-icons-png.flaticon.com/512/1373/1373254.png" width="85" height="85">
+               <%} %>
+               </div>
+               
+               <div class="btn-group">
+                 <button type="button" class="btn btn-warning" onclick="location.href='GoUpdate.do'">정보수정</button>
+                 <button type="button" class="btn btn-warning" onclick="location.href='Logout.do'">로그아웃</button>
+               <!-- 지울예정!! -->
+               <button onclick="location.href='GoResult.do?mb_id=admin&lb_seq=1'" class="btn btn-primary">결과</button>
+               </div>
+               
+               </div>
+               <div id = "calbutton">
+               <img  width="380" height="350" src="asset/image/cal.png" style="cursor: pointer;" onclick="location.href='GoCalendar.do?mb_id=<%=user_id%>'" >
+               </div>
+            </div>
+         </div>
+
+         <!-- <img class="search_box" id="search_box1" src="asset/image/exsearch1.PNG"> -->
+         
+      <div class = recipe_con>
+            
+            <div id="lunName_area"></div>
+            <div id="recipe_area"></div>
+            <div class="search-box" id="search_model"></div>
+            <div id="crawling_area"></div>
+            
+            <div class = "Complete_Lun"><button id="Lun_CompleteB" width = 40px>완성</button></div>
+      </div>
+      
+      <div id = "slideimg">
+      <div id="ingi" align="center">
+      <b>오늘의 인기 반찬!!</b>
+      <div id="owl1">
+      <div class="owl-carousel owl-theme">
+
+      <img  src="asset/image/닭강정.jpg">
+      <img  src="asset/image/소시지볶음.jpg">
+      <img  src="asset/image/소시지야채볶음.jpg">
+      <img  src="asset/image/어묵볶음.jpg">
+      <img  src="asset/image/파프리카볶음.jpg">
+      <img  src="asset/image/닭강정.jpg">
+      <img  src="asset/image/소시지볶음.jpg">
+      <img  src="asset/image/소시지야채볶음.jpg">
+      <img  src="asset/image/어묵볶음.jpg">
+      <img  src="asset/image/파프리카볶음.jpg">
+      </div>
+      </div>
+      </div>
+      </div><!-- 슬라이딩이미지 div 마무리 -->
+      </div><!-- 전체 div 마무리 -->
+
+   <script>
+      $("#first").click(function() {
+         $("#main_box").hide();
+         $(".search_box").hide();
+         $("#search_box1").fadeIn();
+      });
+      $("#second").click(function() {
+         $("#main_box").hide();
+         $(".search_box").hide();
+         $("#search_box2").fadeIn();
+      });
+      $("#third").click(function() {
+         $("#main_box").hide();
+         $(".search_box").hide();
+         $("#search_box3").fadeIn();
+      });
+      $("#fourth").click(function() {
+         $("#main_box").hide();
+         $(".search_box").hide();
+         $("#search_box4").fadeIn();
+      });
+      $("#fifth").click(function() {
+         $("#main_box").hide();
+         $(".search_box").hide();
+         $("#search_box5").fadeIn();
+      });
+   </script>
+   
+   <script>
+      $('.owl-carousel').owlCarousel({
+         loop : true,
+         margin : 10,
+         nav : true,
+         responsive : { 
+            0 : {
+               items : 1
+            },
+            600 : {
+               items : 3
+            },
+            1000 : {
+               items : 5
+            }
+         }
+      })
+   </script>
+
+   
+   
+<script>
+>>>>>>> branch 'main' of https://github.com/nemutai123/Lunchbox_simulator.git
 //1.도시락 완성하기 버튼에서 사용자가 2개이상 레시피를 클릭시 완성저장 할 수 있게끔 완성될때마다 push
 let CompleteR_Num_list = [];
 
@@ -275,6 +471,7 @@ function search_Model(){
       search_model.innerHTML = "";
         recipe_area.innerHTML = "";
         search_model.innerHTML = 
+<<<<<<< HEAD
                        `<br><div id = "Searchboxs"class = "Serach_Model">
         				<div>
                           <input class="search-txt" type="text" placeholder="조리방식,난이도,소요시간 선택후 검색해주세요!!" id = "Input_Search">
@@ -298,6 +495,23 @@ function search_Model(){
                                     <button id="Lun_CompleteB" class="btn btn-warning btn-lg">완성</button>
                                   </div>
                               	</div>
+=======
+                       `<div class = "Serach_Model">
+    
+                          <input class="search-txt" type="text" placeholder="검색어를 입력해 주세요" id = "Input_Search">
+                                   <div class = "Search_Type" id = "Search_Type_id">
+                                    <button id = "Method">조리방식</button>
+                                       <div id = "method_area"></div>
+                                       
+                                    <button id = "Level">난이도</button>
+                                       <div id = "level_area"></div>
+                                       
+                                    <button id = "Time">소요시간</button>
+                                       <div id = "time_area"></div>
+                                    <button class="search-btn" type="submit" id = 'searchbar' >찾기</button>
+                                  </div>
+                              
+>>>>>>> branch 'main' of https://github.com/nemutai123/Lunchbox_simulator.git
                               
                               
                             </div>`;
@@ -337,8 +551,12 @@ function search_Model(){
                   <input type="radio" name="metho" value="볶음,기타" />
                   <span>볶음,기타</span>
                 </label>
+<<<<<<< HEAD
                 <br>
                 <button id = "Type_click1" class="btn btn-warning">선택</button>
+=======
+                <button id = "Type_click1">선택</button>
+>>>>>>> branch 'main' of https://github.com/nemutai123/Lunchbox_simulator.git
               
            </div>`;
            let value1 = $("input[type=radio][name=metho]:checked").val();
@@ -376,7 +594,11 @@ function search_Model(){
                       <input type="radio" name="leve" value="상급" />
                       <span>상급</span>
                     </label>
+<<<<<<< HEAD
                     <button id = "Type_click2" class="btn btn-warning">선택</button>
+=======
+                    <button id = "Type_click2">선택</button>
+>>>>>>> branch 'main' of https://github.com/nemutai123/Lunchbox_simulator.git
                
                </div>`;
                
@@ -417,6 +639,7 @@ function search_Model(){
                        <input type="radio" name="tim" value="60" />
                        <span>60분</span>
                      </label>
+<<<<<<< HEAD
                      <button id = "Type_click3" class="btn btn-warning">선택</button>
                
                </div>`;
@@ -431,6 +654,29 @@ function search_Model(){
                            alert(radio.value);
                            Result_time = radio.value; 
                            }
+=======
+                     <button id = "Type_click3">선택</button>
+               
+               </div>`;
+               
+               let value3 = $("input[type=radio][name=tim]:checked").val();
+               
+               document.getElementById('Type_click3').onclick = function() {
+                   var radios = document.getElementsByName('tim');
+                   for (var radio of radios)
+                   {
+                       if (radio.checked) {
+                           alert(radio.value);
+                           Result_time = radio.value; 
+                      
+                          
+                           
+                           }
+                           
+                           
+                        
+                           
+>>>>>>> branch 'main' of https://github.com/nemutai123/Lunchbox_simulator.git
                        }
                    
                }//
@@ -546,6 +792,7 @@ let SearchBar = document.getElementById("searchbar");
                    
                search_model.innerHTML = null;
                let resultHTML =
+<<<<<<< HEAD
                    `<br>
                    <div style="overflow:auto; width:500px; height:800px;">
                    <table border="1" id="foodplace" width:"300px"> 
@@ -566,6 +813,25 @@ let SearchBar = document.getElementById("searchbar");
                        </tr>`;
                }
                resultHTML += `</table></div>`;
+=======
+                   `<table border="1"> 
+                       <tr>
+                           <th>음식 이미지</th>
+                           <th>음식 이름</th>
+                           <th>난이도</th>
+                       </tr>`;
+               //사용자 검색완료 후 출력되는 레시피에 id를 부여
+       ////~~~~~~~~~~~~~~~check//
+               for(let i = 0; i<Recipe.Num.length; i++){
+                   resultHTML += 
+                       `<tr>
+                           <td><button><img src = "\${Recipe.Recipe_img[i]}" width = 200px height = 200px></button></td>
+                           <td><button id = "\${Recipe.Num[i]}">\${Recipe.Name[i]}</button></td>
+                           <td>\${Recipe.Recipe_difficulty[i]}</td>
+                       </tr>`;
+               }
+               resultHTML += `</table>`;
+>>>>>>> branch 'main' of https://github.com/nemutai123/Lunchbox_simulator.git
                recipe_area.innerHTML = resultHTML;
 
              //4.사용자가 검색한 레시피에 대해서 아이디를 가져온 후 그중에서 하나를 선택할 수 있게 만드는 기능
@@ -682,7 +948,11 @@ let SearchBar = document.getElementById("searchbar");
                        };
 
                        recipe_area.innerHTML = 
+<<<<<<< HEAD
                          `<table border = 1 id="foodplace">
+=======
+                         `<table border = 1>
+>>>>>>> branch 'main' of https://github.com/nemutai123/Lunchbox_simulator.git
                              <tr>
                                  <td colspan = 3> \${ButtonId_Name}번째 도시락 </td>
                              </tr>
@@ -868,6 +1138,7 @@ function crawling(search){
    
 }
 </script>
+<<<<<<< HEAD
 		<div id="slideimg">
 			<div id="ingi" align="center">
 				<b>오늘의 인기 반찬!!</b>
@@ -891,5 +1162,21 @@ function crawling(search){
 	</div>
 	<!-- 전체 div 마무리 -->
 
+=======
+   
+   
+   
+   
+   
+   
+   
+   
+   <h1>메인페이지</h1>
+   <button onclick="location.href='GoLunch.do'" class="btn btn-primary btn-sm">런치</button>
+   
+
+
+   
+>>>>>>> branch 'main' of https://github.com/nemutai123/Lunchbox_simulator.git
 </body>
 </html>

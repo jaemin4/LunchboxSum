@@ -144,11 +144,6 @@ public class JoinOKCon implements Controller {
 	 		System.out.println("예외 상황 발생!");
 	 	}
 	 	System.out.println("값이 잘 입력되었습니다.");
-	 	System.out.println(nutritionfact.getMb_Id());
-	 	System.out.println(nutritionfact.getR_Carbohydrate());
-	 	System.out.println(nutritionfact.getR_Protein());
-	 	System.out.println(nutritionfact.getR_Fat());
-	 	System.out.println(nutritionfact.getR_Calories());
 	 	NutritionfactDAO dAo = new NutritionfactDAO();
 	 	int result = dAo.insertNutritionfact(nutritionfact);
 	 	if(result > 0) {
