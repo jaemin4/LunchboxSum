@@ -91,15 +91,17 @@
 			<div id="main">
 				<div id="dosirak">
 					<div class="dosirak-row rf">
-						<div id="first" class="s"></div>
-						<div id="second" class="s"></div>
-						<div id="third" class="s"></div>
+						<div id="first1" class="s"></div>
+						<div id="secnd2" class="s"></div>
+						<div id="third3" class="s"></div>
 					</div>
 					<div class="dosirak-row rs">
-						<div id="fourth" class="s"></div>
-						<div id="fifth" class="s"></div>
+						<div id="fourh4" class="s"></div>
+						<div id="fifth5" class="s"></div>
 					</div>
 				</div>
+				<button id="Lun_CompleteB" class="btn btn-warning btn-lg">완성</button>
+				
 			</div>
 
 			<div id="ad">
@@ -167,27 +169,27 @@
 		</div>
 
 		<script>
-      $("#first").click(function() {
+      $("#first1").click(function() {
          $("#main_box").hide();
          $(".search_box").hide();
          $("#search_box1").fadeIn();
       });
-      $("#second").click(function() {
+      $("#secnd2").click(function() {
          $("#main_box").hide();
          $(".search_box").hide();
          $("#search_box2").fadeIn();
       });
-      $("#third").click(function() {
+      $("#third3").click(function() {
          $("#main_box").hide();
          $(".search_box").hide();
          $("#search_box3").fadeIn();
       });
-      $("#fourth").click(function() {
+      $("#fourh4").click(function() {
          $("#main_box").hide();
          $(".search_box").hide();
          $("#search_box4").fadeIn();
       });
-      $("#fifth").click(function() {
+      $("#fifth5").click(function() {
          $("#main_box").hide();
          $(".search_box").hide();
          $("#search_box5").fadeIn();
@@ -211,19 +213,19 @@
             }
          }
       })
-      $("#first").click(function() {
+      $("#first1").click(function() {
          $("#ingi").hide();
       });
-      $("#second").click(function() {
+      $("#secnd2").click(function() {
          $("#ingi").hide();
       });
-      $("#third").click(function() {
+      $("#third3").click(function() {
          $("#ingi").hide();
       });
-      $("#fourth").click(function() {
+      $("#fourh4").click(function() {
          $("#ingi").hide();
       });
-      $("#fifth").click(function() {
+      $("#fifth5").click(function() {
          $("#ingi").hide();
       });
       
@@ -244,11 +246,11 @@ let Result_time = "";
 
 
 //2.도시락창 클릭시 기능
-let TempButton1 = document.querySelector("#first");
-let TempButton2 = document.querySelector("#second");
-let TempButton3 = document.querySelector("#third");
-let TempButton4 = document.querySelector("#fourth");
-let TempButton5 = document.querySelector("#fifth");
+let TempButton1 = document.querySelector("#first1");
+let TempButton2 = document.querySelector("#secnd2");
+let TempButton3 = document.querySelector("#third3");
+let TempButton4 = document.querySelector("#fourh4");
+let TempButton5 = document.querySelector("#fifth5");
 
 
 //2.5클릭시 검색창 뜸
@@ -258,9 +260,10 @@ function search_Model(){
       //클릭한 버튼의 아이디//
       let ButtonId = this.id;
       let ButtonId_s = document.getElementById(`\${ButtonId}`);
-      console.log(ButtonId)
+      console.log(ButtonId+" : 버튼 아이디!!!!!!!!!!!!")
       
-      let ButtonId_Name = ButtonId.substr(11,11);
+      let ButtonId_Name = ButtonId.substr(5,5);
+      console.log(ButtonId_Name)
       
       //
       let SelectImg = "";
@@ -293,13 +296,13 @@ function search_Model(){
                                        <br>
                                        <div class="btn-group">
                                     <button class="btn btn-warning btn-lg" type="submit" id = 'searchbar' >찾기</button>
-                                    <button id="Lun_CompleteB" class="btn btn-warning btn-lg">완성</button>
                                   </div>
                               	</div>
-                              
-                              
-                            </div>`;
+                            </div>
+                            
+                            `;
                            
+                            
         //조리방식 , 소요시간 , 난이도 function ========================================        
        let method = document.getElementById("Method");
        let level = document.getElementById("Level");
@@ -766,7 +769,8 @@ let SearchBar = document.getElementById("searchbar");
                                  contentType: "application/json",
                                  data:{"LunchBox_seq" : data , "Lunchbox_name" : lun_name},
                                
-                            });    
+                            });  
+                               location.href = "GoLunchResult.do?lb_seq="+data;
                             })
                       
                          
