@@ -138,7 +138,6 @@
                <div class="btn-group">
                  <button type="button" class="btn btn-warning" onclick="location.href='GoUpdate.do'">정보수정</button>
                  <button type="button" class="btn btn-warning" onclick="location.href='Logout.do'">로그아웃</button>
-                <button type="button" class="btn btn-warning" onclick="location.href='GoDelete.do'">회원탈퇴</button>
                <!-- 지울예정!! -->
                <button onclick="location.href='GoResult.do?mb_id=admin&lb_seq=1'" class="btn btn-primary">결과</button>
                </div>
