@@ -12,13 +12,14 @@ public class RecipeboxDAO {
 	
 	private SqlSessionFactory sqlSessionFactory = SqlSessionManager.getSqlSessionFactiory();
 
-	public ArrayList<Recipe> Search_Keyword(String keyword) {
+	public ArrayList<Recipe> Search_Keyword(Recipe dto) {
 		
 		ArrayList<Recipe> list = new ArrayList<>();
 		SqlSession sqlSession = sqlSessionFactory.openSession(true);
-		System.out.println(keyword+"체크");
+		System.out.println(dto.getIngredient()+"체크");
 		
-		list = (ArrayList)sqlSession.selectList("SelectAll","%"+keyword+"%");
+		//list = (ArrayList)sqlSession.selectList("SelectAll","%"+keyword+"%");
+		list = (ArrayList)sqlSession.selectList("com.smhrd.model.RecipeboxDAO.SelectAll",dto);
 		sqlSession.close();
 		
 		
@@ -76,13 +77,14 @@ public class RecipeboxDAO {
 	}
 	
 	
-	  public int Insert_Completelb(Tbl_Lunchbox tlx) { int result = 0;
+	  public int Insert_Completelb(Tbl_Lunchbox tlx) { 
+		  int result = 0;
 	  
-	  Tbl_Lunchbox tbl_lunchbox = tlx;
-	  
-	  SqlSession sqlSession = sqlSessionFactory.openSession(true); result =
-	  sqlSession.insert("com.smhrd.model.RecipeboxDAO.Insert_CompleteData",
-	  tbl_lunchbox); sqlSession.close();
+		  Tbl_Lunchbox tbl_lunchbox = tlx;
+		  
+		  SqlSession sqlSession = sqlSessionFactory.openSession(true); 
+		  result =sqlSession.insert("com.smhrd.model.RecipeboxDAO.Insert_CompleteData", tbl_lunchbox);
+		  sqlSession.close();
 	  
 	  return result; }
 	 
