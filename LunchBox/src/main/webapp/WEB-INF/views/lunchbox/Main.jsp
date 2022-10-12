@@ -25,7 +25,7 @@
 
 <link rel="stylesheet" type="text/css" href="asset/lunchboxloc.css">
 <link rel="stylesheet" type="text/css" href="asset/mainstyle.css">
-<<<<<<< HEAD
+
 		<style>
 			#search_box1{
 					background-color: #fff;
@@ -35,7 +35,7 @@
 					height: 80%;
 					background-color: red;
 				}
-=======
+
       <style>
          #search_box1{
                background-color: #fff;
@@ -47,13 +47,10 @@
             }
 
       
->>>>>>> branch 'main' of https://github.com/nemutai123/Lunchbox_simulator.git
 
-<<<<<<< HEAD
 		
 
-=======
->>>>>>> branch 'main' of https://github.com/nemutai123/Lunchbox_simulator.git
+
 <style>
  #Lun_CompleteB{
   border: 0;
