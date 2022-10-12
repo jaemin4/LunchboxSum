@@ -25,19 +25,18 @@
 
 <link rel="stylesheet" type="text/css" href="asset/lunchboxloc.css">
 <link rel="stylesheet" type="text/css" href="asset/mainstyle.css">
-
-<!-- 			<style>
-				#search_box1{
+		<style>
+			#search_box1{
 					background-color: #fff;
-				}
-				.recepie-list-box{
+			}
+			.recepie-list-box{
 					padding: 20px;
 					height: 80%;
 					background-color: red;
 				}
 
-			</style>
- -->
+		
+
 <style>
  #Lun_CompleteB{
   border: 0;
@@ -107,13 +106,13 @@
 			<div id="main">
 				<div id="dosirak">
 					<div class="dosirak-row rf">
-						<div id="first" class="s"></div>
-						<div id="second" class="s"></div>
-						<div id="third" class="s"></div>
+						<div id="first1" class="s"></div>
+						<div id="second2" class="s"></div>
+						<div id="third3" class="s"></div>
 					</div>
 					<div class="dosirak-row rs">
-						<div id="fourth" class="s"></div>
-						<div id="fifth" class="s"></div>
+						<div id="fourh4" class="s"></div>
+						<div id="fifth5" class="s"></div>
 					</div>
 				</div>
 			</div>
@@ -150,10 +149,10 @@
 					</div>
 				</div>
 			</div>
-<<<<<<< HEAD
+
 			<!-- <img class="search_box" id="search_box1" src="asset/image/exsearch1.PNG"> -->
 			
-			<div class = recipe_con>
+		<div class = recipe_con>
 				
 				<div id="lunName_area"></div>
 				<div id="recipe_area"></div>
@@ -161,26 +160,8 @@
 				<div id="crawling_area"></div>
 				
 				<div class = "Complete_Lun"><button id="Lun_CompleteB" width = 40px>완성</button></div>
-				
-=======
-			<!-- 메인기능 들어가는부분입니다.
-			<img class="search_box" id="search_box1" src="asset/image/exsearch1.PNG"> -->
-			<div class="search_box" id="search_box1">
-				<input type="text">
-				<input type="button" value="검색">
-				<div class="recepie-list-box">
-
-				</div>
->>>>>>> branch 'main' of https://github.com/nemutai123/Lunchbox_simulator.git
-			</div>
-<<<<<<< HEAD
-			
-
-
-=======
->>>>>>> branch 'main' of https://github.com/nemutai123/Lunchbox_simulator.git
-			
 		</div>
+		
 		<div id = "slideimg">
 		<div id="ingi" align="center">
 		<b>오늘의 인기 반찬!!</b>
@@ -204,27 +185,27 @@
 		</div><!-- 전체 div 마무리 -->
 
 	<script>
-		$("#first").click(function() {
+		$("#first1").click(function() {
 			$("#main_box").hide();
 			$(".search_box").hide();
 			$("#search_box1").fadeIn();
 		});
-		$("#second").click(function() {
+		$("#second2").click(function() {
 			$("#main_box").hide();
 			$(".search_box").hide();
 			$("#search_box2").fadeIn();
 		});
-		$("#third").click(function() {
+		$("#third3").click(function() {
 			$("#main_box").hide();
 			$(".search_box").hide();
 			$("#search_box3").fadeIn();
 		});
-		$("#fourth").click(function() {
+		$("#fourh4").click(function() {
 			$("#main_box").hide();
 			$(".search_box").hide();
 			$("#search_box4").fadeIn();
 		});
-		$("#fifth").click(function() {
+		$("#fifth5").click(function() {
 			$("#main_box").hide();
 			$(".search_box").hide();
 			$("#search_box5").fadeIn();
@@ -249,9 +230,7 @@
 			}
 		})
 	</script>
-<<<<<<< HEAD
-	
-	<!-- main script ============================================================== main script-->
+
 	
 	
 <script>
@@ -266,11 +245,11 @@ let Result_time = "";
 
 
 //2.도시락창 클릭시 기능
-let TempButton1 = document.querySelector("#first");
-let TempButton2 = document.querySelector("#second");
-let TempButton3 = document.querySelector("#third");
-let TempButton4 = document.querySelector("#fourth");
-let TempButton5 = document.querySelector("#fifth");
+let TempButton1 = document.querySelector("#first1");
+let TempButton2 = document.querySelector("#second2");
+let TempButton3 = document.querySelector("#third3");
+let TempButton4 = document.querySelector("#fourh4");
+let TempButton5 = document.querySelector("#fifth5");
 
 
 //2.5클릭시 검색창 뜸
@@ -280,9 +259,11 @@ function search_Model(){
 		//클릭한 버튼의 아이디//
 		let ButtonId = this.id;
 		let ButtonId_s = document.getElementById(`\${ButtonId}`);
-		console.log(ButtonId)
+		console.log(ButtonId+" : 버튼 아이디!!!!!!!!!!!!")
 		
-		let ButtonId_Name = ButtonId.substr(11,11);
+		let ButtonId_Name = ButtonId.substr(5,5);
+		console.log(ButtonId_Name)
+		
 		
 		//
 		let SelectImg = "";
@@ -290,6 +271,7 @@ function search_Model(){
 		//도시락버튼의 번호 푸쉬 후 선택한 레시피 푸쉬할예정
 		let User_Recipe = [];
 		User_Recipe.push(ButtonId_Name);
+		console.log(ButtonId_Name +" : 버튼 아이디!!!!!!!!!!!!")
 		
 		
 		search_model.innerHTML = "";
@@ -311,14 +293,13 @@ function search_Model(){
                         	 		</div>
                         		
                         		
-                        		
                             </div>`;
                            
         //조리방식 , 소요시간 , 난이도 function ========================================        
        let method = document.getElementById("Method");
        let level = document.getElementById("Level");
        let time = document.getElementById("Time");
-       
+       let temp_lb_seq = "";
 
        
        
@@ -472,16 +453,6 @@ let SearchBar = document.getElementById("searchbar");
     function search_click(){//search_click =========================================
     	console.log(Result_method) 
     	
-/*     	if(type_list.length == 0){
-    		type_list[0] = "null값";
-    	}
-    	if(type_list.length == 1){
-    		type_list[1] = "null값2";
-    	}
-    	if(type_list.length == 2){
-    		type_list[2] = "null값3";
-    	}
- */
 
     	let num = []
     	let name = []
@@ -600,7 +571,7 @@ let SearchBar = document.getElementById("searchbar");
     	            
     	        //5.선택한 레시피의 대한 정보를 가져오는 기능
     	        let recipe_num = String(this.id);
-    	        
+    	    
     	        let Result_Html = "";
     	      
     	        for(let i = 0; i<Recipe.Num.length; i++){
@@ -726,8 +697,8 @@ let SearchBar = document.getElementById("searchbar");
     	    
     	    //5-3. 사용자가 선택완료 누를시 도시락 저장
     	    let SelectComplete = document.getElementById("Select_Complete");
-    	   
-    	
+    	   	
+    		alert(User_Recipe);
     	    function Select_complete(){
     	    	
     	    	recipe_area.innerHTML = "";
@@ -750,19 +721,22 @@ let SearchBar = document.getElementById("searchbar");
     	          		console.log(data)
     	          		
     	 	          	$.ajax({
+    	 	          		
         	          		url : "ajax_LunchSuB.do",
         	    	        dataType:"json",
         	    	        contentType: "application/json",
         	    	        data:{"Seq" : User_Recipe[0] , "Num" : User_Recipe[1] ,"LunchBox_seq" : data},
-        	          		
-        	    	        
+
         	          	});
     	          	//7 도시락 완성버튼 클릭시 최종 저장하는 기능
     	   	        let LunCompleteB = document.querySelector("#Lun_CompleteB");
+    	          	
     	   	         //도시락 순번
+    	   	         console.log("데이터 확인 : "+User_Recipe);
     	   	         function CompeteR_Click() {
     	   	         	if(CompleteR_Num_list.length >= 2){
-    	   	         		
+    	   	         	
+    	   	         		lunName_area.innerHTML = "";
     	   	         		//tbl_lunchbox_detail테이블을 이용해서 tbl_lunchbox에 최종저장
     	   	         		lunName_area.innerHTML = 
     	   	         			`<label>도시락 이름 : </label>
@@ -772,18 +746,21 @@ let SearchBar = document.getElementById("searchbar");
     	   	         		
     	   	         		let NameButton = document.getElementById("Lunchbox_Name_button");
     	   	         		
+    	   	         		
     	   	         		NameButton.addEventListener('click',function(){
     	   	         			let LunchboxName = document.getElementById("Lunchbox_Name");
     	   	         			let lun_name = LunchboxName.value;
     	   	         			alert("저장완료")
-    	   	         			location.href = "GoLunchResult.do";
 	    	   	         		$.ajax({
 	    	   						url : "ajax_Insert_CompleteLB.do",
 	            	    	        dataType:"json",
 	            	    	        contentType: "application/json",
 	            	    	        data:{"LunchBox_seq" : data , "Lunchbox_name" : lun_name},
 	    	   						
-	    	   					});	 
+	    	   					});
+    	   	         			
+    	   	         			location.href = "GoLunchResult.do?lb_seq="+data;
+    	   	         		 
     	   	         		})
     	   	         
     	   					

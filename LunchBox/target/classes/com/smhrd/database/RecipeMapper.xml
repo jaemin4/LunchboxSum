@@ -9,7 +9,7 @@
 	<select id = "SelectAll" resultType = "Recipe" parameterType="Recipe">
 		<!-- select * from tbl_recipe where ingredient like #{keyword} -->
 		select * from (select * from tbl_recipe where ingredient like #{ingredient})
-		where recipe_time like #{recipe_time} and recipe_method in
+		where recipe_time like #{recipe_time} or recipe_method in
 		<foreach collection="method_r" item="item" index="index" open="(" close=")" separator=",">
 		#{item}
 		</foreach>

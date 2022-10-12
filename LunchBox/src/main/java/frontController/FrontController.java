@@ -115,9 +115,9 @@ public class FrontController extends HttpServlet {
 		mappings.put("/GoNutrition.do", new GoNutritionCon());
 		mappings.put("/GoMain.do",new GoMainCon());
 
-		mappings.put("/GoLunchResult.do",new GoLunchResult());
+		mappings.put("/GoLunchResult.do",new ResultCon());
 
-		mappings.put("/GoResult.do", new ResultCon());
+		/*mappings.put("/GoResult.do", new ResultCon());*/
 
 	}
 
