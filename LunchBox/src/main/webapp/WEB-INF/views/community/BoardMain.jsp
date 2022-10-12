@@ -125,7 +125,7 @@ tr :hover{
 
                <!-- el표현식을 활용하면 scope영역에 객체바인딩 된 데이터를 바로 꺼내올 수 있다. -->
                <c:forEach var="board" items="${list2}">
-                  <tr onclick='location.href="UpdateRead.do?article_seq=${board.article_seq}&article_cnt=${board.article_cnt}"' style="cursor: pointer;">
+                  <tr onclick='location.href="UpdateRead.do?article_seq=${board.article_seq}&article_cnt=${board.article_cnt}&article_file=${board.article_file}"' style="cursor: pointer;">
                      <td>${board.article_title}</td>
                      <td>${board.mb_id}</td>
                      <td>${board.article_date}</td>
@@ -151,9 +151,10 @@ tr :hover{
 				<c:forEach begin="1" end="${sum}" var="i">
 					<a href="SelectAll.do?page=${i}">${i}</a>
 				</c:forEach>
-         </div>
-     
 				<a href="SelectAll.do?page=${i+1}">&raquo;</a>
+         </div>
+
+     
 			</div>
 
 

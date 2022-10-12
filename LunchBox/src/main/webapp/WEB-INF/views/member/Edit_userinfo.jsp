@@ -7,9 +7,23 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css">
 <style type="text/css">
 
-.box-wrap{
+table{
+	 width: 100%;
+    height: 100px;
+}
+
+.box-wrap1{
+	height: 130px;
+	background-color:gold;
+	font-size: 20px;
+}
+
+.box-wrap2{
+	height: 100px;
+	width: 400px;
 	background-color:gold;
 	font-size: 20px;
 }
@@ -20,7 +34,7 @@
     font-family: sans-serif;
 }
 .wrap {
-    height: 100%;
+    height: 94%;
     width: 100%;
     background-image: url(asset/image/bgbg5.JPG);
     background-repeat : no-repeat;
@@ -28,7 +42,16 @@
     background-size: cover;
     position: absolute;
 }
-.form-wrap {
+
+.form-wrap1 {
+    width: 450px;
+    height: 450px;
+    position: relative;
+    margin: 5% auto;
+    padding: 5px;
+    overflow: hidden;
+}
+.form-wrap2 {
     width: 450px;
     height: 350px;
     position: relative;
@@ -36,12 +59,14 @@
     padding: 5px;
     overflow: hidden;
 }
-.button-wrap {
+
+.button-wrap1 {
     width: 450px;
-    margin: 20px auto;
+    margin: 35px auto;
     position: relative;
     border-radius: 30px;
 }
+
 
 ul {
 	list-style-type: none;
@@ -94,10 +119,10 @@ li a:hover {
 	System.out.println(user_id);
     %>
 <div class="wrap">
-    <div class="form-wrap">
-    	<div class="button-wrap">
+    <div class="form-wrap1">
+    	<div class="button-wrap1">
     		<h1>회원 정보 수정</h1>
-    		<div class="box-wrap" style="border:2px solid">
+    		<div class="box-wrap1" style="border:2px solid">
 		    <form name="edit" action="Update.do" method="post">
 		        <table>
 		            <tr>
@@ -138,17 +163,54 @@ li a:hover {
 		            <tr align="right">
 		                <td colspan = "2">
 		                    <div>
-		                        <input type="button" onclick="editform_check();" value="수정하기">
+		                    	<button type="button" class="btn btn-warning" onclick="editform_check();">수정하기</button>
 		                    </div>   
 		                </td>
 		            </tr>       
 		        </table>
 		    </form>
+		    <div class="form-wrap2">
+		    	<div class="button-wrap2">
+				    <h1>회원 탈퇴</h1>
+		    		<div class="box-wrap2" style="border:2px solid">
+					<form name="deleteMember" action="Delete.do" method="post">
+				        <table>
+				            <tr>
+				                <th>ID</th>
+				                <td><input type="text" name="mb_ID" id="id" placeholder="<%=user_id%>"></td>
+				            </tr>
+				            <tr>
+				                <th>PW</th>
+				                <td><input type="password" name="mb_PW" id="pw" placeholder="PW를 입력하세요."></td>
+				            </tr>
+				            <tr align="right">
+				            	<td colspan="2px"><button type="button" class="btn btn-warning" onclick="deleteform_check();">탈퇴하기</button></td>
+				            </tr>
+				        </table>
+				    </form>
+		    	</div>
+		    	</div>
+		    	</div>
 		    </div>
 		 </div>
 	</div>
 </div>
 <script>
+	function deleteform_check(){
+		var id = document.getElementById("id");
+		var pw = document.getElementById("pw");
+		if(id.value == ""){
+			alert("아이디를 입력해주세요.")
+			id.focus();
+			return false;
+		}
+		if(pw.value == ""){
+			alert("비밀번호를 입력해주세요.")
+			pw.focus();
+			return false;
+		}
+		document.deleteMember.submit();
+	}
     function editform_check(){
     	var y = document.getElementById("y");
     	var m = document.getElementById("m");
