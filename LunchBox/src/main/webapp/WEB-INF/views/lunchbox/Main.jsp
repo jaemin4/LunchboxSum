@@ -43,13 +43,6 @@
 }
 </style>
 
-
-
-
-
-
-
-
 <title>메인페이지입니다.</title>
 </head>
 <body>
@@ -231,7 +224,12 @@
       
       
    </script>
-
+	<script>
+	$("#first1").click(function() {
+        $("#ingi").hide();
+     });
+	
+	</script>
 
 
 		<script>
@@ -683,7 +681,8 @@ let SearchBar = document.getElementById("searchbar");
                        };
 
                        recipe_area.innerHTML = 
-                         `<table border = 1 id="foodplace">
+                         `<div style="overflow:scroll; width:550px; height:800px;">
+                         <table border = 1 id="foodplace">
                              <tr>
                                  <td colspan = 3> \${ButtonId_Name}번째 도시락 </td>
                              </tr>
@@ -703,10 +702,11 @@ let SearchBar = document.getElementById("searchbar");
                          
                              \${Result_Html}
                              <tr>
-                                 <td colspan = "2"><button id = "Go_Back">뒤로가기</button></td>
-                                 <td colspan = "2" align = "center"><button id = "Select_Complete">선택 완료</button></td>   
+                                 <td colspan = "2"><button id = "Go_Back" class="btn btn-warning btn-lg">뒤로가기</button></td>
+                                 <td colspan = "2" align = "center"><button id = "Select_Complete" class="btn btn-warning btn-lg">선택 완료</button></td>   
                              </tr>
-                         </table>`
+                         </table>
+                         </div>`
                    }
            }//for문
            
@@ -751,9 +751,12 @@ let SearchBar = document.getElementById("searchbar");
                             
                             //tbl_lunchbox_detail테이블을 이용해서 tbl_lunchbox에 최종저장
                             lunName_area.innerHTML = 
-                               `<label>도시락 이름 : </label>
+                               `<div id="Searchboxs" class="inputBox">
+                               <label>도시락 이름 : </label>
                              <input type = "text" id = "Lunchbox_Name">
-                             <button type = "button" id = "Lunchbox_Name_button">완료</button>`;
+                             <button type = "button" id = "Lunchbox_Name_button">완료</button>
+                             </div>
+                             `;
                             //사용자가 입력한 도시락 이름을 lun_name이라는 변수에 담기 
                             
                             let NameButton = document.getElementById("Lunchbox_Name_button");
@@ -828,7 +831,7 @@ function crawling(search){
    console.log("==크롤링 시작==")
    
    $.ajax({
-      url : 'http://59.3.58.53:3750/crawling',
+      url : 'http://172.30.1.39:3760/crawling',
       type : 'post',
       data : {
          'search' : search

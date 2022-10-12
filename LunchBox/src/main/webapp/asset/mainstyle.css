@@ -61,7 +61,6 @@ li a:hover {
    width: 230px;
     height: 217px;
 }
-
 .f {
    background-color: azure;
 }
@@ -140,7 +139,13 @@ div{
    border: 1px solid black;
    display: flex;
    background-color: #f1c40f;
+   flex-direction : column; 
 }
+
+.inputBox{
+	flex-direction : column;
+}
+
 
 #foodplace{
    background-color: #f1c40f;

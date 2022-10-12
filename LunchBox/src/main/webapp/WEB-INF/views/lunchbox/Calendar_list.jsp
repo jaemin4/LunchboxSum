@@ -10,14 +10,14 @@
 <head>
 <meta charset="UTF-8">
 <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <!-- jQuery library -->
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <!-- Latest compiled JavaScript -->
-<script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2"></script>
 
 <!-- fullcalender -->
 <link href='.//resources/fullcalendar-5.11.3/lib/main.css'
@@ -151,18 +151,60 @@
 .fc-day-number.fc-sun.fc-past {
  color:#FF0000; 
 };
+
+
+/* 네비게이션바 스타일*/
+ul {
+   list-style-type: none;
+   margin: 0;
+   padding: 0;
+   overflow: hidden;
+   background-color: rgba(0,24,113,1);
+}
+
+li {
+   float: left;
+}
+
+li a {
+   display: block;
+   color: white;
+   text-align: center;
+   padding: 14px 16px;
+   text-decoration: none;
+}
+
+li b {
+   display: block;
+   color: rgba(255,181,73,1);
+   text-align: center;
+   padding: 14px 16px;
+   text-decoration: none;
+}
+
+
+
+li a:hover {
+   background-color: #111;
+}
+
+
+
+
 </style>
 <title>Insert title here</title>
 </head>
 <body>
 
-	<!-- 
-		메인기능2 - 런치박스 플래너
-		
-		달력페이지!
-		저장해둔 부분만 색을 입혀서 출력
-		>> 누르면 해당날짜에 저장된 도시락상세페이지로 이동
-	-->
+<div id="header">
+         <ul>
+            <li><b>LunchBoxsimulator</b></li>
+            <li><a href="GoMain.do"> Main</a></li>
+            <li><a href="GoNutrition.do">영양소 및 칼로리</a></li>
+            <li><a href="GoAsk.do">자주묻는질문</a></li>
+            <li><a href="SelectAll.do">도시락정보공유게시판</a></li>
+         </ul>
+		</div>
 	
 	<% String mb_id = (String)request.getAttribute("mb_id"); %>
 	<h1 style="color:gold">LUNCH PLANNER</h1>
