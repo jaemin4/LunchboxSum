@@ -58,8 +58,13 @@ li a:hover {
 }
 
 .s {
+<<<<<<< HEAD
+	width: 230px;
+    height: 217px;
+=======
    width: 210px;
    height: 210px;
+>>>>>>> branch 'main' of https://github.com/nemutai123/Lunchbox_simulator.git
 }
 
 .f {
@@ -86,6 +91,7 @@ html {
 div{
    border: 1px solid black;
 }*/
+
 #layout {
    width: 100%;
    height: 100%;
@@ -142,6 +148,37 @@ div{
    display: flex;
 }
 
+<<<<<<< HEAD
+/*사이드 서치박스 메뉴*/
+#Searchboxs{
+	border: 1px solid black;
+	display: flex;
+	background-color: #f1c40f;
+}
+
+#foodplace{
+	background-color: #f1c40f;
+}
+
+table, th, td {
+    border: 1px solid black;
+  }
+table {
+    width: 450px;
+    height: 1000px;
+  }
+
+
+
+
+#Input_Search{
+	width: 559px;
+	height: 55px;
+}
+
+
+
+=======
 #search_box2 {
    width: 100%;
    height: 100%;
@@ -181,6 +218,7 @@ div{
 #search_box5.show {
    display: flex;
 }
+>>>>>>> branch 'main' of https://github.com/nemutai123/Lunchbox_simulator.git
 
 /*하단 인기메뉴*/
 #ingi b{
@@ -188,8 +226,14 @@ div{
 }
 /*투명도*/
 #ingi {     
+<<<<<<< HEAD
+	opacity: 0.9;
+	background-color: #95E1D3;
+	height : 250px;
+=======
    opacity: 0.9;
    background-color: #95E1D3;
+>>>>>>> branch 'main' of https://github.com/nemutai123/Lunchbox_simulator.git
 }
 
 /*이미지 슬라이드*/

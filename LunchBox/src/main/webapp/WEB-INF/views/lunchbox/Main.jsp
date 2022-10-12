@@ -99,7 +99,7 @@
        %>    
    <div id="layout" align="center">
 
-<<<<<<< HEAD
+
 		<div id="header">
 			<ul>
 				<li><b>LunchBoxsimulator</b></li>
@@ -185,18 +185,18 @@
 		<b>오늘의 인기 반찬!!</b>
 		<div id="owl1">
 		<div class="owl-carousel owl-theme">
-=======
+
       <div id="header">
          <ul>
             <li><b>LunchBoxsimulator</b></li>
 
 
             <li><a href="GoLunch.do"> Main</a></li>
->>>>>>> branch 'main' of https://github.com/nemutai123/Lunchbox_simulator.git
+
 
             <li><a href="GoMain.do"> Main</a></li>
 
-<<<<<<< HEAD
+
 	<script>
 		$("#first1").click(function() {
 			$("#main_box").hide();
@@ -246,7 +246,7 @@
 
 	
 	
-=======
+
             <li><a href="GoNutrition.do">영양소 및 칼로리</a></li>
             <li><a href="GoAsk.do">자주묻는질문</a></li>
             <li><a href="SelectAll.do">도시락정보공유게시판</a></li>
@@ -410,7 +410,7 @@ let TempButton5 = document.querySelector("#fifth5");
 
 //2.5클릭시 검색창 뜸
 function search_Model(){
-<<<<<<< HEAD
+
 		
 		
 		//클릭한 버튼의 아이디//
@@ -432,7 +432,7 @@ function search_Model(){
 		
 		
 		search_model.innerHTML = "";
-=======
+
       
       
       //클릭한 버튼의 아이디//
@@ -451,12 +451,12 @@ function search_Model(){
       
       
       search_model.innerHTML = "";
->>>>>>> branch 'main' of https://github.com/nemutai123/Lunchbox_simulator.git
+
         recipe_area.innerHTML = "";
         search_model.innerHTML = 
                        `<div class = "Serach_Model">
     
-<<<<<<< HEAD
+
         						<input class="search-txt" type="text" placeholder="검색어를 입력해 주세요" id = "Input_Search">
                                 	<div class = "Search_Type" id = "Search_Type_id">
                         				<button id = "Method">조리방식</button>
@@ -471,7 +471,7 @@ function search_Model(){
                         	 		</div>
                         		
                         		
-=======
+
                           <input class="search-txt" type="text" placeholder="검색어를 입력해 주세요" id = "Input_Search">
                                    <div class = "Search_Type" id = "Search_Type_id">
                                     <button id = "Method">조리방식</button>
@@ -486,9 +486,7 @@ function search_Model(){
                                   </div>
                               
                               
-                              
->>>>>>> branch 'main' of https://github.com/nemutai123/Lunchbox_simulator.git
-                            </div>`;
+
                            
         //조리방식 , 소요시간 , 난이도 function ========================================        
        let method = document.getElementById("Method");
@@ -646,10 +644,10 @@ let SearchBar = document.getElementById("searchbar");
 //===================================================================================================                  
     
     function search_click(){//search_click =========================================
-<<<<<<< HEAD
+
     	console.log(Result_method) 
     	
-=======
+
        console.log(Result_method) 
        
 /*        if(type_list.length == 0){
@@ -662,7 +660,7 @@ let SearchBar = document.getElementById("searchbar");
           type_list[2] = "null값3";
        }
  */
->>>>>>> branch 'main' of https://github.com/nemutai123/Lunchbox_simulator.git
+
 
        let num = []
        let name = []
@@ -777,7 +775,7 @@ let SearchBar = document.getElementById("searchbar");
 
                function recipe_click(){//====================5.===============
 
-<<<<<<< HEAD
+
     	            console.log(this.id);
     	            
     	        //5.선택한 레시피의 대한 정보를 가져오는 기능
@@ -796,7 +794,7 @@ let SearchBar = document.getElementById("searchbar");
     	            	//사용자가 선택한 레시피코드 User_Recipe로 push하기
     	      
     	            	User_Recipe.push(Recipe.Num[i])
-=======
+
                    console.log(this.id);
                    
                //5.선택한 레시피의 대한 정보를 가져오는 기능
@@ -815,7 +813,7 @@ let SearchBar = document.getElementById("searchbar");
                       //사용자가 선택한 레시피코드 User_Recipe로 push하기
              
                       User_Recipe.push(Recipe.Num[i])
->>>>>>> branch 'main' of https://github.com/nemutai123/Lunchbox_simulator.git
+
 
                   //replace ''제거
                   let Temp_Cooking_img = Recipe.Cooking_img[i].replace(/\'/gi,"");
@@ -898,7 +896,7 @@ let SearchBar = document.getElementById("searchbar");
 
                        };
 
-<<<<<<< HEAD
+
     	                recipe_area.innerHTML = 
     	                  `<table border = 1>
     	                      <tr>
@@ -1029,7 +1027,7 @@ let SearchBar = document.getElementById("searchbar");
     	    
     	}//=========================== 5.=========================
     				
-=======
+
                        recipe_area.innerHTML = 
                          `<table border = 1>
                              <tr>
