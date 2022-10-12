@@ -5,6 +5,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+
 <meta charset="EUC-KR">
 <title>Insert title here</title>
 <link rel="stylesheet"
@@ -102,7 +103,7 @@ h1{
 
 					<div class="form-group">
 						<img width="40%" alt=""
-							src="resources/image/${board.article_file}">
+							src="resources/image/${board.article_file}" name = "article_file" id = "article_file">
 					</div>
 					<div class="form-group">
 						<label>내용:</label>

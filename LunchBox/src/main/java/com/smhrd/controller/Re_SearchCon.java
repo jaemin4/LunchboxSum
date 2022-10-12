@@ -35,14 +35,68 @@ public class Re_SearchCon implements Controller{
 			Gson gson = new Gson(); 
 			
 			String search = request.getParameter("Search");
+			String method = request.getParameter("Method");
+			String level = request.getParameter("Level");
+			String time = request.getParameter("Time");
+			
+			
+			
+			String[] method_r = new String[4];
+
+			
 			
 			System.out.println("Re_SearchCon");
 			System.out.println("받아온 데이터 : "+search);
-
+			System.out.println("받아온 데이터 : "+method);
+			System.out.println("받아온 데이터 : "+level);
+			System.out.println("받아온 데이터 : "+time);
+		
+			
+			System.out.println(search+"검색 확인");
+			
+			//조리 방식
+			 
+			if(method.equals("조림,무침,절임,비빔")) {
+				method_r = method.split(",");
+			}
+			else if(method.equals("부침,튀김,굽기,삶기")) {
+				method_r = method.split(",");
+			}
+			else if(method.equals("끓이기,찜,데치기")) {
+				method_r = method.split(",");
+			}
+			else if(method.equals("볶음,기타")) {
+				method_r = method.split(",");
+			}
+			else {
+				for(int i = 0; i<4; i++) {
+					method_r[i] = "%";
+				}
+			}
+			if(search.length()<1) {
+				search = "%";
+			}
+			else {
+				search = "%"+search+"%";
+			}
+			
+			time = time+"%"; 
+			level = level+"%";
+			
+		
+			Recipe dto = new Recipe(method_r,time,level,search);
+			System.out.println("보내줄 데이터");
+			System.out.println(method_r[0]);
+			System.out.println(search);
+			System.out.println(time);
+			System.out.println(level);
+			
+		if(search.length()>=1) {
+			
 			RecipeboxDAO dao = new RecipeboxDAO();
 			ArrayList<Recipe> list = new ArrayList<>();
 			
-			list = dao.Search_Keyword(search);
+			list = dao.Search_Keyword(dto);
 
 			//==================================================================================
 			String jsonArr = gson.toJson(list);
@@ -53,13 +107,54 @@ public class Re_SearchCon implements Controller{
 			out.print(jsonArr);
 			
 		
+			}
 		}
-		
 		catch(Exception e){
 			System.out.println(e);
 		}
 
-
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		return null;
 	}
 }

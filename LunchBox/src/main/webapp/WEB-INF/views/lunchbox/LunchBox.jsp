@@ -8,76 +8,36 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-<!-- jQuery library -->
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<!-- Latest compiled JavaScript -->
-<script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
-<title>Insert title here</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	
+<!-- Latest compiled JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<link rel="icon" href="data:;base64,iVBORw0KGgo=">
+
+<link rel="stylesheet" href="asset/owl/owl.carousel.min.css">
+<link rel="stylesheet" href="asset/owl/owl.theme.default.min.css">
+<script src="asset/owl/jquery.min.js"></script>
+<script src="asset/owl/owl.carousel.min.js"></script>
+<script src="asset/owl/owl.carousel.js"></script>
+<script src="asset/owl/atuo.js"></script>
+
+<link rel="stylesheet" type="text/css" href="asset/lunchboxloc.css">
+<link rel="stylesheet" type="text/css" href="asset/mainstyle.css">
+
+
+
+
+
 <style>
 @import url(https://fonts.googleapis.com/css?family=BenchNine:700);
 
-.snip1535 {
-	background-color: #c47135;
-	border: none;
-	color: #ffffff;
-	cursor: pointer;
-	display: inline-block;
-	font-family: 'BenchNine', Arial, sans-serif;
-	font-size: 1em;
-	font-size: 22px;
-	line-height: 1em;
-	margin: 15px 40px;
-	outline: none;
-	padding: 12px 40px 10px;
-	position: relative;
-	text-transform: uppercase;
-	font-weight: 700;
-}
-
-.snip1535:before, .snip1535:after {
-	border-color: transparent;
-	-webkit-transition: all 0.25s;
-	transition: all 0.25s;
-	border-style: solid;
-	border-width: 0;
-	content: "";
-	height: 24px;
-	position: absolute;
-	width: 24px;
-}
-
-.snip1535:before {
-	border-color: #c47135;
-	border-right-width: 2px;
-	border-top-width: 2px;
-	right: -5px;
-	top: -5px;
-}
-
-.snip1535:after {
-	border-bottom-width: 2px;
-	border-color: #c47135;
-	border-left-width: 2px;
-	bottom: -5px;
-	left: -5px;
-}
-
-.snip1535:hover, .snip1535.hover {
-	background-color: #c47135;
-}
-
-.snip1535:hover:before, .snip1535.hover:before, .snip1535:hover:after,
-	.snip1535.hover:after {
-	height: 100%;
-	width: 100%;
-}
- 
 
 
 
@@ -85,21 +45,40 @@
 
 </head>
 <body>
+	
+			<div id="con">
+				<div id="dosirak">
+				
+					<div class="dosirak-row rf">
+						<div id="first" class="s"></div>
+						<div id="second" class="s"></div>
+						<div id="third" class="s"></div>
+					</div>
+					
+					<div class="dosirak-row rs">
+						<div id="fourth" class="s"></div>
+						<div id="fifth" class="s"></div>
+					</div>
+					
+				</div>
+				
+				<div class = "Complete_Lun">
+					<button id="Lun_CompleteB" width = 40px>도시락 완성하기</button>
+				</div>		
+				
+				<div id="lunName_area"></div>
+				<div id="recipe_area"></div>
+				<div class="search-box" id="search_model"></div>
+				<div id="crawling_area"></div>
+			</div>
+			
+		
 
-	<button class="snip1535" id="Temp_Button1">1</button>
-	<button class="snip1535 hover" id="Temp_Button2">2</button>
-	<button class="snip1535" id="Temp_Button3">3</button>
-	<button class="snip1535" id="Temp_Button4">4</button>
-	<button class="snip1535" id="Temp_Button5">5</button>
-	<button class="snip1535" id="Lun_CompleteB">도시락 완성하기</button>
+		
 
-	<div id="lunName_area"></div>
-
-
-	<div id="recipe_area"></div>
-
-	<div class="search-box" id="search_model"></div>
-	<div id="crawling_area"></div>
+		
+	
+		
 
 
 
@@ -110,19 +89,23 @@
 let CompleteR_Num_list = [];
 
 
+let Result_method = "";
+let Result_level = "";
+let Result_time = "";
+
 
 
 //2.도시락창 클릭시 기능
-let TempButton1 = document.querySelector("#Temp_Button1");
-let TempButton2 = document.querySelector("#Temp_Button2");
-let TempButton3 = document.querySelector("#Temp_Button3");
-let TempButton4 = document.querySelector("#Temp_Button4");
-let TempButton5 = document.querySelector("#Temp_Button5");
+let TempButton1 = document.querySelector("#first");
+let TempButton2 = document.querySelector("#second");
+let TempButton3 = document.querySelector("#third");
+let TempButton4 = document.querySelector("#fourth");
+let TempButton5 = document.querySelector("#fifth");
 
 
 //2.5클릭시 검색창 뜸
 function search_Model(){
-
+		
 		
 		//클릭한 버튼의 아이디//
 		let ButtonId = this.id;
@@ -142,70 +125,172 @@ function search_Model(){
 		search_model.innerHTML = "";
         recipe_area.innerHTML = "";
         search_model.innerHTML = 
-        					`<div class = "Seach_Model">
+        					`<div class = "Serach_Model">
     
         						<input class="search-txt" type="text" placeholder="검색어를 입력해 주세요" id = "Input_Search">
                                 	<div class = "Search_Type" id = "Search_Type_id">
                         				<button id = "Method">조리방식</button>
                         					<div id = "method_area"></div>
                         					
-                        				<button id = "Level" onclick = "click_level()">난이도</button>
-                        					<div id = "time_area"></div>
-                        					
-                        				<button id = "Time" onclick = "click_time()">소요시간</button>
+                        				<button id = "Level">난이도</button>
                         					<div id = "level_area"></div>
-                        			</div>
-                        		<button class="search-btn" type="submit" id = 'searchbar' >찾기</button>
+                        					
+                        				<button id = "Time">소요시간</button>
+                        					<div id = "time_area"></div>
+                        				<button class="search-btn" type="submit" id = 'searchbar' >찾기</button>
+                        				
+                        	 </div>
+                        		
+                        		
                         		
                             </div>`;
         //조리방식 , 소요시간 , 난이도 function ========================================        
        let method = document.getElementById("Method");
+       let level = document.getElementById("Level");
+       let time = document.getElementById("Time");
+       
+
+       
+       
+       
+    
        function click_method(){
-        	
-        	method_area.innerHtml = `
+        	console.log("TRest")
+        	method_area.innerHTML = `
         	<div>
-        	
-        		<fieldset>
+        		
 	        	  <label>
-	        	    <input type="radio" name="contact" value="method_1" checked />
+	        	    <input type="radio" name="metho" value="조림,무침,절임,비빔" checked />
 	        	    <span>조림,무침,절임,비빔</span>
 	        	    
 	        	  </label>
 	        	 
 	        	  <label>
-	        	    <input type="radio" name="contact" value="method_2" />
+	        	    <input type="radio" name="metho" value="부침,튀김,굽기,삶기" />
 	        	    <span>부침,튀김,굽기,삶기</span>
 	        	  </label>
 	        	  
 	        	  <label>
-	        	    <input type="radio" name="contact" value="method_3" disabled />
+	        	    <input type="radio" name="metho" value="끓이기,찜,데치기" />
 	        	    <span>끓이기,찜,데치기</span>
 	        	  </label>
 	        	  
 	        	  <label>
-	        	    <input type="radio" name="contact" value="method_4" />
+	        	    <input type="radio" name="metho" value="볶음,기타" />
 	        	    <span>볶음,기타</span>
 	        	  </label>
-        		</fieldset>
-        	
+	        	  <button id = "Type_click1">선택</button>
+        		
         	</div>`;
-        }
-        method.addEventListener("click",click_method);
-        
+        	let value1 = $("input[type=radio][name=metho]:checked").val();
+        	
+        	document.getElementById('Type_click1').onclick = function() {
+        	    var radios = document.getElementsByName('metho');
+        	    for (var radio of radios)
+        	    {
+        	        if (radio.checked) {
+        	            alert(radio.value);
+        	            Result_method = radio.value; 
+        	        }
+        	    }
+        	}//
+        	
+        	
+        	
+        }//click_method 끝부분 ============================================
         
         function click_level(){
-        	
-        }
+        	level_area.innerHTML = `
+            	<div>
+            		
+    	        	  <label>
+    	        	    <input type="radio" name="leve" value="초급" checked />
+    	        	    <span>초급</span>
+    	        	  </label>
+    	        	 
+    	        	  <label>
+    	        	    <input type="radio" name="leve" value="중급" />
+    	        	    <span>중급</span>
+    	        	  </label>
+    	        	  
+    	        	  <label>
+    	        	    <input type="radio" name="leve" value="상급" />
+    	        	    <span>상급</span>
+    	        	  </label>
+    	        	  <button id = "Type_click2">선택</button>
+            	
+            	</div>`;
+            	
+            	let value2 = $("input[type=radio][name=leve]:checked").val();
+            	
+            	document.getElementById('Type_click2').onclick = function() {
+            	    var radios = document.getElementsByName('leve');
+            	    for (var radio of radios)
+            	    {
+            	        if (radio.checked) {
+            	            alert(radio.value);
+            	            Result_level = radio.value; 
+            	        }
+            	    }
+            	}//
+       	 }
         
         function click_time(){
-        	
+        	time_area.innerHTML = `
+            	<div>
+            	
+    	        	  <label>
+    	        	    <input type="radio" name="tim" value="10" checked />
+    	        	    <span>10분</span>
+    	        	  </label>
+    	        	 
+    	        	  <label>
+    	        	    <input type="radio" name="tim" value="15" />
+    	        	    <span>15분</span>
+    	        	  </label>
+    	        	  
+    	        	  <label>
+    	        	    <input type="radio" name="tim" value="30" />
+    	        	    <span>30분</span>
+    	        	  </label>
+    	        	  
+    	        	  <label>
+	  	        	    <input type="radio" name="tim" value="60" />
+	  	        	    <span>60분</span>
+	  	        	  </label>
+	  	        	  <button id = "Type_click3">선택</button>
+            	
+            	</div>`;
+            	
+            	let value3 = $("input[type=radio][name=tim]:checked").val();
+            	
+            	document.getElementById('Type_click3').onclick = function() {
+            	    var radios = document.getElementsByName('tim');
+            	    for (var radio of radios)
+            	    {
+            	        if (radio.checked) {
+            	            alert(radio.value);
+            	            Result_time = radio.value; 
+            	       
+            	           
+            	            
+            	            }
+            	            
+            	            
+            	         
+            	            
+            	        }
+            	    
+            	}//
         }
         
-
-
+        level.addEventListener("click",click_level);
+        method.addEventListener("click",click_method);
+        time.addEventListener("click",click_time);
+        
+      //조리방식 , 소요시간 , 난이도 function ========================================  ===================================
         	
-                            
-                            
+      
                             
                             
 //jsquery//3.검색 클릭시 
@@ -215,6 +300,19 @@ let SearchBar = document.getElementById("searchbar");
 //===================================================================================================                  
     
     function search_click(){//search_click =========================================
+    	console.log(Result_method) 
+    	
+/*     	if(type_list.length == 0){
+    		type_list[0] = "null값";
+    	}
+    	if(type_list.length == 1){
+    		type_list[1] = "null값2";
+    	}
+    	if(type_list.length == 2){
+    		type_list[2] = "null값3";
+    	}
+ */
+
     	let num = []
     	let name = []
     	let ingredient = []
@@ -230,12 +328,22 @@ let SearchBar = document.getElementById("searchbar");
     	let protein = []
     	let carbohydrate = []
     	let fat = []
-    
+    	
+      	
+    	
+    	
       		$.ajax({
+      			
+      			
     			url:"ajax.do",
     			dataType:"json",
     			contentType: "application/json",
-    			data:{"Search" : InputSearch.value},
+    			data:{"Search" : InputSearch.value,
+    				  "Method" : Result_method,
+    				  "Level" : Result_level,
+    				  "Time" : Result_time
+    					
+    				},
     			
     			success:function(data){
     				console.log("통신성공");

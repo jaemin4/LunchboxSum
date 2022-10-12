@@ -9,7 +9,7 @@
 #dosirak {
 	display: flex;
 	flex-direction: column;
-	width: 950px;
+	width: 650px;
 	height: 100%;
 	background-image: url(../asset/image/dosi.png);
 	background-repeat: no-repeat;

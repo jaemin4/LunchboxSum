@@ -1,5 +1,8 @@
 package com.smhrd.controller;
 
+import java.io.IOException;
+import java.io.PrintWriter;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -24,8 +27,19 @@ public class InsertCommentCon implements Controller {
 		comment.setArticle_seq(article_seq);
 		
 		if(comment.getCmt_content().equals("")) {
-			return "SelectOne.do";
-		}
+	         try {
+	            response.setCharacterEncoding("UTF-8");
+	            response.setContentType("text/html; charset=UTF-8");
+	              PrintWriter out;
+	            out = response.getWriter();
+	            out.println("<script>alert('빈칸을 채워주세요!');location.href='SelectAll.do'; </script>");
+	             out.flush();
+	             out.close();
+	         } catch (IOException e) {
+	            e.printStackTrace();
+	         }
+	         return "SelectOne.do";
+	      }
 		
 		CommentDAO dao = new CommentDAO();
 		int row = dao.InsertComment(comment);
