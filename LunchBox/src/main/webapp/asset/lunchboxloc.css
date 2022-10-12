@@ -1,59 +1,59 @@
 @charset "EUC-KR";
 
 #main {
-	display: flex;
-	justify-content: center;
-	align-items: center;
+   display: flex;
+   justify-content: center;
+   align-items: center;
 }
 
 /*
 #dosirak div{
-	border: 1px solid black;
+   border: 1px solid black;
 }*/
 
 #dosirak {
-	display: flex;
-	flex-direction: column;
-	width: 1200px;
-	height: 100%;
-	background-image: url(../asset/image/dosi.png);
-	background-repeat: no-repeat;
-	background-size: contain;
-	background-position: center;
+   display: flex;
+   flex-direction: column;
+   width: 1200px;
+   height: 100%;
+   background-image: url(../asset/image/dosi.png);
+   background-repeat: no-repeat;
+   background-size: contain;
+   background-position: center;
 }
 
 .dosirak-row {
-	display: flex;
-	width: 100%;
+   display: flex;
+   width: 100%;
 }
 
 .dosirak-row.rf {
-	margin-top: 90px;
+   margin-top: 90px;
 }
 
 .dosirak-row.rs {
-	margin-top: 70px;
+   margin-top: 70px;
 }
 
 #first {
-	margin-left: 175px;
+   margin-left: 175px;
 }
 
 #second {
-	margin-left: 65px;
+   margin-left: 65px;
 }
 
 #third {
-	margin-left: 67px;
+   margin-left: 67px;
 }
 
 #fourth {
-	margin-left: 200px;
-	width: 337px;
-	height: 300px;
+   margin-left: 200px;
+   width: 337px;
+   height: 300px;
 }
 #fifth {
-	margin-left: 94px;
-	width: 337px;
-	height: 300px;
+   margin-left: 94px;
+   width: 337px;
+   height: 300px;
 }
