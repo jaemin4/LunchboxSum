@@ -5,6 +5,7 @@ import java.util.Calendar;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.smhrd.model.LunchboxDetailDAO;
 import com.smhrd.model.Member;
@@ -18,10 +19,22 @@ public class ResultCon implements Controller {
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
 		
-		String mb_id = request.getParameter("mb_id");
-		String lb_seq = request.getParameter("lb_seq");
-		double box_seq = Double.parseDouble(lb_seq);
+		System.out.println("result 콘 들어옴");
+		
+		HttpSession session = request.getSession();
+		String mb_id = (String)session.getAttribute("sessionID");
 
+		System.out.println("result 콘 아이디 확인 " +mb_id);
+		
+		String lb_seq = request.getParameter("lb_seq");
+		
+		System.out.println("result 콘 시퀀스 확인 " +lb_seq);
+		
+		
+		double box_seq = Double.parseDouble(lb_seq);
+		
+
+		
 		request.setAttribute("mb_id", mb_id);
 		
 		// 사용자 정보 (성별/나이)

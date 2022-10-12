@@ -40,10 +40,8 @@ public class Re_SearchCon implements Controller{
 			String time = request.getParameter("Time");
 			
 			
-			
 			String[] method_r = new String[4];
 
-			
 			
 			System.out.println("Re_SearchCon");
 			System.out.println("받아온 데이터 : "+search);
@@ -85,6 +83,7 @@ public class Re_SearchCon implements Controller{
 			
 		
 			Recipe dto = new Recipe(method_r,time,level,search);
+			
 			System.out.println("보내줄 데이터");
 			System.out.println(method_r[0]);
 			System.out.println(search);
