@@ -72,6 +72,9 @@ ul {
 li {
 	float: left;
 }
+#log{
+	float: right;
+}
 
 li a {
 	display: block;
@@ -133,7 +136,11 @@ li a:hover {
                 padding: 3px;
                 height: 30px;
             }
-
+            
+			li{
+				display:inline-block;
+				text-align: right;
+			}
 
 </style>
 </head>
@@ -144,19 +151,12 @@ li a:hover {
 			<ul>
 				<li><b>LunchBoxsimulator</b></li>
 				<li><a href="#" onclick="warning();"> Main</a></li>
-				<li><a href="GoNutrition.do">영양소 및 칼로리</a></li>
-				<li><a href="GoAsk.do">자주묻는질문</a></li>
+				<li><a href="#" onclick="warning();">영양소 및 칼로리</a></li>
+				<li><a href="#" onclick="warning();">자주묻는질문</a></li>
 				<li><a href="#" onclick="warning();">도시락정보공유게시판</a></li>
+				<li id="log"><a href="#" onclick="loginplz();">로그인</a></li>
 			</ul>
-
-
-
-
-
-
 		</div>
-
-
     <script>
         $(document).ready(function(){
             $("#id").click(function(){
@@ -308,8 +308,11 @@ li a:hover {
         $("#myModal1").modal("hide");
     });
     function warning(){
-    	alert("로그인 후 이용해주세요!");
+    	alert("로그인 후 이용해주세요! 로그인은 도시락 만들기 버튼을 눌러주세요~");
     }
+    function loginplz() {
+		alert("도시락 만들기 버튼을 클릭하시면 로그인하실수 있습니다 !")
+	}
     function joinform_check(){
     	var id = document.getElementById("id");
     	var pw = document.getElementById("pw");

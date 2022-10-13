@@ -66,7 +66,9 @@ li a:hover {
 h1{
     font-size : 60px;
 }
-
+th{
+   text-align : center;
+}
 
 </style>
 </head>
