@@ -71,9 +71,11 @@ public class Re_SearchCon implements Controller{
 					method_r[i] = "%";
 				}
 			}
-			if((search.length()<1)) {
+			//사용자가 검색창에 검색을 하지 않고 조리방법이나 시간이나 레벨을 선택했을시 
+			if((search.length()<1) & ((time.length()>=2)||(level.length()>=2)||(method_r[0].length() != 1))){
 				search = "%";
 			}
+			
 			else {
 				search = "%"+search+"%";
 			}
@@ -85,13 +87,14 @@ public class Re_SearchCon implements Controller{
 			Recipe dto = new Recipe(method_r,time,level,search);
 			
 			System.out.println("보내줄 데이터");
+			System.out.println("시간의 길이 : "+time.length() +"레벨의 길이"+ level.length()+" 검색의 길이 : "+search.length() + " search : "+search);
 			System.out.println(method_r[0]);
 			System.out.println(search+search.length());
 			System.out.println(time);
 			System.out.println(level);
 			
-		if(search.length()>=1) {
-			
+		
+			if((search.length()>=3) || (time.length()>=2) ||(level.length()>=2) ||(method.length()>4)) {
 			RecipeboxDAO dao = new RecipeboxDAO();
 			ArrayList<Recipe> list = new ArrayList<>();
 			
@@ -104,9 +107,9 @@ public class Re_SearchCon implements Controller{
 			
 			PrintWriter out = response.getWriter();
 			out.print(jsonArr);
-			
-		
 			}
+		
+			
 		}
 		catch(Exception e){
 			System.out.println(e);

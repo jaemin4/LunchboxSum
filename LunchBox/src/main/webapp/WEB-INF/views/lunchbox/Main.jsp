@@ -388,8 +388,8 @@ function search_Model(){
                     </label>
                     
                     <label>
-                      <input type="radio" name="leve" value="상급" />
-                      <span>상급</span>
+                      <input type="radio" name="leve" value="고급" />
+                      <span>고급</span>
                     </label>
                     <button id = "Type_click2" class="btn btn-warning">선택</button>
                
