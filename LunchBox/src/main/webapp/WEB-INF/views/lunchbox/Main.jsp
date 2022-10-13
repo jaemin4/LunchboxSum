@@ -839,7 +839,7 @@ function crawling(search){
    console.log("==크롤링 시작==")
    
    $.ajax({
-      url : 'http://59.3.58.53:3710/crawling',
+      url : 'http://121.179.35.38:3760/crawling',
       type : 'post',
       data : {
          'search' : search
