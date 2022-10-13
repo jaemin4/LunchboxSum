@@ -97,26 +97,100 @@
 	});
 
 </script>
+<style>
+/* 네비게이션바 스타일*/
+#navih {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background-color: rgba(0,24,113,1);
+}
 
-<title>Insert title here</title>
+#c {
+	float: left;
+}
+
+#c a {
+	display: block;
+	color: white;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+}
+
+#c b {
+	display: block;
+	color: rgba(255,181,73,1);
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+}
+
+
+
+#c a:hover {
+	background-color: #111;
+}
+ 
+/* 네비게이션바 스타일종료*/
+
+h1{
+ font-size:50px}
+
+body{
+   background-image: url("asset/image/bgbg5.JPG");
+   background-repeat: no-repeat;
+   background-size: cover;
+   width: 100%;
+   height: 100%;
+}
+td{
+	font-size: 19px;
+}
+
+#detail1{
+	background-color: white;
+}
+
+#allone{
+	width: 1000px;
+	height: 800px;
+	position: relative;
+	left: 25%;
+	background-color: white;
+}
+
+
+</style>
+
+<title>달력 세부 페이지</title>
 </head>
 <body>
-	<!-- 
-		메인기능2 - 런치박스 플래너
-		
-		해당날짜에 저장된 도시락상세페이지
-	-->
+<div id="header">
+			<ul id ="navih">
+				<li id = "c"><b>LunchBoxsimulator</b></li>
+				<li id = "c"><a href="GoMain.do"> Main</a></li>
+				<li id = "c"><a href="GoNutrition.do">영양소 및 칼로리</a></li>
+				<li id = "c"><a href="GoAsk.do">자주묻는질문</a></li>
+				<li id = "c"><a href="SelectAll.do">도시락정보공유게시판</a></li>
+			</ul>
+
+		</div>
 	
 	<%Lunchbox lunchbox = (Lunchbox)request.getAttribute("date_lunch");%>
 	<%ArrayList<Recipe> recipe = (ArrayList<Recipe>)request.getAttribute("boxes");%>
 	
 	
-	<h1>
+	<h1 align="center"><b>
 	<%=lunchbox.getLd_Date().split("-")[0]%>년
 	<%=lunchbox.getLd_Date().split("-")[1]%>월
 	<%=lunchbox.getLd_Date().split("-")[2].split(" ")[0]%>일 
 	<p><%=lunchbox.getLb_Name()%>🍱</p>
-	</h1>
+	
+	</b></h1>
+	<div id="allone">
+	<div id="detail1">
 		<hr>
 	<div style="float: left; width: 50%;">
 		<table>
@@ -125,7 +199,7 @@
 					<td>
 						<input type="image" src="<%=recipe.get(i).getRecipe_img()%>" width="150" height="150">
 					</td>
-					<td>
+					<td id="recnu">
 						<p><%=recipe.get(i).getRecipe_name()%></p>
 						탄수화물 : <%=recipe.get(i).getCarbohydrate()%>g<br>
 						단백질 : <%=recipe.get(i).getProtein()%>g<br>
@@ -153,14 +227,20 @@
 					<canvas id="myChart" style="display:block; width= 400; height=400;"></canvas>
 				</td>
 			</tr>
+			<br>
+			<br>
+			<br>
+
 			<tr>
 				<td colspan="2" >
+				<br>
 					<input type="image" src="https://img.freepik.com/free-vector/calendar-icon-on-white-background_1308-84634.jpg?w=740&t=st=1664847862~exp=1664848462~hmac=a360141333cf295e0d70d83d3fe69da92f344785f0f45b610b920f1afcf2f7dd" width="250"	height="200" onclick="location.href='GoCalendar.do?mb_id=<%=lunchbox.getMb_Id()%>'">
-					<p>>> 런치플래너로 돌아가기</p>
+					<p><b> ↪ 런치플래너로 돌아가기</b></p>
 				</td>
 			</tr>
 		</table>
 	</div>
-	
+	</div>
+	</div>
 </body>
 </html>

@@ -17,14 +17,14 @@ table{
 
 .box-wrap1{
 	height: 130px;
-	background-color:gold;
+	background-color:#f1c40f;
 	font-size: 20px;
 }
 
 .box-wrap2{
 	height: 100px;
 	width: 400px;
-	background-color:gold;
+	background-color:#f1c40f;
 	font-size: 20px;
 }
 

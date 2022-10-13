@@ -61,7 +61,6 @@ li a:hover {
    width: 230px;
     height: 217px;
 }
-
 .f {
    background-color: azure;
 }
@@ -70,6 +69,7 @@ li a:hover {
    background-color: #f1c40f;
    width: 362px;
    height: 220px;
+   border: 1px solid black;
 }
 #loginmsg{
    font-size: 25px;
@@ -140,7 +140,18 @@ div{
    border: 1px solid black;
    display: flex;
    background-color: #f1c40f;
+   flex-direction : column; 
 }
+
+.inputBox{
+	font-size :20px;
+    width: 300px;
+    height: 100px;
+    position: absolute;
+    top: 300px;
+    right: 111px;
+}
+
 
 #foodplace{
    background-color: #f1c40f;
@@ -162,6 +173,21 @@ table {
    height: 55px;
 }
 
+#selimg{
+	width: 110px;
+	height: 110px;	
+}
+
+
+#crw3{
+	border: 1px solid black;
+    display: flex;
+    background-color: #f1c40f;
+    flex-direction: column;
+    position: absolute;
+    right: 515px;
+    top: 100px;
+}
 
 
 
@@ -171,14 +197,13 @@ table {
 }
 /*투명도*/
 #ingi {     
-   opacity: 0.9;
    background-color: #95E1D3;
    height : 250px;
 }
 
 /*이미지 슬라이드*/
 #slideimg{
-        bottom: 3%;
+        bottom: 7%;
         position: relative;
 }
 #image-box {

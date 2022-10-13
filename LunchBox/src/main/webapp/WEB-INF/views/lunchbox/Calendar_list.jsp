@@ -10,15 +10,14 @@
 <head>
 <meta charset="UTF-8">
 <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <!-- jQuery library -->
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <!-- Latest compiled JavaScript -->
-<script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2"></script>
+ 
 <!-- fullcalender -->
 <link href='.//resources/fullcalendar-5.11.3/lib/main.css'
 	rel='stylesheet' />
@@ -141,7 +140,7 @@
 	}
 	
 </script>
-<style type="text/css">
+<style>
 .event-icon {
   width: 24px;
 };
@@ -151,26 +150,20 @@
 .fc-day-number.fc-sun.fc-past {
  color:#FF0000; 
 };
+
+
+
 </style>
-<title>Insert title here</title>
+<title>달력공간!!</title>
 </head>
 <body>
 
-	<!-- 
-		메인기능2 - 런치박스 플래너
-		
-		달력페이지!
-		저장해둔 부분만 색을 입혀서 출력
-		>> 누르면 해당날짜에 저장된 도시락상세페이지로 이동
-	-->
-	
 	<% String mb_id = (String)request.getAttribute("mb_id"); %>
-	<h1 style="color:gold">LUNCH PLANNER</h1>
-	
-	<hr>
-	
+
 	<div id='calendar'></div>
-	
+		<div align="right">		
+		<a href="GoMain.do"><button type="button" class="btn btn-primary btn-lg"> Main</button></a>
+		</div>
 	<div id='user_id' style='display: none;'>
 		<%=mb_id%>
 	</div>

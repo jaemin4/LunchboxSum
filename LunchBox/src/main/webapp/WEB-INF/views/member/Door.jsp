@@ -28,7 +28,7 @@
 
 
 .modal-body{
-	background-color:gold;
+	background-color:#f1c40f;
 }
 
 
