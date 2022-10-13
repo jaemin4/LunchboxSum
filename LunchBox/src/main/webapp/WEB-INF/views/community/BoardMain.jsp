@@ -83,7 +83,25 @@ tr :hover{
    background-color: #A9D0F5
 
 }
+th{
+   text-align: center;
+}
 
+.mbid{
+   text-align : center;
+}
+.date{
+   text-align : center;
+}
+.click{
+   text-align : center;
+}
+.like{
+   text-align : center;
+}
+h3{
+   text-align : center;
+}
 </style>
 </head>
 <body>
@@ -97,29 +115,29 @@ tr :hover{
          </ul>
 
 
-		</div>
-	<div class="container">
-		<div class="panel panel-default">
-			<div class="panel-heading" align="center">
-		<h1>각종 의견과 본인만의 레시피를 자랑해주세요!</h1>
-		<h2>도시락 게시판</h2>
-			</div>
-			<div class="panel-body">
-				<table class="table table-striped table-hover">
-					<colgroup>
-						<col width="45%">
-						<col width="15%">
-						<col width="20%">
-						<col width="8%">
-						<col width="8%">
-					</colgroup>
-					<tr>
-						<th>제목</th>
-						<th>작성자</th>
-						<th>작성일</th>
-						<th>조회수</th>
-						<th>좋아요</th>
-					</tr>
+      </div>
+   <div class="container">
+      <div class="panel panel-default">
+         <div class="panel-heading" align="center">
+      <h1>각종 의견과 본인만의 레시피를 자랑해주세요!</h1>
+      <h2>도시락 게시판</h2>
+         </div>
+         <div class="panel-body">
+            <table class="table table-striped table-hover">
+               <colgroup>
+                  <col width="45%">
+                  <col width="15%">
+                  <col width="20%">
+                  <col width="8%">
+                  <col width="8%">
+               </colgroup>
+               <tr>
+                  <th>제목</th>
+                  <th>작성자</th>
+                  <th>작성일</th>
+                  <th>조회수</th>
+                  <th>좋아요</th>
+               </tr>
 
 
 
@@ -127,10 +145,10 @@ tr :hover{
                <c:forEach var="board" items="${list2}">
                   <tr onclick='location.href="UpdateRead.do?article_seq=${board.article_seq}&article_cnt=${board.article_cnt}&article_file=${board.article_file}"' style="cursor: pointer;">
                      <td>${board.article_title}</td>
-                     <td>${board.mb_id}</td>
-                     <td>${board.article_date}</td>
-                     <td>${board.article_cnt}</td>
-                     <td>${board.article_likes}</td>
+                     <td class = mbid>${board.mb_id}</td>
+                     <td class = date>${board.article_date}</td>
+                     <td class = click>${board.article_cnt}</td>
+                     <td class = like>${board.article_likes}</td>
                   </tr>
                </c:forEach>
 
@@ -143,41 +161,44 @@ tr :hover{
                </tr>
 
             </table>
-			</div>
-			<!-- a태그 쿼리스트링 방식 어떻게 하나요? -->
-			<div  align="center">
-			<div class="pagination">
-				<a href="#">&laquo;</a>
-				<c:forEach begin="1" end="${sum}" var="i">
-					<a href="SelectAll.do?page=${i}">${i}</a>
-				</c:forEach>
-				<a href="SelectAll.do?page=${i+1}">&raquo;</a>
+         </div>
+         <!-- a태그 쿼리스트링 방식 어떻게 하나요? -->
+         <div  align="center">
+         <div class="pagination">
+            <a href="#">&laquo;</a>
+            <c:forEach begin="1" end="${sum}" var="i">
+               <a href="SelectAll.do?page=${i}">${i}</a>
+            </c:forEach>
+            <a href="SelectAll.do?page=${i+1}">&raquo;</a>
+
          </div>
 
+
+
      
-			</div>
+         </div>
 
 
          <div class="panel-footer">
 
-				<h3>베스트 좋아요 TOP 3</h3>
-				<table class="table table-striped table-hover">
-				<colgroup>
+            <h3>베스트 좋아요 TOP 3</h3>
+            <table class="table table-striped table-hover">
+            <colgroup>
                   <col width="60%">
                   <col width="25%">
                   <col width="15%">
-               	</colgroup>
-					<tr>
-						<th>제목</th>
-						<th>작성일</th>
-						<th>좋아요</th>
-					</tr>
-					<c:forEach var="board" items="${list3}">
-						<tr onclick='location.href="SelectOne.do?article_seq=${board.article_seq}"' style="cursor: pointer;">
+                  </colgroup>
+               <tr>
+                  <th>제목</th>
+                  <th>작성일</th>
+                  <th>좋아요</th>
+               </tr>
+               <c:forEach var="board" items="${list3}">
+                  <tr onclick='location.href="SelectOne.do?article_seq=${board.article_seq}"' style="cursor: pointer;">
 
-							<td>${board.article_title}</td>
-							<td>${board.article_date}</td>
-							<td>${board.article_likes}</td>
+                     <td>${board.article_title}</td>
+                     <td class = date>${board.article_date}</td>
+                     <td class = like>${board.article_likes}</td>
 
                   </tr>
                </c:forEach>

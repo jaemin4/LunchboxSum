@@ -15,10 +15,9 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-
 <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2"></script>
-
+ 
 <!-- fullcalender -->
 <link href='.//resources/fullcalendar-5.11.3/lib/main.css'
 	rel='stylesheet' />
@@ -141,7 +140,7 @@
 	}
 	
 </script>
-<style type="text/css">
+<style>
 .event-icon {
   width: 24px;
 };
@@ -153,66 +152,18 @@
 };
 
 
-/* 네비게이션바 스타일*/
-ul {
-   list-style-type: none;
-   margin: 0;
-   padding: 0;
-   overflow: hidden;
-   background-color: rgba(0,24,113,1);
-}
-
-li {
-   float: left;
-}
-
-li a {
-   display: block;
-   color: white;
-   text-align: center;
-   padding: 14px 16px;
-   text-decoration: none;
-}
-
-li b {
-   display: block;
-   color: rgba(255,181,73,1);
-   text-align: center;
-   padding: 14px 16px;
-   text-decoration: none;
-}
-
-
-
-li a:hover {
-   background-color: #111;
-}
-
-
-
 
 </style>
-<title>Insert title here</title>
+<title>달력공간!!</title>
 </head>
 <body>
 
-<div id="header">
-         <ul>
-            <li><b>LunchBoxsimulator</b></li>
-            <li><a href="GoMain.do"> Main</a></li>
-            <li><a href="GoNutrition.do">영양소 및 칼로리</a></li>
-            <li><a href="GoAsk.do">자주묻는질문</a></li>
-            <li><a href="SelectAll.do">도시락정보공유게시판</a></li>
-         </ul>
-		</div>
-	
 	<% String mb_id = (String)request.getAttribute("mb_id"); %>
-	<h1 style="color:gold">LUNCH PLANNER</h1>
-	
-	<hr>
-	
+
 	<div id='calendar'></div>
-	
+		<div align="right">		
+		<a href="GoMain.do"><button type="button" class="btn btn-primary btn-lg"> Main</button></a>
+		</div>
 	<div id='user_id' style='display: none;'>
 		<%=mb_id%>
 	</div>

@@ -32,14 +32,9 @@
 <link rel="stylesheet" type="text/css" href="asset/lunchboxloc.css">
 <link rel="stylesheet" type="text/css" href="asset/mainstyle.css">
 <style>
-#search_box1 {
-	background-color: #fff;
-}
-
-.recepie-list-box {
-	padding: 20px;
-	height: 80%;
-	background-color: red;
+#Lun_CompleteB{
+	width: 300px;
+	height: 50px;
 }
 </style>
 
@@ -93,8 +88,7 @@
 						<div id="fifth5" class="s"></div>
 					</div>
 				</div>
-				<button id="Lun_CompleteB" class="btn btn-warning btn-lg">완성</button>
-				
+					
 			</div>
 
 			<div id="ad">
@@ -133,10 +127,10 @@
 								onclick="location.href='GoUpdate.do'">정보수정</button>
 							<button type="button" class="btn btn-warning"
 								onclick="location.href='Logout.do'">로그아웃</button>
-							<!-- 지울예정!! -->
+							<!-- 결과페이지 버튼(지웠습니다) 
 							<button
 								onclick="location.href='GoResult.do?mb_id=admin&lb_seq=1'"
-								class="btn btn-primary">결과</button>
+								class="btn btn-primary">결과</button>-->
 						</div>
 
 					</div>
@@ -154,10 +148,10 @@
 				<div id="recipe_area"></div>
 				<div class="search-box" id="search_model"></div>
 				<div id="crawling_area"></div>
-
+				
 
 			</div>
-
+		
 
 		</div>
 
@@ -224,18 +218,12 @@
       
       
    </script>
-	<script>
-	$("#first1").click(function() {
-        $("#ingi").hide();
-     });
-	
-	</script>
+
 
 
 		<script>
 //1.도시락 완성하기 버튼에서 사용자가 2개이상 레시피를 클릭시 완성저장 할 수 있게끔 완성될때마다 push
 let CompleteR_Num_list = [];
-
 
 let Result_method = "";
 let Result_level = "";
@@ -674,7 +662,7 @@ let SearchBar = document.getElementById("searchbar");
                           
                            Result_Html +=                          
                              `<tr>
-                                 <td><img src = "\${Temp_Cooking_img[i]}" width = "100px" height = "100px"></td> 
+                                 <td colspan = 1><img src = "\${Temp_Cooking_img[i]}" width = "100px" height = "100px"></td> 
                                  <td colspan = 3>\${Temp_Recipe_detail[i]}</td> 
                              </tr>`
 
@@ -684,14 +672,13 @@ let SearchBar = document.getElementById("searchbar");
                          `<div style="overflow:scroll; width:550px; height:800px;">
                          <table border = 1 id="foodplace">
                              <tr>
-                                 <td colspan = 3> \${ButtonId_Name}번째 도시락 </td>
+                                 <td colspan = 4> \${ButtonId_Name}번째 도시락 </td>
                              </tr>
                              <tr>
-                                 <td colspan = 2><img src = "\${Recipe.Recipe_img[i]}" width = 300px height = 200px></td>
+                                 <td colspan = 2><img src = "\${Recipe.Recipe_img[i]}" width = 100px height = 100px></td>
                                  <td colspan = 2>
                                  \${"칼로리 : "+Recipe.Calories[i] +" 단백질 : "+Recipe.Protein[i] + " 탄수화물 : "+Recipe.Carbohydrate[i] + " 단백질 : "+Recipe.Fat[i]}
                                  <br>
-                                 
                                  </td>  
                              </tr>
                      <tr>
@@ -701,9 +688,13 @@ let SearchBar = document.getElementById("searchbar");
                          </tr>
                          
                              \${Result_Html}
+                            
+                             
+                             
                              <tr>
-                                 <td colspan = "2"><button id = "Go_Back" class="btn btn-warning btn-lg">뒤로가기</button></td>
-                                 <td colspan = "2" align = "center"><button id = "Select_Complete" class="btn btn-warning btn-lg">선택 완료</button></td>   
+                                 <td colspan = "4" align = "center">
+                                 <button id = "Go_Back" class="btn btn-warning btn-lg">뒤로가기</button>
+                                 <button id = "Select_Complete" class="btn btn-warning btn-lg">선택 완료</button></td>   
                              </tr>
                          </table>
                          </div>`
@@ -719,7 +710,7 @@ let SearchBar = document.getElementById("searchbar");
               recipe_area.innerHTML = "";
               crawling_area.innerHTML = "";
               
-              ButtonId_s.innerHTML = `<img src = "\${SelectImg}" width = 50px height = 50px>`;
+              ButtonId_s.innerHTML = `<img src = "\${SelectImg}" width = 220px height = 220px>`;
               alert("선택완료!!");
               CompleteR_Num_list.push(5);
               
@@ -851,13 +842,15 @@ function crawling(search){
                             </tr>`;
          };
          
-         crawling_area.innerHTML = `<table border = 1>
+         crawling_area.innerHTML = `<div id="crw3" style="overflow:scroll; width:330px; height:710px;">
+         							<table border = 1>
                                  <tr>
                                     <td>이름</td>
                                     <td>가격</td>
                                  </tr>
                                  \${Crawling_Html_Sub}
-                              </table>`;
+                              </table>
+                              </div>`;
          
          
          
@@ -873,6 +866,7 @@ function crawling(search){
    
 }
 </script>
+					<button id="Lun_CompleteB" class="btn btn-warning btn-lg">완성</button>
 		<div id="slideimg">
 			<div id="ingi" align="center">
 				<b>오늘의 인기 반찬!!</b>
