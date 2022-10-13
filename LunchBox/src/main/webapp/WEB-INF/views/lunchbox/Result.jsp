@@ -144,7 +144,7 @@
 			}
 		});
 		
-		let result = document.getElementById("result");
+		/* let result = document.getElementById("result");
 		let str = '따라서 부족한 영양소는';
 		
 		if(userCAR - CARBOHYDRATE>0){
@@ -170,7 +170,7 @@
 			str += ' 초과한 칼로리 ';
 			str += userFAT - FAT;
 			str += 'kcal ';
-		}
+		} */
 		
 		
 	});
@@ -258,8 +258,20 @@ p{
 	<%Nutritionfact nutri = (Nutritionfact)request.getAttribute("nutri");%>
 	<%String gender = (String)request.getAttribute("gender");%>
 	<%String age = (String)request.getAttribute("age");%>
+	
 	<%String userCal = (String)request.getAttribute("userCal");%>
 	<%String CALORIES = (String)request.getAttribute("CALORIES");%>
+	
+	<%String useCAR = (String)request.getAttribute("userCAR");%>
+	<%String usePRO = (String)request.getAttribute("userPRO");%>
+	<%String useFAT = (String)request.getAttribute("userFAT");%>
+	<%String bentoCar = (String)request.getAttribute("CARBOHYDRATE");%>
+	<%String bentoPro = (String)request.getAttribute("PROTEIN");%>
+	<%String bentoFat = (String)request.getAttribute("FAT");%>
+	
+	<%int overCar = Integer.parseInt(bentoCar) - Integer.parseInt(useCAR);%>
+	<%int overPro = Integer.parseInt(bentoPro) - Integer.parseInt(usePRO);%>
+	<%int overFat = Integer.parseInt(bentoFat) - Integer.parseInt(useFAT);%>
 	
 	<div id="result1">
 	<h1 align="center">도시락 선택 결과페이지!</h1>
@@ -321,10 +333,25 @@ p{
 		</table>
 	</div>
 	<div style="bottom:0px;">
-		<p id="result">여기에 영양소 결과 들어감! (js에 의해 실행시 지워지고 내용 추가됨!)</p>
+		
+
+		<%if(overCar<0||overPro<0||overFat<0){%>
+			<p>따라서 부족한 영양소는
+				<%if(overCar<0){%>
+					탄수화물<%=Math.abs(overCar)%>g
+				<%}%>
+				<%if(overPro<0){%>
+					단백질<%=Math.abs(overPro)%>g
+				<%}%>
+				<%if(overFat<0){%>
+					지방<%=Math.abs(overFat)%>g
+				<%}%>
+			입니다.</p>	
+		<%}%>
+		
 		<%int overCal = Integer.parseInt(CALORIES) - Integer.parseInt(userCal);%>
 		<%if(overCal>0){%>
-		<p>초과열량 <%=overCal%>cal</p>
+		<p>초과열량 <%=overCal%>kcal</p>
 			<%if(gender=="남성") { %>
 				<input type="image" src="https://i.pinimg.com/originals/58/31/3d/58313d83e4817fc36589590faab1c214.png" width="150" height="150">
 				달리기 <%=(overCal/93)*10%>분

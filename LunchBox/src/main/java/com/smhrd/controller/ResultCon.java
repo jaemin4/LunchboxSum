@@ -100,15 +100,15 @@ public class ResultCon implements Controller {
 		request.setAttribute("nutri", nutri);
 		
 		// 도시락 영양소 정보
-		request.setAttribute("CARBOHYDRATE", CARBOHYDRATE);
-		request.setAttribute("PROTEIN", PROTEIN);
-		request.setAttribute("FAT", FAT);
+		request.setAttribute("CARBOHYDRATE", Integer.toString(CARBOHYDRATE));
+		request.setAttribute("PROTEIN", Integer.toString(PROTEIN));
+		request.setAttribute("FAT", Integer.toString(FAT));
 		request.setAttribute("CALORIES", Integer.toString(CALORIES));
 		
 		// 개인 영양소 정보
-		request.setAttribute("userCAR", nutri.getR_Carbohydrate());
-		request.setAttribute("userPRO", nutri.getR_Protein());
-		request.setAttribute("userFAT", nutri.getR_Fat());
+		request.setAttribute("userCAR", Integer.toString(nutri.getR_Carbohydrate().intValue()));
+		request.setAttribute("userPRO", Integer.toString(nutri.getR_Protein().intValue()));
+		request.setAttribute("userFAT", Integer.toString(nutri.getR_Fat().intValue()));
 		request.setAttribute("userCal", Integer.toString(nutri.getR_Calories().intValue()));
 		
 		// 사용자 정보
