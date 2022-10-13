@@ -165,6 +165,7 @@
 		str += ' 입니다.'
 		result.innerText = str;
 		
+		
 		if(CALORIES - userCal>0){
 			str += ' 초과한 칼로리 ';
 			str += userFAT - FAT;
@@ -221,9 +222,19 @@ li a:hover {
 
 #result1{
 	background-color: white;
+	width: 1800px;
+	height: 700px;
+	margin-left: 50px;
 }
 h1{
     font-size : 60px;
+}
+p{
+	font-size : 25px;
+}
+
+#id1{
+	font-size: 20px;
 }
 
 </style>
@@ -258,13 +269,13 @@ h1{
 			<tr>
 				<td colspan="2">
 					<% for (int i = 0; i<recipe.size(); i++) {%>
-						<input type="image" src="<%=recipe.get(i).getRecipe_img()%>" width="150" height="150">
+						<input type="image" src="<%=recipe.get(i).getRecipe_img()%>" width="152" height="152">
 					<%} %>
 				</td>
 			</tr>
 			<tr>
 				<td>
-					<p><b><%=nutri.getMb_Id()%>님의 도시락 영양정보</b></p>
+					<p id="id1"><b><%=nutri.getMb_Id()%>님의 도시락 영양정보</b></p>
 					<p id="CARBOHYDRATE"></p>
 					<p id="PROTEIN"></p>
 					<p id="FAT"></p>
@@ -290,18 +301,19 @@ h1{
 					<%} %>
 				</td>
 				<td>
-					<b><%=nutri.getMb_Id()%>님</b>
+					<b id="id1"><%=nutri.getMb_Id()%>님</b>
 					<p>: <%=age%>세 <%=gender%></p>
 				</td>
 			</tr>
 			<tr>
 				<td>
-					<p><b><%=nutri.getMb_Id()%>님의 1일 권장 영양정보</b></p>
+					<p id="id1"><b><%=nutri.getMb_Id()%>님의 1일 권장 영양정보</b></p>
 					<p>🍞 필요 탄수화물 <%=nutri.getR_Carbohydrate()%>g</p>
 					<p>🥩 필요 단백질 <%=nutri.getR_Protein()%>g</p>
 					<p>🧈 필요 지방<%=nutri.getR_Fat()%>g</p>
 					<p>✨ 필요 칼로리<%=nutri.getR_Calories()%>cal</p>
 				</td>
+				
 				<td>
 					<canvas id="myChart2"></canvas>
 				</td>
