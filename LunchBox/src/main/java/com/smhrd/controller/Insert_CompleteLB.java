@@ -45,7 +45,7 @@ public class Insert_CompleteLB implements Controller {
 		  System.out.println(session_mb_id );
 		  
 		  String mb_id = session_mb_id;
-		  String ld_date = "20221008";
+		  String ld_date = "20221013";
 		  
 		  //데이터 tbl_lunchbox(dto)로 집어넣기 
 		 

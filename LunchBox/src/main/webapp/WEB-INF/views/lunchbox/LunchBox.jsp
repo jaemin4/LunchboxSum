@@ -687,13 +687,13 @@ let SearchBar = document.getElementById("searchbar");
     	    function GoBack(){
     	    	
     	       recipe_area.innerHTML = resultHTML;
+    	       crawling_area.empty();
     	       for(let i = 0; i<Recipe.Num.length; i++){
     	           Click_Addbutton(i);
     	        }
     	    }
     	    
     	    Goback.addEventListener("click",GoBack);
-    	    
     	    
     	}//=========================== 5.=========================
     				

@@ -6,11 +6,6 @@
    align-items: center;
 }
 
-/*
-#dosirak div{
-   border: 1px solid black;
-}*/
-
 #dosirak {
    display: flex;
    flex-direction: column;

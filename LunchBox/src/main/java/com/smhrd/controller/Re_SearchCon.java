@@ -71,7 +71,7 @@ public class Re_SearchCon implements Controller{
 					method_r[i] = "%";
 				}
 			}
-			if(search.length()<1) {
+			if((search.length()<1)) {
 				search = "%";
 			}
 			else {
@@ -86,7 +86,7 @@ public class Re_SearchCon implements Controller{
 			
 			System.out.println("보내줄 데이터");
 			System.out.println(method_r[0]);
-			System.out.println(search);
+			System.out.println(search+search.length());
 			System.out.println(time);
 			System.out.println(level);
 			

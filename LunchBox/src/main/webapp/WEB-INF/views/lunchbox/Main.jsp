@@ -31,7 +31,7 @@
 
 <link rel="stylesheet" type="text/css" href="asset/lunchboxloc.css">
 <link rel="stylesheet" type="text/css" href="asset/mainstyle.css">
-<<<<<<< HEAD
+
 
 		<style>
 			#search_box1{
@@ -301,7 +301,7 @@ function search_Model(){
       let User_Recipe = [];
       User_Recipe.push(ButtonId_Name);
       
-      
+      crawling_area.innerHTML = "";
       search_model.innerHTML = "";
         recipe_area.innerHTML = "";
         search_model.innerHTML = 
@@ -382,8 +382,7 @@ function search_Model(){
                        Result_method = radio.value; 
                    }
                }
-           }//
-           
+           }
            
            
         }//click_method 끝부분 ============================================
@@ -472,8 +471,6 @@ function search_Model(){
         
       //조리방식 , 소요시간 , 난이도 function ========================================  ===================================
            
-      
-                            
                             
 //jsquery//3.검색 클릭시 
 let InputSearch = document.getElementById("Input_Search");
@@ -484,17 +481,6 @@ let SearchBar = document.getElementById("searchbar");
     function search_click(){//search_click =========================================
        console.log(Result_method) 
        
-/*        if(type_list.length == 0){
-          type_list[0] = "null값";
-       }
-       if(type_list.length == 1){
-          type_list[1] = "null값2";
-       }
-       if(type_list.length == 2){
-          type_list[2] = "null값3";
-       }
- */
-
        let num = []
        let name = []
        let ingredient = []
@@ -515,7 +501,6 @@ let SearchBar = document.getElementById("searchbar");
        
        
             $.ajax({
-               
                
              url:"ajax.do",
              dataType:"json",
@@ -586,7 +571,7 @@ let SearchBar = document.getElementById("searchbar");
                        </tr>
                        <div>`;
                //사용자 검색완료 후 출력되는 레시피에 id를 부여
-       ////~~~~~~~~~~~~~~~check//
+    
                for(let i = 0; i<Recipe.Num.length; i++){
                    resultHTML += 
                        `<tr>
@@ -615,7 +600,6 @@ let SearchBar = document.getElementById("searchbar");
                    
                //5.선택한 레시피의 대한 정보를 가져오는 기능
                let recipe_num = String(this.id);
-               
                let Result_Html = "";
              
                for(let i = 0; i<Recipe.Num.length; i++){
@@ -748,7 +732,7 @@ let SearchBar = document.getElementById("searchbar");
               recipe_area.innerHTML = "";
               crawling_area.innerHTML = "";
               
-              ButtonId_s.innerHTML = `<img src = "\${SelectImg}" width = 50px height = 50px>`;
+              ButtonId_s.innerHTML = `<img src = "\${SelectImg}" width = 200px height = 200px>`;
               alert("선택완료!!");
               CompleteR_Num_list.push(5);
               
@@ -824,7 +808,7 @@ let SearchBar = document.getElementById("searchbar");
            let Goback = document.getElementById("Go_Back");
           
            function GoBack(){
-              
+              crawling_area.innerHTML = "";
               recipe_area.innerHTML = resultHTML;
               for(let i = 0; i<Recipe.Num.length; i++){
                   Click_Addbutton(i);
@@ -873,7 +857,8 @@ function crawling(search){
          for(let i = 0; i<result.length; i++){
             Crawling_Html_Sub += `<tr>
                               <td>\${result[i].name}</td>
-                              <td>\${result[i].price}</td>
+                              <td><a href = \${result[i].link}>\${result[i].price}</a></td>
+                              
                             </tr>`;
          };
          
@@ -881,6 +866,7 @@ function crawling(search){
                                  <tr>
                                     <td>이름</td>
                                     <td>가격</td>
+                                    <td>링크</td>
                                  </tr>
                                  \${Crawling_Html_Sub}
                               </table>`;
@@ -918,9 +904,8 @@ function crawling(search){
 				</div>
 			</div>
 		</div>
-		<!-- 슬라이딩이미지 div 마무리 -->
+		
 	</div>
-	<!-- 전체 div 마무리 -->
-
+	
 </body>
 </html>
