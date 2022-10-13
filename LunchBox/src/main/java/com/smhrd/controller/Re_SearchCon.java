@@ -71,8 +71,9 @@ public class Re_SearchCon implements Controller{
 					method_r[i] = "%";
 				}
 			}
+			
 			//사용자가 검색창에 검색을 하지 않고 조리방법이나 시간이나 레벨을 선택했을시 
-			if((search.length()<1) & ((time.length()>=2)||(level.length()>=2)||(method_r[0].length() != 1))){
+			if((search.length()<1) & ((time.length()>=2)||(level.length()>=2))){
 				search = "%";
 			}
 			
@@ -94,19 +95,20 @@ public class Re_SearchCon implements Controller{
 			System.out.println(level);
 			
 		
-			if((search.length()>=3) || (time.length()>=2) ||(level.length()>=2) ||(method.length()>4)) {
-			RecipeboxDAO dao = new RecipeboxDAO();
-			ArrayList<Recipe> list = new ArrayList<>();
-			
-			list = dao.Search_Keyword(dto);
-
-			//==================================================================================
-			String jsonArr = gson.toJson(list);
-			System.out.println("Re_SearchCon");
-			System.out.println("보내준 데이터 : "+jsonArr);
-			
-			PrintWriter out = response.getWriter();
-			out.print(jsonArr);
+			if((search.length()>=3) || (time.length()>=2) ||(level.length()>=2)) {
+				
+				RecipeboxDAO dao = new RecipeboxDAO();
+				ArrayList<Recipe> list = new ArrayList<>();
+				
+				list = dao.Search_Keyword(dto);
+	
+				//==================================================================================
+				String jsonArr = gson.toJson(list);
+				System.out.println("Re_SearchCon");
+				System.out.println("보내준 데이터 : "+jsonArr);
+				
+				PrintWriter out = response.getWriter();
+				out.print(jsonArr);
 			}
 		
 			

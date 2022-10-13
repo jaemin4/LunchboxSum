@@ -40,7 +40,7 @@
 		CARper.innerText = '🍞 총 탄수화물 '+CARBOHYDRATE+'g';
 		PROper.innerText = '🥩 총 단백질 '+PROTEIN+'g';
 		FATper.innerText = '🧈 총 지방 '+FAT+'g';
-		CALper.innerText = '✨ 총 칼로리 '+CALORIES+'cal';
+		CALper.innerText = '✨ 총 칼로리 '+CALORIES+'kcal';
 		
 		const myChart = new Chart(ctx, {
 			plugins:[ChartDataLabels],
@@ -204,7 +204,7 @@ td{
 						탄수화물 : <%=recipe.get(i).getCarbohydrate()%>g<br>
 						단백질 : <%=recipe.get(i).getProtein()%>g<br>
 						지방 : <%=recipe.get(i).getFat()%>g<br>
-						칼로리 : <%=recipe.get(i).getCalories()%>cal
+						칼로리 : <%=recipe.get(i).getCalories()%>kcal
 					</td>
 				</tr>
 			<%} %>

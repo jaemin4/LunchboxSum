@@ -37,7 +37,7 @@
 		CARper.innerText = '🍞 총 탄수화물 '+CARBOHYDRATE+'g';
 		PROper.innerText = '🥩 총 단백질 '+PROTEIN+'g';
 		FATper.innerText = '🧈 총 지방 '+FAT+'g';
-		CALper.innerText = '✨ 총 칼로리 '+CALORIES+'cal';
+		CALper.innerText = '✨ 총 칼로리 '+CALORIES+'kcal';
 		
 		const myChart = new Chart(ctx, {
 			plugins:[ChartDataLabels],
@@ -169,7 +169,7 @@
 		if(CALORIES - userCal>0){
 			str += ' 초과한 칼로리 ';
 			str += userFAT - FAT;
-			str += 'cal ';
+			str += 'kcal ';
 		}
 		
 		
@@ -311,7 +311,7 @@ p{
 					<p>🍞 필요 탄수화물 <%=nutri.getR_Carbohydrate()%>g</p>
 					<p>🥩 필요 단백질 <%=nutri.getR_Protein()%>g</p>
 					<p>🧈 필요 지방<%=nutri.getR_Fat()%>g</p>
-					<p>✨ 필요 칼로리<%=nutri.getR_Calories()%>cal</p>
+					<p>✨ 필요 칼로리<%=nutri.getR_Calories()%>kcal</p>
 				</td>
 				
 				<td>
