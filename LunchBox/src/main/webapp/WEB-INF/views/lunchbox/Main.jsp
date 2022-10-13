@@ -839,7 +839,7 @@ function crawling(search){
    console.log("==크롤링 시작==")
    
    $.ajax({
-      url : 'http://172.30.1.39:3760/crawling',
+      url : 'http://59.3.58.53:3710/crawling',
       type : 'post',
       data : {
          'search' : search
@@ -854,8 +854,9 @@ function crawling(search){
          
          for(let i = 0; i<result.length; i++){
             Crawling_Html_Sub += `<tr>
+            				  <td><a href = \${result[i].link}>\${result[i].price}</a></td>
                               <td>\${result[i].name}</td>
-                              <td><a href = \${result[i].link}>\${result[i].price}</a></td>
+                              
                               
                             </tr>`;
          };
@@ -863,9 +864,10 @@ function crawling(search){
          crawling_area.innerHTML = `<div id="crw3" style="overflow:scroll; width:330px; height:710px;">
          							<table border = 1>
                                  <tr>
-                                    <td>이름</td>
                                     <td>가격</td>
-                                    <td>링크</td>
+                                    <td>이름</td>
+                                   
+                                   
                                  </tr>
                                  \${Crawling_Html_Sub}
                               </table>

@@ -114,7 +114,7 @@ h1{
 					
 				
 					<div align="right">
-					<c:if test="${board.mb_id==mb_id}">
+					<c:if test="${board.mb_id==mb_id || mb_id eq 'admin'}">
 						<button type="submit" class="btn btn-primary btn-sm">수정하기</button>
 						<button type="button" class="btn btn-primary btn-sm"
 							onclick="location.href='BoardDelete.do?article_seq=${board.article_seq}'">삭제</button>
@@ -134,7 +134,7 @@ h1{
 								<td>${Comment.mb_id}</td>
 								<td>${Comment.cmt_date}</td>
 								<td>
-									<c:if test="${Comment.mb_id==mb_id}">
+									<c:if test="${Comment.mb_id==mb_id || mb_id eq 'admin'}">
 									<button
 										onclick="location.href='DeleteComment.do?cmt_seq=${Comment.cmt_seq}&article_seq=${board.article_seq}'">삭제</button>
 										</c:if>
