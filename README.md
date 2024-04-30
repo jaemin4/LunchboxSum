@@ -1,4 +1,5 @@
 # Lunchbox_simulator
 1차 프로젝트
 
-https://github.com/jaemin4/LunchboxSum/assets/101157507/6f1e1704-7b78-408d-bad2-067949abc7c4
+![Untitled](https://github.com/jaemin4/LunchboxSum/assets/101157507/148c4d6f-be30-436c-b17b-606e3c30471b)
+
